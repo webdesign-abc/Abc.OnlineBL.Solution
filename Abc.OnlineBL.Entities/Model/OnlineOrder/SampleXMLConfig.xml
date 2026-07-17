@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<productConfig xmlns="http://tempuri.org/XMLConfig.xsd">
+	<fields>
+		<field>
+			<fieldName>Qty</fieldName>
+			<caption>Qty</caption>
+			<helpText>Enter product quanity</helpText>
+			<getDefaultFromProductAttribute>true</getDefaultFromProductAttribute>
+			<enabled>true</enabled>
+			<value>1</value>
+			<fieldType>TextBox</fieldType>
+			<validation required="true">
+				<rangeValidation min="1" max="100"/>
+			</validation>
+		</field>
+		<field>
+			<fieldName>Format</fieldName>
+			<caption>Format</caption>
+			<helpText>Select orientation</helpText>
+			<getDefaultFromProductAttribute>true</getDefaultFromProductAttribute>
+			<enabled>true</enabled>
+			<value></value>
+			<fieldType>ComboBox</fieldType>
+			<listItems>
+				<listItem displayText="Portrait" valueText="Portrait" />
+				<listItem displayText="Landscape" valueText="Landscape" />
+			</listItems>
+		</field>
+		<field>
+			<fieldName>Test</fieldName>
+			<caption>Test Check</caption>
+			<helpText>Select Test</helpText>
+			<getDefaultFromProductAttribute>false</getDefaultFromProductAttribute>
+			<enabled>true</enabled>
+			<value>false</value>
+			<fieldType>CheckBox</fieldType>
+			<validation required="true"></validation>
+		</field>
+		<field>
+			<fieldName>TestRad</fieldName>
+			<caption>Test Radio</caption>
+			<helpText>Select Radio</helpText>
+			<getDefaultFromProductAttribute>false</getDefaultFromProductAttribute>
+			<enabled>true</enabled>
+			<value></value>
+			<fieldType>RadioButton</fieldType>
+			<listItems>
+				<listItem displayText="rad 1" valueText="rad1" />
+				<listItem displayText="rad 2" valueText="rad2" />
+			</listItems>
+		</field>
+	</fields>
+</productConfig>

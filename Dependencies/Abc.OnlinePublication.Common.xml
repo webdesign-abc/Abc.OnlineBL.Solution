@@ -1,0 +1,2838 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Abc.OnlinePublication.Common</name>
+    </assembly>
+    <members>
+        <member name="T:Abc.OnlinePublication.Common.ImageProcessors.ImageProcessorException">
+            <summary>
+            exception class for Image processor types
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.ImageProcessors.ImageProcessorException.#ctor(System.String,System.Exception)">
+            <summary>
+            default constructor
+            </summary>
+            <param name="msg">message</param>
+            <param name="innerExp">inner exception</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.ImageProcessors.ImageProcessorException.#ctor(System.String)">
+            <summary>
+            default constructor
+            </summary>
+            <param name="msg">message</param>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.Bounds">
+            <summary>
+            Geomatric Boundary of a Page Item, TagInstance
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Bounds.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Bounds"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Bounds.#ctor(System.Decimal,System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Bounds"/> class.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="top">The top.</param>
+            <param name="width">The width.</param>
+            <param name="height">The height.</param>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Bounds.Left">
+            <summary>
+            Gets or sets the left.
+            </summary>
+            <value>The left.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Bounds.Top">
+            <summary>
+            Gets or sets the top.
+            </summary>
+            <value>The top.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Bounds.Width">
+            <summary>
+            Gets or sets the width.
+            </summary>
+            <value>The width.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Bounds.Height">
+            <summary>
+            Gets or sets the height.
+            </summary>
+            <value>The height.</value>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.TagAttribute">
+            <summary>
+            a Tag's xml attribute
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.TagAttribute.Href">
+            <summary>
+            Image Href
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.TagAttribute.AvailableStyles">
+            <summary>
+            this attribute will define if a xml element can have multiple styles
+            which the user will select from the UI
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.TagAttribute.AppliedParagraphStyleName">
+            <summary>
+            this attribute will specify the default paragraph style to apply
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.TagAttribute.#ctor">
+            <summary>
+            default constructor
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.TagAttribute.#ctor(System.String,System.String)">
+            <summary>
+            instantciate a tag Attribute object
+            </summary>
+            <param name="key">key name</param>
+            <param name="value">value</param>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.TagAttribute.Key">
+            <summary>
+            key
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.TagAttribute.Value">
+            <summary>
+            value
+            </summary>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.AttributesCollection">
+            <summary>
+            Dictionary based Attributes collection for a Xml Element Tag
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.AttributesCollection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AttributesCollection"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.AttributesCollection.Add(System.String,System.String)">
+            <summary>
+            add a new tag attribute. it will make sure duplicate keys doesn't exists
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.AttributesCollection.FindByKey(System.String)">
+            <summary>
+            find attribute by a key
+            </summary>
+            <param name="key">key to find</param>
+            <returns>tag attribute</returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.AttributesCollection.ContainsKey(System.String)">
+            <summary>
+            check if a key exists
+            </summary>
+            <param name="key">key to find</param>
+            <returns>if exists then true</returns>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.AttributesCollection.Keys">
+            <summary>
+            get all the keys
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.AttributesCollection.Item(System.String)">
+            <summary>
+            indexer for attributes
+            </summary>
+            <param name="key">key name</param>
+            <returns>tag attribute</returns>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.Rules.ProcessingLevel">
+            <summary>
+            ProcessingLevel indicates the order of the processing sequence
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.Rules.ProcessingLevel.Level1">
+            <summary>
+            Rules having this level will be process first
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.Rules.ProcessingLevel.Level2">
+            <summary>
+            Level2 : Processed While Feeding Data in InDesign
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.Rules.ProcessingLevel.Level3">
+            <summary>
+            Level3 : Processed after data is fed in InDesign
+            </summary>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.Rules.ProcessingRule">
+            <summary>
+            Various processing instruction for the document which is not part of the form and gets applied by the layout artist manually.
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.Rules.ProcessingRule.ruleName">
+            <summary>
+            Name of the rule
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.ProcessingRule.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ProcessingRule"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.ProcessingRule.MergeWithDocument(Abc.OnlinePublication.Common.DOM.Document,Abc.OnlinePublication.Common.DOM.DocumentPolicy)">
+            <summary>
+            Merges the with document.
+            </summary>
+            <param name="document">The document.</param>
+            <param name="parentPolicy">The policy to apply</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.ProcessingRule.Process(Abc.OnlinePublication.Common.DOM.Rules.IProcessorFactory)">
+            <summary>
+            Process the rule
+            </summary>
+            <param name="factory">The factory which will provide the appropriate rule processor</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.ProcessingRule.Duplicate">
+            <summary>
+            get a duplicate copy
+            </summary>
+            <returns>a copy of it self</returns>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.ProcessingRule.RuleName">
+            <summary>
+            Gets or sets the name of the rule.
+            </summary>
+            <value>The name of the rule.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.ProcessingRule.Level">
+            <summary>
+            Gets or sets the level.
+            </summary>
+            <value>The level.</value>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.DropDownListElement">
+            <summary>
+            DropDownListElement class
+            </summary>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.ListBoxElement">
+            <summary>
+            This abstract class models the functionality for a DropDown or Radio List box
+            </summary>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.FormElement">
+            <summary>
+            Form element represent how we want to display the question for a Xml Tag to the user.
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.FormElement.id">
+            <summary>
+            A id is used in flex to uniquely identify a form element.
+            <see cref="T:DocumentPolicy"/> form elements will have id values assigned
+            and when it gets copied to <see cref="T:Document"/> object.
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.FormElement.visible">
+            <summary>
+            Should the form element be displayed
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.FormElement.enabled">
+            <summary>
+            Display form element but should it be in readonly mode
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.FormElement.labelText">
+            <summary>
+            Label of the form element
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.FormElement.helpMessage">
+            <summary>
+            Help message
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.FormElement.validators">
+            <summary>
+            Validators
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.FormElement.value">
+            <summary>
+            Value of form element
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.FormElement.oldValue">
+            <summary>
+            the selected value. Value points to current value
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.FormElement.formElementType">
+            <summary>
+            Type of element, either level1 or level2
+            </summary>
+            <seealso cref="T:FormElementType"/>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.FormElement.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:FormElement"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.FormElement.CompareTo(System.Object)">
+            <summary>
+            Compares the current instance with another object of the same type.
+            </summary>
+            <param name="obj">An object to compare with this instance.</param>
+            <returns>
+            A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings: Value Meaning Less than zero This instance is less than obj. Zero This instance is equal to obj. Greater than zero This instance is greater than obj.
+            </returns>
+            <exception cref="T:System.ArgumentException">obj is not the same type as this instance. </exception>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.FormElement.Duplicate">
+            <summary>
+            get a duplicate copy of the element
+            </summary>
+            <returns>a deep copy of it self</returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.FormElement.CopyValueFrom(Abc.OnlinePublication.Common.DOM.FormElement)">
+            <summary>
+            Copy details from another FormElement
+            </summary>
+            <param name="fe">source FormElement Type</param>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.FormElement.Id">
+            <summary>
+            A id is used in flex to uniquely identify a form element
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.FormElement.Visible">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:FormElement"/> is visible.
+            </summary>
+            <value><c>true</c> if visible; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.FormElement.Enabled">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:FormElement"/> is enabled.
+            </summary>
+            <value><c>true</c> if enabled; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.FormElement.LabelText">
+            <summary>
+            Gets or sets the label text.
+            </summary>
+            <value>The label text.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.FormElement.DisplayOrder">
+            <summary>
+            Gets or sets the display order.
+            Used to sort the input fields in client side form
+            </summary>
+            <value>The display order.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.FormElement.HelpMessage">
+            <summary>
+            Gets or sets the help message.
+            </summary>
+            <value>The help message.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.FormElement.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.FormElement.FormElementType">
+            <summary>
+            Type of element, either level1 or level2
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.FormElement.Validators">
+            <summary>
+            Gets or sets the validators.
+            </summary>
+            <value>The validators.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.FormElement.OldValue">
+            <summary>
+            Gets or sets the Last selected value
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.ListBoxElement.items">
+            <summary>
+            Items in the list
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.ListBoxElement.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ListBoxElement"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.ListBoxElement.CopyValueFrom(Abc.OnlinePublication.Common.DOM.FormElement)">
+            <summary>
+            Copy value from FormElement if the selected value exists in this items collection
+            </summary>
+            <param name="fe">form element to copy from</param>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.ListBoxElement.Items">
+            <summary>
+            Gets or sets the items.
+            </summary>
+            <value>The items.</value>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.DropDownListElement.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DropDownListElement"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.DropDownListElement.Duplicate">
+            <summary>
+            get a duplicate copy of the element
+            </summary>
+            <returns>a deep copy of it self</returns>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.Rules.IProcessorFactory">
+            <summary>
+            the factory interface for getting a correct processor for a specific
+            rule
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.IProcessorFactory.GetProcessor(Abc.OnlinePublication.Common.DOM.Rules.ProcessingRule)">
+            <summary>
+            get a processor for a rule
+            </summary>
+            <param name="rule">Rule to process</param>
+            <returns>returns an actual processor of <see cref="T:Processor"/> type</returns>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.RequiredValidator">
+            <summary>
+            RequiredValidator is same is RequiredFieldValidator of DotNet
+            </summary>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.DataValidator">
+            <summary>
+            Used for Data Validation of the Form Elements
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.DataValidator.errorMessage">
+            <summary>
+            ErrorMessage
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.DataValidator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DataValidator"/> class.
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.DataValidator.ErrorMessage">
+            <summary>
+            Gets or sets the error message.
+            </summary>
+            <value>The error message.</value>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.RequiredValidator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RequiredValidator"/> class.
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.RequiredValidator.MinSize">
+            <summary>
+            Gets or sets the size of the min.
+            </summary>
+            <value>The size of the min.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.RequiredValidator.MaxSize">
+            <summary>
+            Gets or sets the size of the max.
+            </summary>
+            <value>The size of the max.</value>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.Rules.PluginInvokerRule">
+            <summary>
+            This rule holds extra data for executing a plugin in flex side for a specific tag group
+            </summary>
+            <remarks>
+            this rule is only used on the flex side...
+            </remarks>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.PluginInvokerRule.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Abc.OnlinePublication.Common.DOM.Rules.PluginInvokerRule"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.PluginInvokerRule.MergeWithDocument(Abc.OnlinePublication.Common.DOM.Document,Abc.OnlinePublication.Common.DOM.DocumentPolicy)">
+            <summary>
+            Merges the with document.
+            </summary>
+            <param name="document">The document.</param>
+            <param name="parentPolicy">The policy to apply</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.PluginInvokerRule.Duplicate">
+            <summary>
+            get a duplicate copy
+            </summary>
+            <returns>a copy of it self</returns>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.PluginInvokerRule.ModuleName">
+            <summary>
+            Gets or sets the name of the swf module where the plugin resides.
+            </summary>
+            <value>The name of the module.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.PluginInvokerRule.TagName">
+            <summary>
+            Gets or sets the name of the tag if present in the document a link will appear next to it
+            which if clicked will execute this plugin inside the module name.
+            </summary>
+            <value>The name of the tag.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.PluginInvokerRule.ChildsInitiallyDisabled">
+            <summary>
+            Gets or sets a value indicating whether [childs initially disabled].
+            </summary>
+            <value>
+            	<c>true</c> if [childs initially disabled]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.PluginInvokerRule.ShowChilds">
+            <summary>
+            Gets or sets a value indicating whether [show childs].
+            </summary>
+            <value><c>true</c> if [show childs]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.PluginInvokerRule.ChildsEditable">
+            <summary>
+            Gets or sets a value indicating whether [childs editable].
+            </summary>
+            <value><c>true</c> if [childs editable]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.PluginInvokerRule.DisplayText">
+            <summary>
+            Gets or sets the display text.
+            </summary>
+            <value>The display text.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.PluginInvokerRule.IconFileName">
+            <summary>
+            Gets or sets the name of the icon file.
+            </summary>
+            <value>The name of the icon file.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.PluginInvokerRule.Tooltip">
+            <summary>
+            Gets or sets the tooltip.
+            </summary>
+            <value>The tooltip.</value>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.Rules.LayerVisibilityRule">
+            <summary>
+            LayerVisibilityRule class lets you hide any layer by specifying the name.
+            </summary>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.Rules.BaseLayerProcessingRule">
+            <summary>
+            BaseLayerVisibilityRule class
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.Rules.BaseLayerProcessingRule.matchingLayerName">
+            <summary>
+            Matching layer name
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.Rules.BaseLayerProcessingRule.matchingType">
+            <summary>
+            Type of matching
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.BaseLayerProcessingRule.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BaseLayerVisibilityRule"/> class.
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.BaseLayerProcessingRule.MatchingType">
+            <summary>
+            Gets or sets the type of the matching.
+            </summary>
+            <value>The type of the matching.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.BaseLayerProcessingRule.MatchingLayerName">
+            <summary>
+            Gets or sets the name of the matching layer.
+            </summary>
+            <value>The name of the matching layer.</value>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.LayerVisibilityRule.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LayerVisibilityRule"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.LayerVisibilityRule.MergeWithDocument(Abc.OnlinePublication.Common.DOM.Document,Abc.OnlinePublication.Common.DOM.DocumentPolicy)">
+            <summary>
+            Merges the with document.
+            </summary>
+            <param name="document">The document.</param>
+            <param name="parentPolicy">The policy to apply</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.LayerVisibilityRule.Duplicate">
+            <summary>
+            get a duplicate copy
+            </summary>
+            <returns>a copy of it self</returns>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.LayerVisibilityRule.Visible">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:LayerVisibilityRule"/> is visible.
+            </summary>
+            <value><c>true</c> if visible; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.FormElementType">
+            <summary>
+            Used to identify the type of Form Element.
+            </summary>
+            <remarks>
+            level1 = Used in the processing rules section. Meaning this form element question
+            should be asked first. And then we will evaluate the processing rules and then
+            display the 2nd form for asking all the level2 form element questions.
+            level2 = Used in the Tags only.
+            </remarks>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.FormElementType.Level1">
+            <summary>
+            Level 1
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.FormElementType.Level2">
+            <summary>
+            Level 2
+            </summary>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.ValidatorsUIEditor">
+            <summary>
+            The UI Editor class used in Policy Editor
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.ValidatorsUIEditor.#ctor">
+            <summary>
+            Default Constructor
+            </summary>        
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.ValidatorsUIEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Tell the Property Grid that we will use Modal method
+            </summary>
+            <param name="context">the context</param>
+            <returns>Type of Editor we will use</returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.ValidatorsUIEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+            Edit the Collection of Vlidators
+            </summary>
+            <param name="context">the context</param>
+            <param name="provider">the provider</param>
+            <param name="value">the value to edit in this case the List collection of DataValidator</param>
+            <returns>the edited object</returns>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.ValidatorsUIEditor.ValidatorsCollectionEditor">
+            <summary>
+            Overrided Collection editor class which will be used inside our wrapper UI Editor class. Which will
+            do the actual work
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.ValidatorsUIEditor.ValidatorsCollectionEditor.#ctor(System.Type)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="type">The type of Collection we will edit</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.ValidatorsUIEditor.ValidatorsCollectionEditor.CreateNewItemTypes">
+            <summary>
+            The types that will be avilable as DataValidator
+            </summary>
+            <returns>Types inherited from DataValidator</returns>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.RangeValidator">
+            <summary>
+            Range Validator is same as RangeValidator of DotNet
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.RangeValidator.allowFrom">
+            <summary>
+            Min value
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.RangeValidator.allowTo">
+            <summary>
+            Max value
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.RangeValidator.allowDecimals">
+            <summary>
+            Should allow decimals
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.RangeValidator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RangeValidator"/> class.
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.RangeValidator.AllowFrom">
+            <summary>
+            Gets or sets the allow from.
+            </summary>
+            <value>The allow from.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.RangeValidator.AllowTo">
+            <summary>
+            Gets or sets the allow to.
+            </summary>
+            <value>The allow to.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.RangeValidator.AllowDecimals">
+            <summary>
+            Gets or sets a value indicating whether [allow decimals].
+            </summary>
+            <value><c>true</c> if [allow decimals]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.Layer">
+            <summary>
+            Represents an layer in indesign document
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Layer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Layer"/> class.
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Layer.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>The id.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Layer.Locked">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Layer"/> is locked.
+            </summary>
+            <value><c>true</c> if locked; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Layer.Visible">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Layer"/> is visible.
+            </summary>
+            <value><c>true</c> if visible; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Layer.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.Services.IRemoteFileIO">
+            <summary>
+            Interface for a Remote File Copier
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.Services.IRemoteFileIO.Copy(System.String,System.String,System.Boolean)">
+            <summary>
+            Copies the specified SRC file name.
+            </summary>
+            <param name="srcFileName">Name of the SRC file.</param>
+            <param name="destFileName">Name of the dest file.</param>
+            <param name="overwrite">if set to <c>true</c> [overwrite].</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.Services.IRemoteFileIO.Copy(System.String,System.String)">
+            <summary>
+            Copies the specified SRC file name.
+            </summary>
+            <param name="srcFileName">Name of the SRC file.</param>
+            <param name="destFileName">Name of the dest file.</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.Services.IRemoteFileIO.Delete(System.String)">
+            <summary>
+            Deletes the specified path.
+            </summary>
+            <param name="path">The path.</param>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.AOPClientConfig">
+            <summary>
+            AOP Client Config Class
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.AOPClientConfig.AOP_SERVER_ADDRESS">
+            <summary>
+            Gets the AOP_SERVER_ADDRESS.
+            </summary>
+            <value>The AOP_SERVER_ADDRESS</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.AOPClientConfig.AOP_SERVER_PORT">
+            <summary>
+            Gets the AOP_SERVER_PORT.
+            </summary>
+            <value>The AOP_SERVER_PORT.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.AOPClientConfig.AOP_DOCUMENTS_ROOT">
+            <summary>
+            Gets the AOP_DOCUMENTS_ROOT.
+            </summary>
+            <value>The AOP_DOCUMENTS_ROOT.</value>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.Rules.LayerGroupRule">
+            <summary>
+            This rule enables the possibility of hiding all layers from a group except one.
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.Rules.LayerGroupRule.layerNames">
+            <summary>
+            List of layers in the group
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.Rules.LayerGroupRule.formElementId">
+            <summary>
+            Associated Element
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.LayerGroupRule.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LayerGroupRule"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.LayerGroupRule.MergeWithDocument(Abc.OnlinePublication.Common.DOM.Document,Abc.OnlinePublication.Common.DOM.DocumentPolicy)">
+            <summary>
+            Merges the with document.
+            </summary>
+            <param name="document">The document.</param>
+            <param name="parentPolicy">The policy to apply</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.LayerGroupRule.Duplicate">
+            <summary>
+            get a duplicate copy
+            </summary>
+            <returns>a copy of it self</returns>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.LayerGroupRule.LayerNames">
+            <summary>
+            Gets or sets the layer names.
+            </summary>
+            <value>The layer names.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.LayerGroupRule.FormElementId">
+            <summary>
+            Gets or sets the associated drop down list.
+            </summary>
+            <value>The associated drop down list.</value>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.ClonableObject">
+            <summary>
+            <b>BaseObject</b> class is an abstract class for you to derive from. <br />
+            Every class that will be dirived from this class will support the <b>Clone</b> method automaticly.<br />
+            The class implements the interface <i>ICloneable</i> and there for every object that will be derived <br />
+            from this object will support the <i>ICloneable</i> interface as well.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.ClonableObject.Clone">
+            <summary>
+            Clone the object, and returning a reference to a cloned object.
+            </summary>
+            <returns>Reference to the new cloned object.</returns>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.Crop">
+            <summary>
+            Crop class
+            </summary>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.Transformation">
+            <summary>
+            Transformation class
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.Transformation.applied">
+            <summary>
+            Indicates whether this <see cref="T:Transformation"/> is applied
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Transformation.Applied">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Transformation"/> is applied.
+            </summary>
+            <value><c>true</c> if applied; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Crop.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Crop"/> class.
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Crop.CroppingRegion">
+            <summary>
+            Gets or sets the cropping region.
+            </summary>
+            <value>The cropping region.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Crop.SaveAsGrayscale">
+            <summary>
+            Gets or sets a value indicating whether [save as grayscale].
+            </summary>
+            <value><c>true</c> if [save as grayscale]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Crop.ScaleFactor">
+            <summary>
+            Sepcify what is Flex Image Components Scale factor as it was used to resize the image in Flex component.
+            Default should be 1.
+            </summary>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.Services.IQueueService">
+            <summary>
+            IQueueService interface
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.Services.IQueueService.UpdateQueueStatus(System.Int32,Abc.AIS.Entities.Enums.AOP_QueueStatusList,System.String)">
+            <summary>
+            Updates the queue status.
+            </summary>
+            <param name="queueId">The queue id.</param>
+            <param name="status">The status.</param>
+            <param name="msg">The MSG.</param>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.ServiceHelper">
+            <summary>
+            ServiceHelper class
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.ServiceHelper.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ServiceHelper"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.ServiceHelper.GetUrl(System.String,System.String)">
+            <summary>
+            returns a the url for the remote factory object
+            </summary>
+            <param name="serverUrl">address or ip</param>
+            <param name="port">port number the server is running on</param>
+            <returns>url of the remote factory</returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.ServiceHelper.SetupRemotingClient">
+            <summary>
+            Setups the remoting client.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.ServiceHelper.GetFactory">
+            <summary>
+            Gets the service factory.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.ServiceHelper.GetFactory(System.String,System.String)">
+            <summary>
+            Gets the service factory.
+            </summary>
+            <param name="serverUrl">The server URL.</param>
+            <param name="port">The port.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.ServiceHelper.RemoteServerAddress">
+            <summary>
+            Specify the Remote Server IP or dns Address
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.ServiceHelper.RemoteServerPort">
+            <summary>
+            Specify the Remote Server Port
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.ServiceHelper.LocalClientPort">
+            <summary>
+            Gets or sets the local client port.
+            </summary>
+            <value>The local client port.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.ServiceHelper.QueueService">
+            <summary>
+            Gets the queue service.
+            </summary>
+            <value>The queue service.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.ServiceHelper.JobService">
+            <summary>
+            Gets the job service.
+            </summary>
+            <value>The job service.</value>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.Rules.TextReplacementRule">
+            <summary>
+            This rule processor describe the Search and Replace operation of special characters.
+            E.g: Search for empty space and replace with non breaking space (^s)
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.TextReplacementRule.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TextReplacementRule"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.TextReplacementRule.MergeWithDocument(Abc.OnlinePublication.Common.DOM.Document,Abc.OnlinePublication.Common.DOM.DocumentPolicy)">
+            <summary>
+            Merges the with document.
+            </summary>
+            <param name="document">The document.</param>
+            <param name="parentPolicy">The policy to apply</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.TextReplacementRule.Duplicate">
+            <summary>
+            get a duplicate copy
+            </summary>
+            <returns>a copy of it self</returns>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.TextReplacementRule.SearchAndReplaceInfos">
+            <summary>
+            Gets or sets the search and replace infos.
+            </summary>
+            <value>The search and replace infos.</value>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.ListItem">
+            <summary>
+            List Item in a List Box
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.ListItem.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ListItem"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.ListItem.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ListItem"/> class.
+            </summary>
+            <param name="text">The text.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.ListItem.Text">
+            <summary>
+            Gets or sets the text.
+            </summary>
+            <value>The text.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.ListItem.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.DocumentProperties">
+            <summary>
+            DocumentProperties class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.DocumentProperties.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentProperties"/> class.
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.DocumentProperties.Unit">
+            <summary>
+            Gets or sets the unit.
+            </summary>
+            <value>The unit.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.DocumentProperties.NumberOfPages">
+            <summary>
+            Gets or sets the number of pages.
+            </summary>
+            <value>The number of pages.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.DocumentProperties.IsPortrait">
+            <summary>
+            Gets or sets a value indicating whether this instance is portrait.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is portrait; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.DocumentProperties.PageHeight">
+            <summary>
+            Gets or sets the height of the page.
+            </summary>
+            <value>The height of the page.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.DocumentProperties.PageWidth">
+            <summary>
+            Gets or sets the width of the page.
+            </summary>
+            <value>The width of the page.</value>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.AppliedParaStyle">
+            <summary>
+            this class represents which paragraph styles is applied in what paragraph
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.AppliedParaStyle.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Abc.OnlinePublication.Common.DOM.AppliedParaStyle"/> class.
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.AppliedParaStyle.StyleName">
+            <summary>
+            what indesign style is used
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.AppliedParaStyle.ParaIndex">
+            <summary>
+            what is para index
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.AppliedParaStyle.EndIndex">
+            <summary>
+            the index of end position of the para in whole Text
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.AppliedParaStyle.BeginIndex">
+            <summary>
+            the begining index of the para in whole text
+            </summary>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.AOPServiceFactory">
+            <summary>
+            ServiceFactory class
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.AOPServiceFactory.GetQueueService">
+            <summary>
+            Gets the queue service.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.AOPServiceFactory.GetJobService">
+            <summary>
+            Gets the job service.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.JobType">
+            <summary>
+            JobType enum
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.JobType.JpegPreview">
+            <summary>
+            JpegPreview
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.JobType.SaveAsIndesign">
+            <summary>
+            SaveAsIndesign
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.JobType.JpegPreviewAndSave">
+            <summary>
+            JpegPreview then SaveAsIndesign
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.JobType.SaveAsIndesignToAltFolder">
+            <summary>
+            Exactly like SaveAsIndesign, but save to diff location.
+            </summary>
+            <remarks>
+            Because we dont want nobody to touch the .indd file untill the client approves the job
+            or cancels the job, that's why we save the job in the CompletedJobs folder under DocumentsRoot
+            forder. When client approves/cancels the job from CMyAbc we need to move the file from CompletedJobs
+            to a Layout folder. But for cancelation we insert a queue in AOP database so it will generate a fresh
+            .indd file. The problem is we are trying to move the file when it is being generated by AOP.
+            So the enum will flag AOP to generate the file in the target folder, Layout folder, instead of CompletedJobs.
+            </remarks>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.FolderStructureType">
+            <summary>
+            FolderStructureType enum
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.FolderStructureType.Flat">
+            <summary>
+            All files will be in the specified root folder
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.FolderStructureType.Hundred">
+            <summary>
+            All files will be in the ?00/ folder in the specified root folder
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.FolderStructureType.JobId">
+            <summary>
+            All files will be in the JobId folder in the specified root folder
+            </summary>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.TextBoxElement">
+            <summary>
+            TextBoxElement class
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.TextBoxElement.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TextBoxElement"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.TextBoxElement.Duplicate">
+            <summary>
+            get a duplicate copy of the element
+            </summary>
+            <returns>a deep copy of it self</returns>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.TextBoxElement.TextFormats">
+            <summary>
+            Holds the list of special text formats like bold/italic/underline information
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.TextBoxElement.ParaStyles">
+            <summary>
+            list of paragraph styles.        
+            </summary>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.ImageQuality">
+            <summary>
+            ImageQuality class
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.ImageQuality.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ImageQuality"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.ImageQuality.#ctor(System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ImageQuality"/> class.
+            </summary>
+            <param name="width">The width.</param>
+            <param name="height">The height.</param>
+            <param name="resolution">The resolution.</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.ImageQuality.#ctor(System.Decimal,System.Decimal)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Abc.OnlinePublication.Common.DOM.ImageQuality"/> class.
+            </summary>
+            <param name="minimumMegaPixels">The minimum mega pixels.</param>
+            <param name="recommendedMegaPixels">The recommended mega pixels.</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.ImageQuality.GetInMegaPixel">
+            <summary>
+            Gets the image quality in mega pixel.
+            </summary>
+            <returns>Width*Height value</returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.ImageQuality.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.ImageQuality.Height">
+            <summary>
+            Gets or sets the height.
+            </summary>
+            <value>The height.</value>        
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.ImageQuality.Width">
+            <summary>
+            Gets or sets the width.
+            </summary>
+            <value>The width.</value>        
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.ImageQuality.Resolution">
+            <summary>
+            Gets or sets the resolution.
+            </summary>
+            <value>The resolution.</value>        
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.ImageQuality.RecommendedMegaPixels">
+            <summary>
+            Any image that are greater or equals to the recommended mega pixels are good quality images.
+            </summary>
+            <value>The recommended mega pixels.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.ImageQuality.MinimumMegaPixels">
+            <summary>
+            Any image that are greater or equals to the minimum mega pixels and less than recommended
+            mega pixels are OK images, but should be issued a warning to the user. Any image less this value
+            is not acceptable
+            </summary>
+            <value>The minimum mega pixles.</value>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.ImageElement">
+            <summary>
+            ImageElement class
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.ImageElement.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ImageElement"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.ImageElement.Duplicate">
+            <summary>
+            get a duplicate copy of the element
+            </summary>
+            <returns>a deep copy of it self</returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.ImageElement.CopyValueFrom(Abc.OnlinePublication.Common.DOM.FormElement)">
+            <summary>
+            Copy value from FormElement if the selected value exists in this items collection
+            </summary>
+            <param name="fe">form element to copy from</param>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.ImageElement.TransformedImageUrl">
+            <summary>
+            Gets or sets the transformed image URL.
+            </summary>
+            <value>The transformed image URL.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.ImageElement.SaveAsGrayscale">
+            <summary>
+            Gets or sets a value indicating whether [save as grayscale].
+            </summary>
+            <value><c>true</c> if [save as grayscale]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.ImageElement.DonotValidateImageQuality">
+            <summary>
+            Gets or sets a value indicating whether to validate image quality or not.
+            </summary>
+            <value>
+            	<c>true</c> if [donot validate image quality]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.Rules.GenericLayerGroupRule">
+            <summary>
+            This rule is similar to layergroup rule except it is more generic and ask multiple
+            group question. For eg. couple of layers like this:
+            Q_Sale Type_For Sale
+            Q_Sale Type_Auction
+            Q_Photos_1 Photo
+            Q_Photos_2 Photo
+            
+            should result in asking two drop down list question, Sale Type and Photos
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.GenericLayerGroupRule.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.GenericLayerGroupRule.MergeWithDocument(Abc.OnlinePublication.Common.DOM.Document,Abc.OnlinePublication.Common.DOM.DocumentPolicy)">
+            <summary>
+            Marge with the Policy
+            </summary>
+            <param name="document"></param>
+            <param name="parentPolicy"></param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.GenericLayerGroupRule.Duplicate">
+            <summary>
+            get a duplicate copy
+            </summary>
+            <returns>a copy of it self</returns>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.GenericLayerGroupRule.Separator">
+            <summary>
+            Delimeter character to seperate the layer name values
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.GenericLayerGroupRule.FormElementIds">
+            <summary>
+            The links to the form elements id that contains the user response for
+            each of the group selection question
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.GenericLayerGroupRule.LayerNameStartsWith">
+            <summary>
+            Layer name to start with, for eg. Q_
+            </summary>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.Document">
+            <summary>
+            Represent an Indesign Document with specific tags and layers and rules.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Document.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Document"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Document.MergeWithPolicy(Abc.OnlinePublication.Common.DOM.DocumentPolicy)">
+            <summary>
+            Merges the with policy.
+            </summary>
+            <param name="policy">The policy.</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Document.CopyFormFieldValuesFrom(Abc.OnlinePublication.Common.DOM.Document)">
+            <summary>
+            Copies the form field values from.
+            </summary>
+            <param name="srcDoc">The SRC doc.</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Document.Serialize(Abc.OnlinePublication.Common.DOM.Document)">
+            <summary>
+            Serializes the specified document. Unicode is used
+            </summary>
+            <param name="document">The document.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Document.Serialize(Abc.OnlinePublication.Common.DOM.Document,System.Text.Encoding)">
+            <summary>
+            Serializes the specified document to xml string.
+            </summary>
+            <param name="document">The document.</param>
+            <param name="encoding">The encoding.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Document.Deserialize(System.String)">
+            <summary>
+            Deserializes the specified XML data to Document.
+            </summary>
+            <param name="xmlData">The XML data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Document.GetFormElementById(System.String)">
+            <summary>
+            Gets the form element by id.
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Document.GetPageByName(System.String)">
+            <summary>
+            Gets the page by its name. Name usually is page number e.g. "4".
+            </summary>
+            <param name="pageName">Name of the page.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Document.GetLayerByName(System.String)">
+            <summary>
+            Gets the layer by name.
+            </summary>
+            <param name="layerName">Name of the layer.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Document.GetLayerByNameStartsWith(System.String)">
+            <summary>
+            Gets the layer starts with name. The first occurence is returned
+            </summary>
+            <param name="layerName">Name of the layer.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Document.GetAllLayerByNameStartsWith(System.String)">
+            <summary>
+            Get all matching Layer Names
+            </summary>
+            <param name="layerName">name starts with</param>
+            <returns>all matched layers</returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Document.GetLayerByNameEndsWith(System.String)">
+            <summary>
+            Gets the layer ends with name. The first occurence is returned
+            </summary>
+            <param name="layerName">Name of the layer.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Document.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Document.Preference">
+            <summary>
+            Gets or sets the preference.
+            </summary>
+            <value>The preference.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Document.ImageRequirement">
+            <summary>
+            Gets or sets the image requirement.
+            </summary>
+            <value>The image requirement.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Document.Pages">
+            <summary>
+            Gets or sets the pages.
+            </summary>
+            <value>The pages.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Document.Layers">
+            <summary>
+            Gets or sets the layers.
+            </summary>
+            <value>The layers.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Document.Root">
+            <summary>
+            Root tag of the Document
+            </summary>
+            <value>The Root tag</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Document.FormElements">
+            <summary>
+            Gets or sets the form elements for the 1st level form (basically for all the processing rules).
+            </summary>
+            <value>The form elements.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Document.ProcessingRules">
+            <summary>
+            Gets or sets the processing rules.
+            </summary>
+            <value>The processing rules.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Document.PolicyVersion">
+            <summary>
+            The version of the document policy applied
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Document.FontSizeReduceThreshold">
+            <summary>
+            If we need to reduce the font size to fit texts, how much we can reduce by
+            </summary>
+            <exception cref="T:ArgumentOutOfRangeException">thorws exception if value is not within 0 to 10</exception>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Document.ParaStyles">
+            <summary>
+            Available Styles for this Tag
+            </summary>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.ImageProcessors.ProcessingResult">
+            <summary>
+            ProcessingResult class
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.ImageProcessors.ProcessingResult.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ProcessingResult"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.ImageProcessors.ProcessingResult.Serialize(Abc.OnlinePublication.Common.ImageProcessors.ProcessingResult)">
+            <summary>
+            Serializes the specified document. Unicode is used
+            </summary>
+            <param name="processingResult">The processing result.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.ImageProcessors.ProcessingResult.Serialize(Abc.OnlinePublication.Common.ImageProcessors.ProcessingResult,System.Text.Encoding)">
+            <summary>
+            Serializes the specified ProcessingResult to xml string.
+            </summary>
+            <param name="processingResult">The processing result.</param>
+            <param name="encoding">The encoding.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.ImageProcessors.ProcessingResult.Deserialize(System.String)">
+            <summary>
+            Deserializes the specified XML data to ProcessingResult.
+            </summary>
+            <param name="xmlData">The XML data.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.ImageProcessors.ProcessingResult.FileName">
+            <summary>
+            Gets or sets the name of the file.
+            </summary>
+            <value>The name of the file.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.ImageProcessors.ProcessingResult.Message">
+            <summary>
+            Gets or sets the message.
+            </summary>
+            <value>The message.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.ImageProcessors.ProcessingResult.HasError">
+            <summary>
+            Gets or sets a value indicating whether this instance has error.
+            </summary>
+            <value><c>true</c> if this instance has error; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.ImageProcessors.ProcessingResult.HasWarning">
+            <summary>
+            Gets or sets a value indicating whether this instance has warning.
+            </summary>
+            <value>
+            	<c>true</c> if this instance has warning; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.ImageProcessors.ProcessingResult.Data">
+            <summary>
+            Gets or sets the data.
+            </summary>
+            <value>The data.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.ImageProcessors.ProcessingResult.ErrorTrace">
+            <summary>
+            Gets or sets the ErrorTrace.
+            </summary>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.Services.IJobService">
+            <summary>
+            IJobService
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.Services.IJobService.SaveTempWorkingDocument(System.Int32,System.String)">
+            <summary>
+            Saves the Temp working document.
+            </summary>
+            <param name="jobDocId">The job doc id.</param>
+            <param name="tempDocModel">The working doc model.</param>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.Style">
+            <summary>
+            defines a generic indesign style
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Style.#ctor">
+            <summary>
+            default constructor
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Style.GetSchema">
+            <summary>
+            Impl of XML Serializer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Style.ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Impl of XML Serializer
+            </summary>
+            <param name="reader"></param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Style.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Impl of XML Serializer
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Style.Properties">
+            <summary>
+            Gets or sets the properties.
+            </summary>
+            <value>The properties.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Style.StyleName">
+            <summary>
+            Gets or sets the name of the style.
+            </summary>
+            <value>The name of the style.</value>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.Utility">
+            <summary>
+            Utility Methods Placeholders
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.Utility.Duplicate``1(``0)">
+            <summary>
+            get a duplicate copy using XML serialzation
+            </summary>
+            <param name="obj">The object to duplicate</param>
+            <returns>a copy of obj</returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.Utility.Serialize``1(``0)">
+            <summary>
+            Serializes the specified object. Unicode is used
+            </summary>
+            <param name="obj">the object to serilize</param>
+            <returns>xml string copy of the object</returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.Utility.Serialize``1(``0,System.Text.Encoding)">
+            <summary>
+            Serializes the specified tag to xml string.
+            </summary>
+            <param name="tag">The object.</param>
+            <param name="encoding">The encoding.</param>
+            <returns>xml string copy of the object</returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.Utility.Deserialize``1(System.String)">
+            <summary>
+            Deserializes the specified XML data to Generic Type.
+            </summary>
+            <param name="xmlData">The XML data.</param>
+            <returns>The generic object</returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.Utility.BinarySerialize``1(``0)">
+            <summary>
+            Binary serialize.
+            </summary>
+            <typeparam name="T">Generic Type</typeparam>
+            <param name="obj">The obj.</param>
+            <returns>byte array of the object</returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.Utility.BinaryDeserialize``1(System.Byte[])">
+            <summary>
+            Binary Deserialize.
+            </summary>
+            <typeparam name="T">Generic Type</typeparam>
+            <param name="data">The data.</param>
+            <returns>Returns the generic typed object</returns>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.Units">
+            <summary>
+            Measurement units
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.Units.Millimetres">
+            <summary>
+            Millimetres
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.Units.Centimetres">
+            <summary>
+            Centimetres
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.Units.Inches">
+            <summary>
+            Inches
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.Units.Pixels">
+            <summary>
+            Pixels
+            </summary>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.MatchingType">
+            <summary>
+            Name matching type for the Layer name
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.MatchingType.StartsWith">
+            <summary>
+            String starts with
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.MatchingType.Whole">
+            <summary>
+            String matches exactly
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.MatchingType.EndsWith">
+            <summary>
+            String ends with
+            </summary>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender">
+            <summary>
+            AbcSmtpAppender is the custom appender of SmtpAppender.
+            This class is exactly the same as log4net.Appender.AbcSmtpAppender.
+            The reason this class is here because flourine lib was compiled with
+            the original log4net.dll which was signed.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+            <remarks>
+            <para>
+            Default constructor
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.SendBuffer(log4net.Core.LoggingEvent[])">
+            <summary>
+            Sends the contents of the cyclic buffer as an e-mail message.
+            </summary>
+            <param name="events">The logging events to send.</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.SendEmail(log4net.Core.LoggingEvent,System.String)">
+            <summary>
+            Sends the email.
+            </summary>
+            <param name="loggingEvent">The logging event.</param>
+            <param name="attachmentContent">Content of the attachment.</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.SendEmail(System.String)">
+            <summary>
+            Sends the email.
+            </summary>
+            <param name="messageBody">The message body.</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.SendEmail(System.String,System.String)">
+            <summary>
+            Send the email message
+            </summary>
+            <param name="messageBody">the body text to include in the mail</param>
+            <param name="attachmentFile">The attachment file.</param>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.To">
+            <summary>
+            Gets or sets a semicolon-delimited list of recipient e-mail addresses.
+            </summary>
+            <value>
+            A semicolon-delimited list of e-mail addresses.
+            </value>
+            <remarks>
+            <para>
+            A semicolon-delimited list of recipient e-mail addresses.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.From">
+            <summary>
+            Gets or sets the e-mail address of the sender.
+            </summary>
+            <value>
+            The e-mail address of the sender.
+            </value>
+            <remarks>
+            <para>
+            The e-mail address of the sender.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.Subject">
+            <summary>
+            Gets or sets the subject line of the e-mail message.
+            </summary>
+            <value>
+            The subject line of the e-mail message.
+            </value>
+            <remarks>
+            <para>
+            The subject line of the e-mail message.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.SmtpHost">
+            <summary>
+            Gets or sets the name of the SMTP relay mail server to use to send 
+            the e-mail messages.
+            </summary>
+            <value>
+            The name of the e-mail relay server. If SmtpServer is not set, the 
+            name of the local SMTP server is used.
+            </value>
+            <remarks>
+            <para>
+            The name of the e-mail relay server. If SmtpServer is not set, the 
+            name of the local SMTP server is used.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.LocationInfo">
+            <summary>
+            Obsolete
+            </summary>
+            <remarks>
+            Use the BufferingAppenderSkeleton Fix methods instead 
+            </remarks>
+            <remarks>
+            <para>
+            Obsolete property.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.Authentication">
+            <summary>
+            The mode to use to authentication with the SMTP server
+            </summary>
+            <remarks>
+            <note type="caution">Authentication is only available on the MS .NET 1.1 runtime.</note>
+            <para>
+            Valid Authentication mode values are: <see cref="F:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.SmtpAuthentication.None"/>, 
+            <see cref="F:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.SmtpAuthentication.Basic"/>, and <see cref="F:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.SmtpAuthentication.Ntlm"/>. 
+            The default value is <see cref="F:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.SmtpAuthentication.None"/>. When using 
+            <see cref="F:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.SmtpAuthentication.Basic"/> you must specify the <see cref="P:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.Username"/> 
+            and <see cref="P:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.Password"/> to use to authenticate.
+            When using <see cref="F:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.SmtpAuthentication.Ntlm"/> the Windows credentials for the current
+            thread, if impersonating, or the process will be used to authenticate. 
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.Username">
+            <summary>
+            The username to use to authenticate with the SMTP server
+            </summary>
+            <remarks>
+            <note type="caution">Authentication is only available on the MS .NET 1.1 runtime.</note>
+            <para>
+            A <see cref="P:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.Username"/> and <see cref="P:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.Password"/> must be specified when 
+            <see cref="P:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.Authentication"/> is set to <see cref="F:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.SmtpAuthentication.Basic"/>, 
+            otherwise the username will be ignored. 
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.Password">
+            <summary>
+            The password to use to authenticate with the SMTP server
+            </summary>
+            <remarks>
+            <note type="caution">Authentication is only available on the MS .NET 1.1 runtime.</note>
+            <para>
+            A <see cref="P:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.Username"/> and <see cref="P:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.Password"/> must be specified when 
+            <see cref="P:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.Authentication"/> is set to <see cref="F:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.SmtpAuthentication.Basic"/>, 
+            otherwise the password will be ignored. 
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.Port">
+            <summary>
+            The port on which the SMTP server is listening
+            </summary>
+            <remarks>
+            <note type="caution">Server Port is only available on the MS .NET 1.1 runtime.</note>
+            <para>
+            The port on which the SMTP server is listening. The default
+            port is <c>25</c>. The Port can only be changed when running on
+            the MS .NET 1.1 runtime.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.Priority">
+            <summary>
+            Gets or sets the priority of the e-mail message
+            </summary>
+            <value>
+            One of the <see cref="T:System.Net.Mail.MailPriority"/> values.
+            </value>
+            <remarks>
+            <para>
+            Sets the priority of the e-mails generated by this
+            appender. The default priority is <see cref="F:System.Net.Mail.MailPriority.Normal"/>.
+            </para>
+            <para>
+            If you are using this appender to report errors then
+            you may want to set the priority to <see cref="F:System.Net.Mail.MailPriority.High"/>.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.ProjectName">
+            <summary>
+            Gets or sets the name of the project.
+            </summary>
+            <value>The name of the project.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.RequiresLayout">
+            <summary>
+            Gets a value indicating whether [requires layout].
+            </summary>
+            <value><c>true</c> if [requires layout]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.SmtpAuthentication">
+            <summary>
+            Values for the <see cref="P:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.Authentication"/> property.
+            </summary>
+            <remarks>
+            <para>
+            SMTP authentication modes.
+            </para>
+            </remarks>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.SmtpAuthentication.None">
+            <summary>
+            No authentication
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.SmtpAuthentication.Basic">
+            <summary>
+            Basic authentication.
+            </summary>
+            <remarks>
+            Requires a username and password to be supplied
+            </remarks>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.Utilities.AbcSmtpAppender.SmtpAuthentication.Ntlm">
+            <summary>
+            Integrated authentication
+            </summary>
+            <remarks>
+            Uses the Windows credentials from the current thread or process to authenticate.
+            </remarks>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.Tag">
+            <summary>
+            A tag is a xml tag which is associated with a XMLElement in indesign document.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Tag.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tag"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Tag.#ctor(Abc.OnlinePublication.Common.DOM.Tag)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tag"/> class.
+            </summary>
+            <param name="parent">The Parent Tag, use Null if Root Tag</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Tag.#ctor(Abc.OnlinePublication.Common.DOM.Tag,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tag"/> class.
+            </summary>
+            <param name="parent">The Parent Tag, use Null if Root Tag</param>
+            <param name="tagName">Name of the Tag</param>
+            <param name="id">Id of the XMLElement object in a unique form i.e. dotted decimal form, like 1.2.1, (Root node id.CHild Node Id.CHild Node Id)</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Tag.Initialize(Abc.OnlinePublication.Common.DOM.Tag)">
+            <summary>
+            Re-create the Parent Links after De-serializing the Tag Tree
+            </summary>
+            <param name="parent">The parent to connect to, Null if Root</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Tag.HasChild">
+            <summary>
+            If the tag element is a leaf node or contains child elements
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Tag.UpdateFormElementFromPolicy(Abc.OnlinePublication.Common.DOM.DocumentPolicy)">
+            <summary>
+            Copy the FormElement object from the document policy
+            </summary>
+            <param name="policy">Document <see cref="T:DocumentPolicy"/> to Merge from</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Tag.UpdateFormElementFromDocument(Abc.OnlinePublication.Common.DOM.Document)">
+            <summary>
+            Updates the form element from document.
+            </summary>
+            <param name="srcDoc">The SRC doc.</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Tag.Find(System.Predicate{Abc.OnlinePublication.Common.DOM.Tag})">
+            <summary>
+            Generic Find method to find a Tag Element in the tree
+            </summary>
+            <param name="match">Predicate function delegate</param>
+            <returns>Matching Tag if found else null</returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Tag.FindAll(System.Predicate{Abc.OnlinePublication.Common.DOM.Tag})">
+            <summary>
+            find all occurance of the user supplied matched predicate
+            </summary>
+            <param name="match">predicate to match</param>
+            <returns>list of matched tags</returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Tag.GetTagById(System.String)">
+            <summary>
+            Gets the tag instance by XML element id by recursively 
+            looking down the tree from this node
+            </summary>
+            <param name="id">The XML element id in dotted form eg. 1.2.1</param>
+            <returns><see cref="T:Tag"/> class</returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Tag.IsTagExists(System.String)">
+            <summary>
+            If a tag name exists in this part of Tree
+            </summary>
+            <param name="tagNameToMatch">Which tag to look for</param>
+            <returns></returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Tag.SortChilds">
+            <summary>
+            sort tree accoridng to display order. Intermediate nodes takes the lowest value
+            from it child nodes for sorting
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Tag.GetTree">
+            <summary>
+            get string representation of the tree
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Tag.ResetOverflowText">
+            <summary>
+            Reset the tree for overflow text to false. We need to do this every time we get a preview
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Tag.Duplicate">
+            <summary>
+            get a duplicate copy
+            </summary>
+            <returns>a copy of it self</returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Tag.CompareTo(Abc.OnlinePublication.Common.DOM.Tag)">
+            <summary>
+            impl of compare to intercace, display order of a tag is sorting point
+            </summary>
+            <param name="other">other tag to compare against</param>
+            <returns>standard compare to result</returns>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Tag.Id">
+            <summary>
+            Unique ID of the Xml Element Tag
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Tag.TagName">
+            <summary>
+            Gets or sets the name of the tag.
+            </summary>
+            <value>The name of the tag.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Tag.AltTagName">
+            <summary>
+            This is a alternate tag name. which is populated from a documen policy. Is used for
+            copying contents/values from other documents.
+            eg. BrochureHeading and Heading can be interchangable while copying contents from
+            one document to the other
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Tag.ItemLayerId">
+            <summary>
+            Gets or sets the item layer id.
+            </summary>
+            <value>The item layer id.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Tag.PageNo">
+            <summary>
+            Gets or sets the page no.
+            </summary>
+            <value>The page no.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Tag.Bounds">
+            <summary>
+            Gets or sets the bounds.
+            </summary>
+            <value>The bounds.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Tag.Parent">
+            <summary>
+            The parent node, Null is Root Node
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Tag.Childs">
+            <summary>
+            Gets or sets the child tag instances.
+            </summary>
+            <value>The tag instances.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Tag.FormElement">
+            <summary>
+            Gets or sets the associated element.
+            </summary>
+            <value>FormElement</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Tag.Attributes">
+            <summary>
+            Hold the attributes of this xml element tag
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Tag.OverflowText">
+            <summary>
+            If the tag contents is overflow in the associated text frame
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Tag.CharactersOverflown">
+            <summary>
+            Gets or sets the characters overflown count.
+            </summary>
+            <value>The characters overflown.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Tag.DisplayOrder">
+            <summary>
+            display order of the tag
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Tag.PreferredHeight">
+            <summary>
+            If the tag text box doesn't have a height.. i.e. inline tag then use the preferred height
+            to display in the form
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Tag.PreferredWidth">
+            <summary>
+            If the tag text box doesn't have a width.. i.e. inline tag then use the preferred width
+            to display in the form
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Tag.FitTextToFrame">
+            <summary>
+            Fit text to frame if text is overflowing. We will reduce the font size to fit text.
+            The max font size we can reduce will be defined in FontSizeReduceThreshold property
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Tag.RotationAngle">
+            <summary>
+            This value shows the rotation angle of the imageframe/textframe if any found while analyzing
+            the document. This value will be used in ImageCropping box in flex, to determine the portrait/
+            landscape mode for the crop box.
+            </summary>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.Rotation">
+            <summary>
+            Rotation class
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rotation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Rotation"/> class.
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rotation.Degrees">
+            <summary>
+            Gets or sets the degrees.
+            </summary>
+            <value>The degrees.</value>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.ImageProcessors.ImageProcessorFactory">
+            <summary>
+            ImageProcessorFactory class provides class to get the image editing software
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.ImageProcessors.ImageProcessorFactory.objectCache">
+            <summary>
+            Cache used for holding the instances of dynamically loaded assemblies.
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.ImageProcessors.ImageProcessorFactory.padlock">
+            <summary>
+            Shared object to implement simple thread-safety.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.ImageProcessors.ImageProcessorFactory.GetInstance(System.String,System.String)">
+            <summary>
+            Gets the instance.
+            </summary>
+            <param name="dllName">Name of the DLL.</param>
+            <param name="className">Name of the class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.SettingsNotFoundException">
+            <summary>
+            SettingsNotFoundException class
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.SettingsNotFoundException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SettingsNotFoundException"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.SettingsNotFoundException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SettingsNotFoundException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.SettingsNotFoundException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SettingsNotFoundException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.SettingsNotFoundException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SettingsNotFoundException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"></see> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"></see> that contains contextual information about the source or destination.</param>
+            <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult"></see> is zero (0). </exception>
+            <exception cref="T:System.ArgumentNullException">The info parameter is null. </exception>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.SettingsNotFoundException.op_Implicit(Abc.OnlinePublication.Common.SettingsNotFoundException)~System.String">
+            <summary>
+            Implicit operators the specified ex.
+            </summary>
+            <param name="ex">The ex.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.SettingsNotFoundException.ToString">
+            <summary>
+            Creates and returns a string representation of the current exception.
+            </summary>
+            <returns>
+            A string representation of the current exception.
+            </returns>
+            <PermissionSet><IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" PathDiscovery="*AllFiles*"/></PermissionSet>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.SettingsNotFoundException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            When overridden in a derived class, sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"></see> with information about the exception.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"></see> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"></see> that contains contextual information about the source or destination.</param>
+            <exception cref="T:System.ArgumentNullException">The info parameter is a null reference (Nothing in Visual Basic). </exception>
+            <PermissionSet><IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Read="*AllFiles*" PathDiscovery="*AllFiles*"/><IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="SerializationFormatter"/></PermissionSet>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.InvalidUNCPathException">
+            <summary>
+            InvalidUNCPathException Class
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.InvalidUNCPathException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Abc.OnlinePublication.Common.InvalidUNCPathException"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.InvalidUNCPathException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Abc.OnlinePublication.Common.InvalidUNCPathException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.InvalidUNCPathException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Abc.OnlinePublication.Common.InvalidUNCPathException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="inner">The inner.</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.InvalidUNCPathException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Abc.OnlinePublication.Common.InvalidUNCPathException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"></see> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"></see> that contains contextual information about the source or destination.</param>
+            <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult"></see> is zero (0). </exception>
+            <exception cref="T:System.ArgumentNullException">The info parameter is null. </exception>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.Rules.Processor">
+            <summary>
+            Represents a base rule processor class
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.Rules.Processor.document">
+            <summary>
+            the DOM model
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.Rules.Processor.rule">
+            <summary>
+            rules processing
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.Rules.Processor.indDocument">
+            <summary>
+            ind document
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.Processor.#ctor(Abc.OnlinePublication.Common.DOM.Document,Abc.OnlinePublication.Common.DOM.Rules.ProcessingRule,System.Object)">
+            <summary>
+            default constructor
+            </summary>
+            <param name="doc">the DOM model</param>
+            <param name="rule">the rule to process</param>
+            <param name="indDocument">The indesign document.</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.Processor.ProcessRule">
+            <summary>
+            Define abstract method which will be implemented in the client connector library
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.Processor.Document">
+            <summary>
+            Gets or sets the document.
+            </summary>
+            <value>The document.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.Processor.Rule">
+            <summary>
+            Gets or sets the rule.
+            </summary>
+            <value>The rule.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.Processor.IndDocument">
+            <summary>
+            Gets or sets the ind document. This is either Ind Desktop Document or Ind Server Document
+            </summary>
+            <value>The ind document.</value>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.Rules.ObjectGroupRule">
+            <summary>
+            ObjectGroupProcessingRule class
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.ObjectGroupRule.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ObjectGroupProcessingRule"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.ObjectGroupRule.MergeWithDocument(Abc.OnlinePublication.Common.DOM.Document,Abc.OnlinePublication.Common.DOM.DocumentPolicy)">
+            <summary>
+            Merges the with document.
+            </summary>
+            <param name="document">The document.</param>
+            <param name="parentPolicy">The policy to apply</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.ObjectGroupRule.Duplicate">
+            <summary>
+            duplicate this object
+            </summary>
+            <returns>a deep copy of it self</returns>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.ObjectGroupRule.MatchingTagName">
+            <summary>
+            Gets or sets the name of the matching tag.
+            </summary>
+            <value>The name of the matching tag.</value>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.DocumentPolicy">
+            <summary>
+            Document Policy defines how a document will be represented on the web site and how it will be rendered in indesign
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.DocumentPolicy.processingRules">
+            <summary>
+            List of processing rules
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.DocumentPolicy.tags">
+            <summary>
+            List of Tags
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.DocumentPolicy.name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.DocumentPolicy.description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.DocumentPolicy.version">
+            <summary>
+            Hold Last Update Version of this Policy
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.DOM.DocumentPolicy.fontSizeReduceThreshold">
+            <summary>
+            How many point we can reduce font sizes by to fit text
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.DocumentPolicy.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentPolicy"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.DocumentPolicy.Serialize(Abc.OnlinePublication.Common.DOM.DocumentPolicy)">
+            <summary>
+            Serializes the specified document policy.
+            Unicode is used
+            </summary>
+            <param name="documentPolicy">The document policy.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.DocumentPolicy.Serialize(Abc.OnlinePublication.Common.DOM.DocumentPolicy,System.Text.Encoding)">
+            <summary>
+            Serializes the specified Policy to xml string.
+            </summary>
+            <param name="documentPolicy">The document policy.</param>
+            <param name="encoding">The encoding.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.DocumentPolicy.Deserialize(System.String)">
+            <summary>
+            Deserializes the specified XML data to Policy.
+            </summary>
+            <param name="xmlData">The XML data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.DocumentPolicy.GetFormElementById(System.String)">
+            <summary>
+            Gets the form element by id.
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.DocumentPolicy.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.DocumentPolicy.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.DocumentPolicy.Tags">
+            <summary>
+            Gets or sets the tags.
+            </summary>
+            <value>The tags.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.DocumentPolicy.FormElements">
+            <summary>
+            Gets or sets the form elements.
+            </summary>
+            <value>The form elements.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.DocumentPolicy.ProcessingRules">
+            <summary>
+            Gets or sets the processing rules.
+            </summary>
+            <value>The processing rules.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.DocumentPolicy.Version">
+            <summary>
+            Last Update Version
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.DocumentPolicy.FontSizeReduceThreshold">
+            <summary>
+            If we need to reduce the font size to fit texts, how much we can reduce by
+            </summary>
+            <exception cref="T:ArgumentOutOfRangeException">thorws exception if value is not within 0 to 10</exception>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.CheckBoxElement">
+            <summary>
+            CheckBoxElement class
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.CheckBoxElement.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CheckBoxElement"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.CheckBoxElement.Duplicate">
+            <summary>
+            get a duplicate copy of the element
+            </summary>
+            <returns>a deep copy of it self</returns>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.Utilities.DirectoryPath">
+            <summary>
+            Helper class to get directory path.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.Utilities.DirectoryPath.GetOutputFolder(System.Int32,System.String,System.String)">
+            <summary>
+            Gets the output folder.
+            </summary>
+            <param name="jobId">The job id.</param>
+            <param name="outputFolder">The output folder.</param>
+            <param name="outputStructure">The output structure.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.Utilities.DirectoryPath.GetOutputFolder(System.Int32,System.String,Abc.OnlinePublication.Common.FolderStructureType)">
+            <summary>
+            Gets the output dir.
+            </summary>
+            <param name="jobId">The job id.</param>
+            <param name="outputFolder">The output folder.</param>
+            <param name="outputStruct">The output struct.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.Utilities.DirectoryPath.GetJobDocumentPath(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Gets the job document path. E.g. RootPath\ClientId\JobId\JobDocumentId\
+            </summary>
+            <param name="documentRootPath">The document root path.</param>
+            <param name="clientId">The client id.</param>
+            <param name="jobId">The job id.</param>
+            <param name="jobDocumentId">The job document id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.Utilities.DirectoryPath.GetJobDocumentTemplatePath(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Gets the job document template path. E.g. RootPath\ClientId\JobId\JobDocumentId\JobDocumentId.indt
+            </summary>
+            <param name="documentRootPath">The document root path.</param>
+            <param name="clientId">The client id.</param>
+            <param name="jobId">The job id.</param>
+            <param name="jobDocumentId">The job document id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.Utilities.DirectoryPath.HasSameFullPath(System.String,System.String)">
+            <summary>
+            Determines whether two file paths are actually one.
+            E.g. //mercury/xfer/4 Kenny/file1.txt same as \\mercury\xfer\4 Kenny\file1.txt
+            but string comparision is different. 
+            </summary>
+            <param name="file1">The file1.</param>
+            <param name="file2">The file2.</param>
+            <returns>
+            	<c>true</c> if same file; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.Utilities.DirectoryPath.GetFileNameWithIds(System.Int32,System.Int32,System.String)">
+            <summary>
+            Gets the image name with ids. Return format jobId_jobDocumentId_fileName
+            </summary>
+            <param name="jobId">The job id.</param>
+            <param name="jobDocumentId">The job document id.</param>
+            <param name="fileName">Name of the file without path.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.Rules.SearchAndReplaceInfo">
+            <summary>
+            SearchAndReplaceInfo class
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.SearchAndReplaceInfo.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SearchAndReplaceInfo"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.SearchAndReplaceInfo.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SearchAndReplaceInfo"/> class.
+            </summary>
+            <param name="tagName">Name of the tag.</param>
+            <param name="searchFor">String to search for.</param>
+            <param name="replaceWith">String to replace with.</param>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.SearchAndReplaceInfo.TagName">
+            <summary>
+            Gets or sets the name of the tag.
+            </summary>
+            <value>The name of the tag.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.SearchAndReplaceInfo.SearchFor">
+            <summary>
+            Gets or sets the string to search for.
+            </summary>
+            <value>The search for.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.SearchAndReplaceInfo.ReplaceWith">
+            <summary>
+            Gets or sets the string to replace with.
+            </summary>
+            <value>The replace with.</value>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.Constants">
+            <summary>
+            Constants class
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.Constants.ASSETS_FOLDER_NAME">
+            <summary>
+            Assets folder
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.Constants.TRANSFORMED_ASSETS_FOLDER_NAME">
+            <summary>
+            Transformed Assets folder
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.Constants.ORIGINAL_FOLDER_NAME">
+            <summary>
+            Original images folder
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.Constants.MEDIUM_RES_FOLDER_NAME">
+            <summary>
+            MediumRes folder
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.Constants.LOW_RES_FOLDER_NAME">
+            <summary>
+            LowRes folder
+            </summary>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.ImageProcessors.ResolutionType">
+            <summary>
+            ResolutionType indicates whether image is of high resolution, medium or low
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.ImageProcessors.ResolutionType.Original">
+            <summary>
+            Original high res image
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.ImageProcessors.ResolutionType.MediumRes">
+            <summary>
+            Medium res
+            </summary>
+        </member>
+        <member name="F:Abc.OnlinePublication.Common.ImageProcessors.ResolutionType.LowRes">
+            <summary>
+            Low res
+            </summary>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.ImageProcessors.IImageProcessor">
+            <summary>
+            Interface to a ImageProcessor class which will define about applying 
+            a transformation to a Image file
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.ImageProcessors.IImageProcessor.Validate(System.String,System.Decimal,System.Decimal)">
+            <summary>
+            Validates the specified file name.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <param name="minimumMegaPixels">The minimum mega pixels.</param>
+            <param name="recommendedMegaPixels">The recommended mega pixels.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.ImageProcessors.IImageProcessor.Resize(System.String,System.String,Abc.OnlinePublication.Common.ImageProcessors.ResolutionType)">
+            <summary>
+            Resizes the specified input file.
+            </summary>
+            <param name="inputFile">The input file.</param>
+            <param name="outputFile">The output file.</param>
+            <param name="resType">Type of the res.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.ImageProcessors.IImageProcessor.ApplyTransformation(System.String,System.String,System.String,System.Collections.Generic.List{Abc.OnlinePublication.Common.DOM.Transformation})">
+            <summary>
+            Applies the transformation to file.
+            </summary>
+            <param name="inputFile">The input file.</param>
+            <param name="workingFile">The working file. The operations are not done on the original file. It's done on the medium res file in this case</param>
+            <param name="outPutFile">The out put file.</param>
+            <param name="transformations">The transformations.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.RadioGroupElement">
+            <summary>
+            Radio Buttons List Group
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.RadioGroupElement.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RadioGroupElement"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.RadioGroupElement.Duplicate">
+            <summary>
+            get a duplicate copy of the element
+            </summary>
+            <returns>a deep copy of it self</returns>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.Rules.ParaStyleRule">
+            <summary>
+            this class is responsible for matching a para style name with the tag..
+            for eg.. Q_Body COPY_Bullets will be a available para style for body copy tag
+            </summary>
+            <remarks>
+            this rule is only used on the flex side...
+            </remarks>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.ParaStyleRule.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Abc.OnlinePublication.Common.DOM.Rules.ParaStyleRule"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.ParaStyleRule.MergeWithDocument(Abc.OnlinePublication.Common.DOM.Document,Abc.OnlinePublication.Common.DOM.DocumentPolicy)">
+            <summary>
+            Merges the policy with the document.
+            </summary>
+            <param name="document">The document.</param>
+            <param name="parentPolicy">The policy to apply</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.ParaStyleRule.Duplicate">
+            <summary>
+            get a duplicate copy
+            </summary>
+            <returns>a copy of it self</returns>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.ParaStyleRule.ParaStyleNameStartsWith">
+            <summary>
+            Paragraphs style starts with.. eg. Q
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.ParaStyleRule.Separator">
+            <summary>
+            Delimeter character to seperate the layer name values
+            </summary>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.Rules.CustomLayerVisibilityRule">
+            <summary>
+            CustomLayerVisibilityRule class lets you hide any layer by specifying the name
+            which comes from user input.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.CustomLayerVisibilityRule.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CustomLayerVisibilityRule"/> class.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.CustomLayerVisibilityRule.MergeWithDocument(Abc.OnlinePublication.Common.DOM.Document,Abc.OnlinePublication.Common.DOM.DocumentPolicy)">
+            <summary>
+            Merges the with document.
+            </summary>
+            <param name="document">The document.</param>
+            <param name="parentPolicy">The policy to apply</param>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.Rules.CustomLayerVisibilityRule.Duplicate">
+            <summary>
+            duplicate this object
+            </summary>
+            <returns>a deep copy of it self</returns>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Rules.CustomLayerVisibilityRule.FormElementId">
+            <summary>
+            Gets or sets the associated element.
+            </summary>
+            <value>The associated element.</value>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.Page">
+            <summary>
+            Represents a page in indesign document
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Page.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>The id.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Page.Index">
+            <summary>
+            Gets or sets the page number.
+            </summary>
+            <value>The page number.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Page.DocumentOffset">
+            <summary>
+            Gets or sets the document offset.
+            </summary>
+            <value>The document offset.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Page.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Page.Label">
+            <summary>
+            Gets or sets the label.
+            </summary>
+            <value>The label.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.Page.Visible">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Page"/> is visible.
+            </summary>
+            <value><c>true</c> if visible; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:Abc.OnlinePublication.Common.DOM.AppliedTextFormat">
+            <summary>
+            this class represents a text format that has been applied
+            to a <see cref="T:TextBoxElement"/> to a range of texts in the value of the
+            element.
+            </summary>
+        </member>
+        <member name="M:Abc.OnlinePublication.Common.DOM.AppliedTextFormat.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Abc.OnlinePublication.Common.DOM.AppliedTextFormat"/> class.
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.AppliedTextFormat.BeginIndex">
+            <summary>
+            the character position of the text where this format is applicable.
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.AppliedTextFormat.Length">
+            <summary>
+            how many characters this format should be applied from the BeginIndex
+            </summary>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.AppliedTextFormat.Bold">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Abc.OnlinePublication.Common.DOM.AppliedTextFormat"/> is bold.
+            </summary>
+            <value><c>true</c> if bold; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.AppliedTextFormat.Italic">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Abc.OnlinePublication.Common.DOM.AppliedTextFormat"/> is italic.
+            </summary>
+            <value><c>true</c> if italic; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Abc.OnlinePublication.Common.DOM.AppliedTextFormat.Underline">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Abc.OnlinePublication.Common.DOM.AppliedTextFormat"/> is underline.
+            </summary>
+            <value><c>true</c> if underline; otherwise, <c>false</c>.</value>
+        </member>
+    </members>
+</doc>

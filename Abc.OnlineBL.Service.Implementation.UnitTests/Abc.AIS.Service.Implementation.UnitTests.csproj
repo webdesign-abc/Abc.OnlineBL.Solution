@@ -1,0 +1,143 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A086AD68-418E-4018-BEEC-D02811A7D7D9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Abc.AIS.Service.Implementation.UnitTests</RootNamespace>
+    <AssemblyName>Abc.AIS.Service.Implementation.UnitTests</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AbcLib, Version=2.0.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\AbcLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AbcUtil2, Version=1.0.0.3, Culture=neutral, PublicKeyToken=3af9857a726ead22, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\AbcUtil2.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.ImageMagickObject, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Abc.AIS.Service.Implementation\obj\Debug\Interop.ImageMagickObject.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountServiceTest.cs" />
+    <Compile Include="OrderServiceTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AuthoringTests.txt" />
+    <Content Include="ImageTest\Sunset.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageTest\Green.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Abc.AIS.Config\Abc.AIS.Configuration.csproj">
+      <Project>{636B75AA-307C-46C0-8002-82D35AE005A2}</Project>
+      <Name>Abc.AIS.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.AIS.DataStore\Abc.AIS.DataStore.csproj">
+      <Project>{FE6FC148-B028-40C7-AB3C-A54031218425}</Project>
+      <Name>Abc.AIS.DataStore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.AIS.Entities\Abc.AIS.Entities.csproj">
+      <Project>{DBF32C19-8545-4211-958D-4F8E86CB2586}</Project>
+      <Name>Abc.AIS.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.AIS.Service.Implementation\Abc.AIS.Service.Implementation.csproj">
+      <Project>{8C46C4A0-5DD0-42B3-AEEC-EF7B6EF682EF}</Project>
+      <Name>Abc.AIS.Service.Implementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.AIS.Service\Abc.AIS.Service.csproj">
+      <Project>{FD065480-4EE0-4D21-8EC8-32768E8D0A7D}</Project>
+      <Name>Abc.AIS.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.AIS.Utility\Abc.AIS.Utility.csproj">
+      <Project>{75943185-C14F-440F-AA31-CF52BDD85BF8}</Project>
+      <Name>Abc.AIS.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.AIS.VirtualFileSystem\Abc.AIS.VirtualFileSystem.csproj">
+      <Project>{28487097-535A-4864-A2F2-8A9CF5D35E34}</Project>
+      <Name>Abc.AIS.VirtualFileSystem</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

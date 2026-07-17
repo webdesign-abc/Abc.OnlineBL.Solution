@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8C46C4A0-5DD0-42B3-AEEC-EF7B6EF682EF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Abc.OnlineBL.Service.Implementation</RootNamespace>
+    <AssemblyName>Abc.OnlineBL.Service.Implementation</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>http://localhost/Abc.AIS.Service.Implementation/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Abc.OnlinePublication.Common, Version=2.0.1.4, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\Abc.OnlinePublication.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Abc.Util, Version=1.0.2223.21440, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\Abc.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="AbcLib, Version=2.0.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\AbcLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AbcUtil2, Version=1.0.0.3, Culture=neutral, PublicKeyToken=3af9857a726ead22, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\AbcUtil2.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Workflow.Activities">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Workflow.ComponentModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Workflow.Runtime">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XmlOrder, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\XmlOrder.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountService.cs" />
+    <Compile Include="AOPService.cs" />
+    <Compile Include="AOPService.JobDocument.cs">
+      <DependentUpon>AOPService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessLogic\Extension.cs" />
+    <Compile Include="BusinessLogic\ImageQuality.cs" />
+    <Compile Include="BusinessLogic\ProductAttributeMapper.cs" />
+    <Compile Include="BusinessLogic\ProductComparer.cs" />
+    <Compile Include="BusinessLogic\StateMappingFactory.cs" />
+    <Compile Include="ClientService.cs" />
+    <Compile Include="ClientService.Preferences.cs">
+      <DependentUpon>ClientService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignService.cs" />
+    <Compile Include="FloorPlanService.cs" />
+    <Compile Include="ManagerService.cs" />
+    <Compile Include="Model\BoardStateMapping.cs" />
+    <Compile Include="Model\BrochureStateMapping.cs" />
+    <Compile Include="Model\LayoutRequiredStateMapping.cs" />
+    <Compile Include="Model\OrderStateMapping.cs" />
+    <Compile Include="Model\StateMapping.cs" />
+    <Compile Include="Model\WebServiceStateMapping.cs" />
+    <Compile Include="OnlineProductHelper.cs" />
+    <Compile Include="OrderService.cs" />
+    <Compile Include="OrderService.StateWorkflow.cs">
+      <DependentUpon>OrderService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoSysRunSheetService.cs" />
+    <Compile Include="ProductService.cs" />
+    <Compile Include="ProductService.OnlineOrder.cs">
+      <DependentUpon>ProductService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceConfig.cs" />
+    <Compile Include="TemplateManagerService.cs" />
+    <Compile Include="Utility\BingGeoLocation\BingJSONClasses.cs" />
+    <Compile Include="Utility\BingGeoLocation\BingMap.cs" />
+    <Compile Include="Utility\ExtensionMethods.cs" />
+    <Compile Include="Utility\Formater.cs" />
+    <Compile Include="Utility\Geocoder.cs" />
+    <Compile Include="Utility\Geoloc.cs" />
+    <Compile Include="Utility\OnlineOrder\FormatOrder.cs" />
+    <Compile Include="Utility\OrderSBAdapter.cs" />
+    <Compile Include="Utility\RunsheetDetailSBAdapter.cs" />
+    <Compile Include="Utility\UBD.cs" />
+    <Compile Include="Utility\WhereIs\UBDCache.cs" />
+    <Compile Include="Utility\WhereIs\GeocodeResponse.cs" />
+    <Compile Include="Utility\WhereIs\Results.cs" />
+    <Compile Include="Utility\WhereIs\Pagination.cs" />
+    <Compile Include="Utility\WhereIs\Point.cs" />
+    <Compile Include="Utility\WhereIs\WhereisApiClient.cs" />
+    <Compile Include="WFRuntimeHelper.cs" />
+    <Compile Include="WorkflowService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Abc.OnlineBL.Config\Abc.OnlineBL.Configuration.csproj">
+      <Project>{636B75AA-307C-46C0-8002-82D35AE005A2}</Project>
+      <Name>Abc.OnlineBL.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.OnlineBL.DataStore\Abc.OnlineBL.DataStore.csproj">
+      <Project>{FE6FC148-B028-40C7-AB3C-A54031218425}</Project>
+      <Name>Abc.OnlineBL.DataStore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.OnlineBL.Entities\Abc.OnlineBL.Entities.csproj">
+      <Project>{DBF32C19-8545-4211-958D-4F8E86CB2586}</Project>
+      <Name>Abc.OnlineBL.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.OnlineBL.Orders.Workflow\Abc.OnlineBL.Orders.Workflow.csproj">
+      <Project>{2B367522-F37C-4EEB-9B37-4348FC7CDB1F}</Project>
+      <Name>Abc.OnlineBL.Orders.Workflow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.OnlineBL.Service\Abc.OnlineBL.Service.csproj">
+      <Project>{FD065480-4EE0-4D21-8EC8-32768E8D0A7D}</Project>
+      <Name>Abc.OnlineBL.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.OnlineBL.Utility\Abc.OnlineBL.Utility.csproj">
+      <Project>{75943185-C14F-440F-AA31-CF52BDD85BF8}</Project>
+      <Name>Abc.OnlineBL.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.OnlineBL.VirtualFileSystem\Abc.OnlineBL.VirtualFileSystem.csproj">
+      <Project>{28487097-535A-4864-A2F2-8A9CF5D35E34}</Project>
+      <Name>Abc.OnlineBL.VirtualFileSystem</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ImageMagickObject">
+      <Guid>{9AA0FC6A-63C7-3632-BD6B-7CAF646E51A0}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

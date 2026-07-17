@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DBF32C19-8545-4211-958D-4F8E86CB2586}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Abc.OnlineBL.Entities</RootNamespace>
+    <AssemblyName>Abc.OnlineBL.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>http://localhost/Abc.AIS.Entities/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ABC.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ABC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Enums\ServiceAvailability.cs" />
+    <Compile Include="ExtensionMethods\DroneAuthorisationStatus.cs" />
+    <Compile Include="Model\OnlineOrder\ResponseModel.cs" />
+    <Compile Include="Model\OnlineOrder\SitePlanOverlayForPhotography.cs" />
+    <Compile Include="Model\Photography\DroneFlightRequestDTO.cs" />
+    <Compile Include="Model\Photography\DronePilotDTO.cs" />
+    <Compile Include="Model\Photography\FloorPlan.cs" />
+    <Compile Include="Model\Photography\PhotographerLogin.cs" />
+    <Compile Include="Model\Photography\PhotographerName.cs" />
+    <Compile Include="Model\Photography\PhotographerRunsheetDTO.cs" />
+    <Compile Include="Model\Photography\PhotoOrderDetailDTO.cs" />
+    <Compile Include="Model\Photography\PhotoOrderDTO.cs" />
+    <Compile Include="Model\WebClient\PropertyListingModel.cs" />
+    <Compile Include="Model\WebClient\ViewOrderDetailsModel.cs" />
+    <Compile Include="Utility\AbcConfig.cs" />
+    <Compile Include="Utility\Preferences.cs" />
+    <None Include="EntityRelations.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EntityRelations.generated.cs</LastGenOutput>
+    </None>
+    <Compile Include="DataLoadOptionsUtility.cs" />
+    <Compile Include="EntityRelations.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntityRelations.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Enums\AOP_DocumentStatusList.cs" />
+    <Compile Include="Enums\AOP_JobType.cs" />
+    <Compile Include="Enums\AOP_QueueStatusList.cs" />
+    <Compile Include="Enums\CreateUserStatus.cs" />
+    <Compile Include="Enums\FloorPlanPackageStatus.cs" />
+    <Compile Include="Enums\ProductAvailability.cs" />
+    <Compile Include="Enums\UploadedFileQualityType.cs" />
+    <Compile Include="Enums\UploadedFileType.cs" />
+    <Compile Include="Enums\WorkflowStates.cs" />
+    <Compile Include="ExtensionMethods\AOP_JobDocument.cs" />
+    <Compile Include="ExtensionMethods\AOP_TemplateExtension.cs" />
+    <Compile Include="ExtensionMethods\OnlineOrderCategory.cs" />
+    <Compile Include="ExtensionMethods\PhotoOrder.cs" />
+    <Compile Include="ExtensionMethods\Property.cs" />
+    <Compile Include="LINQEntityBase.cs" />
+    <Compile Include="Model\AbcKeyValuePair.cs" />
+    <Compile Include="Model\AbcVisual\AbcVisualResponse.cs" />
+    <Compile Include="Model\AbcVisual\ListingOption.cs" />
+    <Compile Include="Model\AbcVisual\RentedAsset.cs" />
+    <Compile Include="Model\AbcVisual\VisualListing.cs" />
+    <Compile Include="Model\OnlineBL_GetAllAvailableOnlineOrderProductIds_Products.cs" />
+    <Compile Include="Model\ClientDetails.cs" />
+    <Compile Include="Model\ClientsPref.cs" />
+    <Compile Include="Model\CustomerDetails.cs" />
+    <Compile Include="Model\CustomerPaymentDetails.cs" />
+    <Compile Include="Model\DriverReport.cs" />
+    <Compile Include="Model\FilterOrders.cs" />
+    <Compile Include="Model\FloorPlanPrice.cs" />
+    <Compile Include="Model\IOnlineBL_GetAllAvailableOnlineOrderProductIds_Products.cs" />
+    <Compile Include="Model\ManagerDetails.cs" />
+    <Compile Include="Model\Marketing\MarketingMailModel.cs" />
+    <Compile Include="Model\Myop\MyopPackageProductModel.cs" />
+    <Compile Include="Model\Myop\MyOwnPackageModel.cs" />
+    <Compile Include="Model\OnlineOrder\BaseOrder.cs" />
+    <Compile Include="Model\OnlineOrder\BoardInstallationType.cs" />
+    <Compile Include="Model\OnlineOrder\BrochureOption.cs" />
+    <Compile Include="Model\OnlineOrder\CartItem.cs" />
+    <Compile Include="Model\OnlineOrder\CorflutePricing.cs" />
+    <Compile Include="Model\OnlineOrder\DeliveryDetail.cs" />
+    <Compile Include="Model\OnlineOrder\DIYTemplate.cs" />
+    <Compile Include="Model\OnlineOrder\Field.cs" />
+    <Compile Include="Model\OnlineOrder\Fields.cs" />
+    <Compile Include="Model\OnlineOrder\FieldType.cs" />
+    <Compile Include="Model\OnlineOrder\InvoiceDetail.cs" />
+    <Compile Include="Model\OnlineOrder\ListingOrder.cs" />
+    <Compile Include="Model\OnlineOrder\ListItem.cs" />
+    <Compile Include="Model\OnlineOrder\ListItems.cs" />
+    <Compile Include="Model\OnlineOrder\MarketingDeliveryAddress.cs" />
+    <Compile Include="Model\OnlineOrder\OnlineCategoryAndProductModel.cs" />
+    <Compile Include="Model\OnlineOrder\OnlineOrderResponse.cs" />
+    <Compile Include="Model\OnlineOrder\OnlineProduct.cs" />
+    <Compile Include="Model\OnlineOrder\OrderCommonDetailsModel.cs" />
+    <Compile Include="Model\OnlineOrder\PackageGroup.cs" />
+    <Compile Include="Model\OnlineOrder\PackageContentProduct.cs" />
+    <Compile Include="Model\OnlineOrder\ProductConfig.cs" />
+    <Compile Include="Model\OnlineOrder\OnlinePropertyOrder.cs" />
+    <Compile Include="Model\OnlineOrder\RangeValidation.cs" />
+    <Compile Include="Model\OnlineOrder\RegexValidation.cs" />
+    <Compile Include="Model\OnlineOrder\SmsOrder.cs" />
+    <Compile Include="Model\OnlineOrder\TextDetails.cs" />
+    <Compile Include="Model\OnlineOrder\Validation.cs" />
+    <Compile Include="Model\OrderFile\UploadText.cs" />
+    <Compile Include="Model\OrderService\ClientInfo.cs" />
+    <Compile Include="Model\PackageProduct.cs" />
+    <Compile Include="Model\PhotoSysOrderProduct.cs" />
+    <Compile Include="Model\PhotoSysRunSheet.cs" />
+    <Compile Include="Model\PhotoSysRunSheetDetail.cs" />
+    <Compile Include="Model\PickingSlipOrderInfo.cs" />
+    <Compile Include="Model\ProductFilterData.cs" />
+    <Compile Include="Model\ProductRule.cs" />
+    <Compile Include="Model\RunsheetDetail.cs" />
+    <Compile Include="Model\RunsheetDetailCompleted.cs" />
+    <Compile Include="Model\RunsheetModel.cs" />
+    <Compile Include="Model\UploadPhotoRequest.cs" />
+    <Compile Include="Model\UploadPhotoResponse.cs" />
+    <Compile Include="Model\OrderTrackingEventParameter.cs" />
+    <Compile Include="Model\ProductTypes.cs" />
+    <Compile Include="Model\WebClient\DashBoard.cs" />
+    <Compile Include="Model\WebClient\JobSearch.cs" />
+    <Compile Include="Model\WebClient\PickingSlipModel.cs" />
+    <Compile Include="Model\WebClient\PriceListModel.cs" />
+    <Compile Include="Model\WebClient\PSImage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ABC.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ABC.generated.cs</LastGenOutput>
+    </None>
+    <None Include="app.config" />
+    <None Include="L2ST4.ttinclude" />
+    <EmbeddedResource Include="Model\OnlineOrder\XMLProductConfig.xsd" />
+    <None Include="Model\OrderFile\OrderXML.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\OnlineOrder\SampleXMLConfig.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Abc.OnlineBL.Config\Abc.OnlineBL.Configuration.csproj">
+      <Project>{636B75AA-307C-46C0-8002-82D35AE005A2}</Project>
+      <Name>Abc.OnlineBL.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.OnlineBL.Utility\Abc.OnlineBL.Utility.csproj">
+      <Project>{75943185-C14F-440F-AA31-CF52BDD85BF8}</Project>
+      <Name>Abc.OnlineBL.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)\LatestOutput\ /Y
+copy $(TargetDir)\$(TargetName).pdb $(SolutionDir)\LatestOutput\ /Y</PostBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>

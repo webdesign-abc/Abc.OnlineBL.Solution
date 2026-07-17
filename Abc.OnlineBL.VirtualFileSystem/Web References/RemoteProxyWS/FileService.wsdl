@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Exists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExistsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExistsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Copy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="srcPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="overwrite" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CopyResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReadAllText">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadAllTextResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadAllTextResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadAllBytes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadAllBytesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadAllBytesResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteAllText">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filePath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteAllTextResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="WriteAllBytes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filePath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteAllBytesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ExistsDir">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dirPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExistsDirResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExistsDirResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateDir">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dirPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateDirResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteDir">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dirPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="recursive" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDirResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetFiles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFilesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFilesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:Exists" />
+  </wsdl:message>
+  <wsdl:message name="ExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:ExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CopySoapIn">
+    <wsdl:part name="parameters" element="tns:Copy" />
+  </wsdl:message>
+  <wsdl:message name="CopySoapOut">
+    <wsdl:part name="parameters" element="tns:CopyResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadAllTextSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadAllText" />
+  </wsdl:message>
+  <wsdl:message name="ReadAllTextSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadAllTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadAllBytesSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadAllBytes" />
+  </wsdl:message>
+  <wsdl:message name="ReadAllBytesSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadAllBytesResponse" />
+  </wsdl:message>
+  <wsdl:message name="WriteAllTextSoapIn">
+    <wsdl:part name="parameters" element="tns:WriteAllText" />
+  </wsdl:message>
+  <wsdl:message name="WriteAllTextSoapOut">
+    <wsdl:part name="parameters" element="tns:WriteAllTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="WriteAllBytesSoapIn">
+    <wsdl:part name="parameters" element="tns:WriteAllBytes" />
+  </wsdl:message>
+  <wsdl:message name="WriteAllBytesSoapOut">
+    <wsdl:part name="parameters" element="tns:WriteAllBytesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExistsDirSoapIn">
+    <wsdl:part name="parameters" element="tns:ExistsDir" />
+  </wsdl:message>
+  <wsdl:message name="ExistsDirSoapOut">
+    <wsdl:part name="parameters" element="tns:ExistsDirResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDirSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateDir" />
+  </wsdl:message>
+  <wsdl:message name="CreateDirSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateDirResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDirSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteDir" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDirSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteDirResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFilesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFiles" />
+  </wsdl:message>
+  <wsdl:message name="GetFilesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFilesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="FileServiceSoap">
+    <wsdl:operation name="Exists">
+      <wsdl:input message="tns:ExistsSoapIn" />
+      <wsdl:output message="tns:ExistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Copy">
+      <wsdl:input message="tns:CopySoapIn" />
+      <wsdl:output message="tns:CopySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:input message="tns:DeleteSoapIn" />
+      <wsdl:output message="tns:DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllText">
+      <wsdl:input message="tns:ReadAllTextSoapIn" />
+      <wsdl:output message="tns:ReadAllTextSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllBytes">
+      <wsdl:input message="tns:ReadAllBytesSoapIn" />
+      <wsdl:output message="tns:ReadAllBytesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteAllText">
+      <wsdl:input message="tns:WriteAllTextSoapIn" />
+      <wsdl:output message="tns:WriteAllTextSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteAllBytes">
+      <wsdl:input message="tns:WriteAllBytesSoapIn" />
+      <wsdl:output message="tns:WriteAllBytesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistsDir">
+      <wsdl:input message="tns:ExistsDirSoapIn" />
+      <wsdl:output message="tns:ExistsDirSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDir">
+      <wsdl:input message="tns:CreateDirSoapIn" />
+      <wsdl:output message="tns:CreateDirSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDir">
+      <wsdl:input message="tns:DeleteDirSoapIn" />
+      <wsdl:output message="tns:DeleteDirSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFiles">
+      <wsdl:input message="tns:GetFilesSoapIn" />
+      <wsdl:output message="tns:GetFilesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FileServiceSoap" type="tns:FileServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Exists">
+      <soap:operation soapAction="http://tempuri.org/Exists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Copy">
+      <soap:operation soapAction="http://tempuri.org/Copy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllText">
+      <soap:operation soapAction="http://tempuri.org/ReadAllText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllBytes">
+      <soap:operation soapAction="http://tempuri.org/ReadAllBytes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteAllText">
+      <soap:operation soapAction="http://tempuri.org/WriteAllText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteAllBytes">
+      <soap:operation soapAction="http://tempuri.org/WriteAllBytes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistsDir">
+      <soap:operation soapAction="http://tempuri.org/ExistsDir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDir">
+      <soap:operation soapAction="http://tempuri.org/CreateDir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDir">
+      <soap:operation soapAction="http://tempuri.org/DeleteDir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFiles">
+      <soap:operation soapAction="http://tempuri.org/GetFiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FileServiceSoap12" type="tns:FileServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Exists">
+      <soap12:operation soapAction="http://tempuri.org/Exists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Copy">
+      <soap12:operation soapAction="http://tempuri.org/Copy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap12:operation soapAction="http://tempuri.org/Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllText">
+      <soap12:operation soapAction="http://tempuri.org/ReadAllText" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllBytes">
+      <soap12:operation soapAction="http://tempuri.org/ReadAllBytes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteAllText">
+      <soap12:operation soapAction="http://tempuri.org/WriteAllText" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteAllBytes">
+      <soap12:operation soapAction="http://tempuri.org/WriteAllBytes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistsDir">
+      <soap12:operation soapAction="http://tempuri.org/ExistsDir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDir">
+      <soap12:operation soapAction="http://tempuri.org/CreateDir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDir">
+      <soap12:operation soapAction="http://tempuri.org/DeleteDir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFiles">
+      <soap12:operation soapAction="http://tempuri.org/GetFiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FileService">
+    <wsdl:port name="FileServiceSoap" binding="tns:FileServiceSoap">
+      <soap:address location="http://localhost/Abc.OnlineBL.VirtualFileSystemProvider/FileService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FileServiceSoap12" binding="tns:FileServiceSoap12">
+      <soap12:address location="http://localhost/Abc.OnlineBL.VirtualFileSystemProvider/FileService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="XMLConfig"
+    targetNamespace="http://tempuri.org/XMLConfig.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/XMLConfig.xsd"
+    xmlns:mstns="http://tempuri.org/XMLConfig.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+	<xs:element name="productConfig">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="fields">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="field" type="Field" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="Field">
+			<xs:sequence>
+				<xs:element name="fieldName" type="xs:string" />
+				<xs:element name="caption" type="xs:string" />
+				<xs:element name="helpText" type="xs:string" />
+				<xs:element name="getDefaultFromProductAttribute" type="xs:boolean" />
+				<xs:element name="getDefaultFromItemOrPkgQty" type="xs:boolean" />
+				<xs:element name="enabled" type="xs:boolean" />
+				<xs:element name="value" type="xs:string" />
+				<xs:element name="fieldType" type="FieldType" />
+				<xs:element name="listItems" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="listItem" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="displayText" type="xs:string" use="required" />
+									<xs:attribute name="valueText" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="validation" minOccurs="0">
+					<xs:complexType>
+						<xs:choice minOccurs="0">
+							<xs:element name="rangeValidation">
+								<xs:complexType>
+									<xs:attribute name="min" type="xs:unsignedInt" use="required" />
+									<xs:attribute name="max" type="xs:unsignedInt" use="required" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="regExValidation">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="regex" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:choice>
+						<xs:attribute name="required" type="xs:boolean" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>		
+	</xs:complexType>
+	<xs:simpleType name="FieldType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="TextBox"/>
+			<xs:enumeration value="CheckBox"/>
+			<xs:enumeration value="ComboBox"/>
+			<xs:enumeration value="RadioButton"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,51 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Abc.OnlineBL.Entities.Model.OnlineOrder;
+
+namespace Abc.OnlineBL.Orders.Workflow
+{
+	[Serializable]
+	public class OrderDataExchange
+	{
+		#region Product Type ID's
+		public const int BOARD_TYPE_ID = 1;
+		public const int STOCK_BOARD_TYPE_ID = 4;
+		public const int BROCHURE_TYPE_ID = 2;
+		public const int WC_TYPE_ID = 17;
+		public const int PHOTO_TYPE_ID = 8;
+		public const int SMS_TYPE_ID = 16;
+		public const int ERECTIONFEE_TYPE_ID = 19;
+		public const int SPOTLIGHT_TYPE_ID = 19;
+		#endregion
+
+		public OnlinePropertyOrder PropertyOrder { get; set; }
+		public int OrderId { get; set; }
+		public int StockId { get; set; }
+		public int PhotoOrderId { get; set; }
+		public int ListingId { get; set; }
+
+		public string ConnectionString { get; set; }
+		public string OrderDir { get; set; }
+		public Abc.OnlineBL.Entities.Client Client { get; set; }
+		public Abc.OnlineBL.Entities.Property Property { get; set; }
+		public ClientInfo ClientInfo { get; set; }
+
+		public string StrOrder
+		{
+			get
+			{
+				return Abc.Util.Runtime.Serializer.BinarySerialize(PropertyOrder);
+
+			}
+		}
+
+		#region StringToObject
+		public static OnlinePropertyOrder StringToObject(string strObj)
+		{
+			return (OnlinePropertyOrder)Abc.Util.Runtime.Serializer.BinaryDeserialize(strObj);
+		}
+		#endregion
+	}
+}

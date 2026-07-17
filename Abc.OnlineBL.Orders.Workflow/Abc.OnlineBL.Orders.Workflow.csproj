@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2B367522-F37C-4EEB-9B37-4348FC7CDB1F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Abc.OnlineBL.Orders.Workflow</RootNamespace>
+    <AssemblyName>Abc.OnlineBL.Orders.Workflow</AssemblyName>
+    <ProjectTypeGuids>{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>http://localhost/Abc.AIS.Orders.Workflow/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Abc.OnlinePublication.Common, Version=2.0.1.4, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\Abc.OnlinePublication.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Abc.Util, Version=1.0.2223.21440, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\Abc.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Workflow.Activities">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Workflow.ComponentModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Workflow.Runtime">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.WorkflowServices">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="OnlineBLProcessOrder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OnlineBLProcessOrder.Designer.cs">
+      <DependentUpon>OnlineBLProcessOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientInfo.cs" />
+    <Compile Include="FormatOrder.cs" />
+    <Compile Include="Model\InspectionDate.cs" />
+    <Compile Include="Model\NewOnlineListing.cs" />
+    <Compile Include="Model\NewOrder.cs" />
+    <Compile Include="Model\NewOrderEvent.cs" />
+    <Compile Include="Model\NewPhotoOrder.cs" />
+    <Compile Include="Model\NewStockBoardOrder.cs" />
+    <Compile Include="Model\OnlineOrder.cs" />
+    <Compile Include="OrderDataExchange.cs" />
+    <Compile Include="OrderProcessor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="WorkflowConfig.cs" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Abc.OnlineBL.Config\Abc.OnlineBL.Configuration.csproj">
+      <Project>{636b75aa-307c-46c0-8002-82d35ae005a2}</Project>
+      <Name>Abc.OnlineBL.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.OnlineBL.DataStore\Abc.OnlineBL.DataStore.csproj">
+      <Project>{FE6FC148-B028-40C7-AB3C-A54031218425}</Project>
+      <Name>Abc.OnlineBL.DataStore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.OnlineBL.Entities\Abc.OnlineBL.Entities.csproj">
+      <Project>{DBF32C19-8545-4211-958D-4F8E86CB2586}</Project>
+      <Name>Abc.OnlineBL.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.OnlineBL.Service\Abc.OnlineBL.Service.csproj">
+      <Project>{fd065480-4ee0-4d21-8ec8-32768e8d0a7d}</Project>
+      <Name>Abc.OnlineBL.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.OnlineBL.Utility\Abc.OnlineBL.Utility.csproj">
+      <Project>{75943185-c14f-440f-aa31-cf52bdd85bf8}</Project>
+      <Name>Abc.OnlineBL.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.OnlineBL.VirtualFileSystem\Abc.OnlineBL.VirtualFileSystem.csproj">
+      <Project>{28487097-535A-4864-A2F2-8A9CF5D35E34}</Project>
+      <Name>Abc.OnlineBL.VirtualFileSystem</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <Import Project="$(MSBuildToolsPath)\Workflow.Targets" />
+</Project>

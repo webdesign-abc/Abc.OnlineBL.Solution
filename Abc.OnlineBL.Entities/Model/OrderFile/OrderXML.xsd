@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="OnlineOrder">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="OrderId" type="xs:unsignedInt" />
+				<xs:element name="PropertyId" type="xs:unsignedInt" />
+				<xs:element name="DateReceived" type="xs:date" />
+				<xs:element name="ClientDetails">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ClientId" type="xs:unsignedInt" />
+							<xs:element name="ClientName" type="xs:string" />
+							<xs:element name="ActualClientName" type="xs:string" />
+							<xs:element name="ClientOffice" type="xs:string" />
+							<xs:element name="ActualClientOffice" type="xs:string" />
+							<xs:element name="ClientAddress" type="xs:string" />
+							<xs:element name="ClientSuburb" type="xs:string" />
+							<xs:element name="ClientState" type="xs:string" />
+							<xs:element name="ClientPostCode" type="xs:unsignedInt" />
+							<xs:element name="ClientCountry" type="xs:string" />
+							<xs:element name="ClientPhone" type="xs:string" />
+							<xs:element name="ClientFax" type="xs:string" />
+							<xs:element name="ClientEmail" type="xs:string" />
+							<xs:element name="ClientLicNo" type="xs:string" />
+							<xs:element name="ClientWebSite" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="DesignOption" type="xs:string" />
+				<xs:element name="ContactDetails">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ContactName" type="xs:string" />
+							<xs:element name="ContactNumber" type="xs:unsignedInt" />
+							<xs:element name="SendProofBy" type="xs:string" />
+							<xs:element name="SendProofTo" type="xs:string" />
+							<xs:element name="ClientsReferenceId" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="PropertyDetails">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="UnitNo" type="xs:string" />
+							<xs:element name="StreetNo" type="xs:unsignedByte" />
+							<xs:element name="StreetName" type="xs:string" />
+							<xs:element name="Suburb" type="xs:string" />
+							<xs:element name="State" type="xs:string" />
+							<xs:element name="PostCode" type="xs:unsignedInt" />
+							<xs:element name="PropertyType" type="xs:string" />
+							<xs:element name="PropertyTypeId" type="xs:unsignedByte" />
+							<xs:element name="ShowAddress" type="xs:boolean" />
+							<xs:element name="PropertyAddress" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="SaleDetails">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SaleType" type="xs:string" />
+							<xs:element name="AuctionDate" type="xs:date" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Notes" type="xs:string" />
+				<xs:element name="Products">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Board">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ProductId" type="xs:unsignedInt" />
+										<xs:element name="ProductName" type="xs:string" />
+										<xs:element name="Size">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Code" type="xs:string" />
+													<xs:element name="Height" type="xs:string" />
+													<xs:element name="Width" type="xs:string" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Qty" type="xs:unsignedByte" />
+										<xs:element name="BoardType" type="xs:string" />
+										<xs:element name="Format" type="xs:string" />
+										<xs:element name="ClipartID" type="xs:string" />
+										<xs:element name="FrameType" type="xs:string" />
+										<xs:element name="Layout" type="xs:string" />
+										<xs:element name="OnlineDesign" type="xs:string" />
+										<xs:element name="Wings" type="xs:string" />
+										<xs:element name="SoldSticker" type="xs:string" />
+										<xs:element name="FlagHolder" type="xs:string" />
+										<xs:element name="OptionalItems">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="OptionalItem">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="TextToDisplay" type="xs:string" />
+																<xs:element name="ItemSelected" type="xs:string" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Brochure">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Size">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Code" type="xs:string" />
+													<xs:element name="Height" type="xs:string" />
+													<xs:element name="Width" type="xs:string" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="BrochureType" type="xs:string" />
+										<xs:element name="Format" type="xs:string" />
+										<xs:element name="Layout" type="xs:string" />
+										<xs:element name="AdditionalInformation" type="xs:string" />
+										<xs:element name="PaperType" type="xs:string" />
+										<xs:element name="Qty" type="xs:unsignedByte" />
+										<xs:element name="OnlineDesign" type="xs:string" />
+										<xs:element name="ProductId" type="xs:unsignedInt" />
+										<xs:element name="ProductName" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="WindowCard">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Size">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Code" type="xs:string" />
+													<xs:element name="Height" type="xs:string" />
+													<xs:element name="Width" type="xs:string" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="ProductId" type="xs:unsignedInt" />
+										<xs:element name="ProductName" type="xs:string" />
+										<xs:element name="Qty" type="xs:unsignedByte" />
+										<xs:element name="Format" type="xs:string" />
+										<xs:element name="Layout" type="xs:string" />
+										<xs:element name="OnlineDesign" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="StockBoard">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ProductId" type="xs:unsignedInt" />
+										<xs:element name="ProductName" type="xs:string" />
+										<xs:element name="FrameType" type="xs:string" />
+										<xs:element name="Format" type="xs:string" />
+										<xs:element name="CustomName" type="xs:string" />
+										<xs:element name="Size">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Code" type="xs:string" />
+													<xs:element name="Height" type="xs:string" />
+													<xs:element name="Width" type="xs:string" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Qty" type="xs:unsignedByte" />
+										<xs:element name="Wings" type="xs:unsignedByte" />
+										<xs:element name="SoldSticker" type="xs:unsignedByte" />
+										<xs:element name="FlagHolder" type="xs:unsignedByte" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Photography">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="KeySafe" type="xs:string" />
+										<xs:element name="ArrangeContact" type="xs:string" />
+										<xs:element name="PickupKeys" type="xs:string" />
+										<xs:element name="ContactName" type="xs:string" />
+										<xs:element name="ContactPhone" type="xs:string" />
+										<xs:element name="OtherInstructions" type="xs:string" />
+										<xs:element name="Photograph">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Type" type="xs:string" />
+													<xs:element name="Enlargments6x4" type="xs:string" />
+													<xs:element name="Enlargments8x10" type="xs:string" />
+													<xs:element name="TheHouseFaces" type="xs:string" />
+													<xs:element name="MelwayRef" type="xs:string" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="ProductName" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="PackageDeal">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Name" type="xs:string" />
+										<xs:element name="Description" type="xs:string" />
+										<xs:element name="Modules">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Board">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Size">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="Code" type="xs:string" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="FrameType" type="xs:string" />
+																<xs:element name="Qty" type="xs:unsignedByte" />
+																<xs:element name="BoardType" type="xs:string" />
+																<xs:element name="Format" type="xs:string" />
+																<xs:element name="Layout" type="xs:string" />
+																<xs:element name="OnlineDesign" type="xs:string" />
+																<xs:element name="FlagHolder" type="xs:string" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="Brochure">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Size">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="Code" type="xs:string" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="Type" type="xs:string" />
+																<xs:element name="Qty" type="xs:unsignedByte" />
+																<xs:element name="Format" type="xs:string" />
+																<xs:element name="Layout" type="xs:string" />
+																<xs:element name="OnlineDesign" type="xs:string" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="WindowCard">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Size">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="Code" type="xs:string" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="Format" type="xs:string" />
+																<xs:element name="Layout" type="xs:string" />
+																<xs:element name="Qty" type="xs:unsignedByte" />
+																<xs:element name="OnlineDesign" type="xs:string" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="Photography">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Type" type="xs:string" />
+																<xs:element name="TheHouseFaces" type="xs:string" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="FloorPlansSitePlans">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Type" type="xs:string" />
+																<xs:element name="PickupKeys" type="xs:string" />
+																<xs:element name="ArrangeContact" type="xs:string" />
+																<xs:element name="ContactName" type="xs:string" />
+																<xs:element name="ContactPhone" type="xs:unsignedInt" />
+																<xs:element name="OtherInstructions" type="xs:string" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="FixedProduct">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="ProductName" type="xs:string" />
+																<xs:element name="Qty" type="xs:unsignedByte" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ImageSupplyDetails">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Selection" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="TextDetails">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SaleType" type="xs:string" />
+							<xs:element name="AuctionDetails" type="xs:string" />
+							<xs:element name="InspectionDetails" type="xs:string" />
+							<xs:element name="TermsConditions" type="xs:string" />
+							<xs:element name="Heading" type="xs:string" />
+							<xs:element name="SubHeading" type="xs:string" />
+							<xs:element name="BodyCopy" type="xs:string" />
+							<xs:element name="ConjunctionalDetails" type="xs:string" />
+							<xs:element name="Bed" type="xs:unsignedByte" />
+							<xs:element name="Bath" type="xs:unsignedByte" />
+							<xs:element name="Car" type="xs:unsignedByte" />
+							<xs:element name="Pool" type="xs:string" />
+							<xs:element name="DisplayIcons" type="xs:string" />
+							<xs:element name="TenderDetails" type="xs:string" />
+							<xs:element name="SetSaleDetails" type="xs:string" />
+							<xs:element name="AuctionVenue" type="xs:string" />
+							<xs:element name="Lounge" type="xs:string" />
+							<xs:element name="Dining" type="xs:string" />
+							<xs:element name="Study" type="xs:string" />
+							<xs:element name="Toilet" type="xs:unsignedByte" />
+							<xs:element name="Price" type="xs:string" />
+							<xs:element name="MapRef" type="xs:string" />
+							<xs:element name="BrochureHeading" type="xs:string" />
+							<xs:element name="BrochureSubHeading" type="xs:string" />
+							<xs:element name="BrochureBodyCopy" type="xs:string" />
+							<xs:element name="BottomSubHeading" type="xs:string" />
+							<xs:element name="BrochureBottomSubHeading" type="xs:string" />
+							<xs:element name="AHDetails" type="xs:string" />
+							<xs:element name="WebReferenceID" type="xs:string" />
+							<xs:element name="AgentContacts">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Contact">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Id" type="xs:unsignedByte" />
+													<xs:element name="ContactId" type="xs:unsignedInt" />
+													<xs:element name="FirstName" type="xs:string" />
+													<xs:element name="LastName" type="xs:string" />
+													<xs:element name="Phone" type="xs:string" />
+													<xs:element name="Mobile" type="xs:string" />
+													<xs:element name="Email" type="xs:string" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ImageDetails">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Image1" type="xs:string" />
+							<xs:element name="Image2" type="xs:string" />
+							<xs:element name="Image3" type="xs:string" />
+							<xs:element name="BrochureImage2" type="xs:string" />
+							<xs:element name="BrochureImage3" type="xs:string" />
+							<xs:element name="BrochureImage4" type="xs:string" />
+							<xs:element name="BrochureImage1" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="LogHistory">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="LogEntries">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" name="LogEntry">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="LogInfo">
+														<xs:complexType>
+															<xs:attribute name="appName" type="xs:string" use="required" />
+															<xs:attribute name="computerName" type="xs:string" use="required" />
+															<xs:attribute name="userName" type="xs:string" use="required" />
+															<xs:attribute name="logDateTime" type="xs:string" use="optional" />
+															<xs:attribute name="logdateTime" type="xs:string" use="optional" />
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="LogDetails">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element maxOccurs="unbounded" name="FieldChange">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="OldValue" type="xs:string" />
+																		</xs:sequence>
+																		<xs:attribute name="propertyName" type="xs:string" use="required" />
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A5B4755C-70F6-4316-819A-CB409A70F4C9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Abc.OnlineBL.DataStoreTest</RootNamespace>
+    <AssemblyName>Abc.OnlineBL.DataStoreTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>http://localhost/Abc.OnlineBL.DataStoreTest/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\AOPCommands\DeleteTemplateCommand.cs" />
+    <Compile Include="Commands\AOPCommands\GetTemplateProductsMatchingPriceListCommand.cs" />
+    <Compile Include="Commands\AOPCommands\InsertTemplateCommand.cs" />
+    <Compile Include="Commands\AOPCommands\UpdateTemplateCommand.cs" />
+    <Compile Include="Commands\BaseCommand.cs" />
+    <Compile Include="Commands\TemplateManagerCommands\GetClientsWhoCanOrderProductCommand.cs" />
+    <Compile Include="Commands\ClientCommands\GetClientsByNameWithLoadOptionsCommand.cs" />
+    <Compile Include="Commands\ProductCommands\GetProductByIdCommand.cs" />
+    <Compile Include="Commands\TemplateManagerCommands\GetProductsByTypeIdCommand.cs" />
+    <Compile Include="Commands\AOPCommands\GetTemplatesByPathsCommand.cs" />
+    <Compile Include="Commands\ClientCommands\SayHelloCommand.cs" />
+    <Compile Include="Commands\TemplateManagerCommands\GetProductsByIdsCommand.cs" />
+    <Compile Include="Commands\ClientCommands\UpdateClientsPrefCommand.cs" />
+    <Compile Include="Commands\WorkflowCommands\SayHelloCommand.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Abc.OnlineBL.Config\Abc.OnlineBL.Configuration.csproj">
+      <Project>{636B75AA-307C-46C0-8002-82D35AE005A2}</Project>
+      <Name>Abc.OnlineBL.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.OnlineBL.Entities\Abc.OnlineBL.Entities.csproj">
+      <Project>{DBF32C19-8545-4211-958D-4F8E86CB2586}</Project>
+      <Name>Abc.OnlineBL.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.OnlineBL.Service.Implementation\Abc.OnlineBL.Service.Implementation.csproj">
+      <Project>{8C46C4A0-5DD0-42B3-AEEC-EF7B6EF682EF}</Project>
+      <Name>Abc.OnlineBL.Service.Implementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.OnlineBL.ServiceProxy\Abc.OnlineBL.ServiceProxy.csproj">
+      <Project>{9A6D2167-54B0-4E2A-9C05-1415EC013791}</Project>
+      <Name>Abc.OnlineBL.ServiceProxy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.OnlineBL.Service\Abc.OnlineBL.Service.csproj">
+      <Project>{FD065480-4EE0-4D21-8EC8-32768E8D0A7D}</Project>
+      <Name>Abc.OnlineBL.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Abc.OnlineBL.Utility\Abc.OnlineBL.Utility.csproj">
+      <Project>{75943185-C14F-440F-AA31-CF52BDD85BF8}</Project>
+      <Name>Abc.OnlineBL.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\Abc.AIS.Entities.Client.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\Abc.AIS.Entities.ClientsPref.datasource" />
+    <None Include="Properties\DataSources\Abc.AIS.Entities.Product.datasource" />
+    <None Include="Properties\DataSources\Abc.AIS.Entities.ProductSizeCodeDetail.datasource" />
+    <None Include="Properties\DataSources\Abc.AIS.Entities.ProductType.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\Abc.AIS.Entities.Order.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\Abc.AIS.Entities.AOP_AnalyzeQueue.datasource" />
+    <None Include="Properties\DataSources\Abc.AIS.Entities.AOP_DocumentPolicy.datasource" />
+    <None Include="Properties\DataSources\Abc.AIS.Entities.AOP_Template.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>

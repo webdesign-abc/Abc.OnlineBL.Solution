@@ -665,7 +665,6 @@ namespace Abc.OnlineBL.Orders.Workflow
                                 }
                                 else if (forAbc && orderDataExchange.Client.Manager.IsWorkshop && orderDataExchange.PropertyOrder.IsDIYOrder && orderDataExchange.PropertyOrder.OrderHasCommunityBoardOnly())
                                 {
-                                    //Logger.Info("New community board OrderID: " + nOrderEvent.OrderId);
                                     OrderProcessor.GenerateNewCommunityBoardDIYOrderEvent(nOrderEvent);
                                 }
                                 else if (forAbc && (orderDataExchange.PropertyOrder.OrderDescription == "notemplate" || orderDataExchange.PropertyOrder.OrderDescription == "CreateSingleOrder"))

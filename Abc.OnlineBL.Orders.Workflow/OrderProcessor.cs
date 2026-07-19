@@ -950,33 +950,6 @@ namespace Abc.OnlineBL.Orders.Workflow
 
         #endregion
 
-        #region GetTemplateProductById
-        public static AOP_TemplateProduct GetTemplateProductById(int templateProductId, List<EntityRelations> loadOptions)
-        {
-            try
-            {
-                using (AbcDataContext ctx = new AbcDataContext())
-                {
-                    ctx.DeferredLoadingEnabled = false;
-
-                    if (loadOptions != null && loadOptions.Count > 0)
-                        ctx.SetDataLoadOptions(loadOptions);
-
-                    AOP_TemplateProduct tp = (from t in ctx.AOP_TemplateProducts
-                                              where t.TemplateProductId == templateProductId && t.Active
-                                              select t).FirstOrDefault();
-
-                    return tp;
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Exception(ex, "Error occured in 'GetTemplateProductById'. templateProductId:{0}", templateProductId);
-                throw;
-            }
-        }
-        #endregion
-
         #region GetJobDocumentPath
         /// <summary>
         /// Gets the job document path. E.g. RootPath\ClientId\JobId\JobDocumentId\

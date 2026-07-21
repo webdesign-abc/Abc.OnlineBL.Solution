@@ -468,7 +468,7 @@ namespace Abc.OnlineBL.Orders.Workflow
             catch (Exception ex)
             {
                 cc++; if (cc < 2) goto RetryCreate;
-                Logger.Exception(ex, string.Format("{0} {1}"), fileNameToUse, contents);
+                Logger.Exception(ex, string.Format("{0} {1}", fileNameToUse, contents));
             }
 
             return ret;
@@ -494,7 +494,7 @@ namespace Abc.OnlineBL.Orders.Workflow
             catch (Exception ex)
             {
                 cc++; if (cc < 2) goto RetryCreate;
-                Logger.Exception(ex, string.Format("{0} {1}"), fileNameToUse, contents);
+                Logger.Exception(ex, string.Format("{0} {1}", fileNameToUse, contents));
             }
 
             return ret;
@@ -677,8 +677,6 @@ namespace Abc.OnlineBL.Orders.Workflow
                                 }
                                 else
                                 {
-                                    //Logger.Warn(forAbc + " OrderID: " + nOrderEvent.OrderId + " - " + orderDataExchange.PropertyOrder.OrderDescription);
-
                                     OrderProcessor.GenerateNewOrderEvent(nOrderEvent);
                                 }
                             }
@@ -996,10 +994,12 @@ namespace Abc.OnlineBL.Orders.Workflow
                 nPhotoOrder.SendBy = orderDataExchange.PropertyOrder.SendProofBy;
                 nPhotoOrder.SendTo = orderDataExchange.PropertyOrder.SendProofTo;
                 nPhotoOrder.ContactName = orderDataExchange.PropertyOrder.ContactDetailName;
+
                 if (orderDataExchange.PropertyOrder.ContactDetailName.Length > 20)
                 {
                     nPhotoOrder.ContactName = orderDataExchange.PropertyOrder.ContactDetailName.Substring(0, 19);
                 }
+
                 nPhotoOrder.ContactNumber = orderDataExchange.PropertyOrder.ContactNumber;
 
                 nPhotoOrder.PropertyId = orderDataExchange.PropertyOrder.PropertyId;
@@ -1089,7 +1089,7 @@ namespace Abc.OnlineBL.Orders.Workflow
             }
             catch (Exception ex)
             {
-                Logger.Exception(ex, string.Format("{0} {1}"), new Object[] { orderDataExchange.PropertyOrder.GetHTMLString() });
+                Logger.Exception(ex, string.Format("{0}", orderDataExchange.PropertyOrder.GetHTMLString() ));
             }
         }
 

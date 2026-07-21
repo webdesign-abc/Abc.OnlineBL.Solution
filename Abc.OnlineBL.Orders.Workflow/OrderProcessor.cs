@@ -1,19 +1,14 @@
-﻿using System;
+﻿using Abc.OnlineBL.DataStore;
+using Abc.OnlineBL.Entities;
+using Abc.OnlineBL.Entities.Model;
+using Abc.OnlineBL.Entities.Model.OnlineOrder;
+using Abc.OnlineBL.Orders.Workflow.Model;
+using Abc.OnlineBL.VirtualFileSystem;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Abc.OnlineBL.DataStore;
-using Abc.OnlineBL.Entities;
-using Abc.OnlineBL.Entities.Model;
-using Abc.OnlineBL.Orders.Workflow.Model;
-using Abc.OnlineBL.VirtualFileSystem;
-using Abc.OnlineBL.Entities.Model.OnlineOrder;
-using System.Net.Mail;
 using System.Text;
-using Abc.OnlineBL.Entities.Enums;
-using System.Xml.Linq;
-using Dom = Abc.OnlinePublication.Common.DOM;
-using Abc.OnlinePublication.Common.DOM;
 namespace Abc.OnlineBL.Orders.Workflow
 {
     public class OrderProcessor

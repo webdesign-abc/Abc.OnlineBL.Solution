@@ -970,11 +970,11 @@ namespace Abc.OnlineBL.Orders.Workflow
         /// <param name="jobId">The job id.</param>
         /// <param name="jobDocumentId">The job document id.</param>
         /// <returns></returns>
-        private static string GetJobDocumentTemplatePath(string documentRootPath, int clientId, int jobId, int jobDocumentId)
-        {
-            string templateFile = Path.Combine(GetJobDocumentPath(documentRootPath, clientId, jobId, jobDocumentId), jobDocumentId + ".indt");
-            return templateFile;
-        }
+        //private static string GetJobDocumentTemplatePath(string documentRootPath, int clientId, int jobId, int jobDocumentId)
+        //{
+        //    string templateFile = Path.Combine(GetJobDocumentPath(documentRootPath, clientId, jobId, jobDocumentId), jobDocumentId + ".indt");
+        //    return templateFile;
+        //}
         #endregion
 
         #region CreateAssetsFolders

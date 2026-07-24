@@ -954,26 +954,10 @@ namespace Abc.OnlineBL.Orders.Workflow
         /// <param name="jobId">The job id.</param>
         /// <param name="jobDocumentId">The job document id.</param>
         /// <returns></returns>
-        private static string GetJobDocumentPath(string documentRootPath, int clientId, int jobId, int jobDocumentId)
-        {
-            string templateFilePath = string.Format("{0}\\{1}\\{2}\\{3}", documentRootPath.TrimEnd('\\'), clientId, jobId, jobDocumentId);
-            return templateFilePath;
-        }
-        #endregion
-
-        #region GetJobDocumentTemplatePath
-        /// <summary>
-        /// Gets the job document template path. E.g. RootPath\ClientId\JobId\JobDocumentId\JobDocumentId.indt
-        /// </summary>
-        /// <param name="documentRootPath">The document root path.</param>
-        /// <param name="clientId">The client id.</param>
-        /// <param name="jobId">The job id.</param>
-        /// <param name="jobDocumentId">The job document id.</param>
-        /// <returns></returns>
-        //private static string GetJobDocumentTemplatePath(string documentRootPath, int clientId, int jobId, int jobDocumentId)
+        //private static string GetJobDocumentPath(string documentRootPath, int clientId, int jobId, int jobDocumentId)
         //{
-        //    string templateFile = Path.Combine(GetJobDocumentPath(documentRootPath, clientId, jobId, jobDocumentId), jobDocumentId + ".indt");
-        //    return templateFile;
+        //    string templateFilePath = string.Format("{0}\\{1}\\{2}\\{3}", documentRootPath.TrimEnd('\\'), clientId, jobId, jobDocumentId);
+        //    return templateFilePath;
         //}
         #endregion
 

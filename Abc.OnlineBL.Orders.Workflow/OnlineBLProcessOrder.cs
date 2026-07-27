@@ -1267,7 +1267,6 @@ namespace Abc.OnlineBL.Orders.Workflow
                 {
                     GenerateOrderEventWrapper(true, false, false);
                 }
-
             }
         }
 

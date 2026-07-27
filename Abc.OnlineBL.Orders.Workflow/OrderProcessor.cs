@@ -945,22 +945,6 @@ namespace Abc.OnlineBL.Orders.Workflow
 
         #endregion
 
-        #region GetJobDocumentPath
-        /// <summary>
-        /// Gets the job document path. E.g. RootPath\ClientId\JobId\JobDocumentId\
-        /// </summary>
-        /// <param name="documentRootPath">The document root path.</param>
-        /// <param name="clientId">The client id.</param>
-        /// <param name="jobId">The job id.</param>
-        /// <param name="jobDocumentId">The job document id.</param>
-        /// <returns></returns>
-        //private static string GetJobDocumentPath(string documentRootPath, int clientId, int jobId, int jobDocumentId)
-        //{
-        //    string templateFilePath = string.Format("{0}\\{1}\\{2}\\{3}", documentRootPath.TrimEnd('\\'), clientId, jobId, jobDocumentId);
-        //    return templateFilePath;
-        //}
-        #endregion
-
         #region CreateAssetsFolders
         /// <summary>
         /// Create Assets Folders path. E.g. RootPath\ClientId\JobId\Assets\Original

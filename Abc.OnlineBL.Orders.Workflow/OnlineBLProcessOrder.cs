@@ -637,7 +637,7 @@ namespace Abc.OnlineBL.Orders.Workflow
                                 }
                                 else
                                 {
-                                    Logger.Info("New artwork OrderID: " + nOrderEvent.OrderId + " file: " + fileName);
+                                    //Logger.Info("New artwork OrderID: " + nOrderEvent.OrderId + " file: " + fileName);
                                 }
                             }
                             else
@@ -1438,7 +1438,7 @@ namespace Abc.OnlineBL.Orders.Workflow
                 && (orderDataExchange.PropertyOrder.OrderHasOverlay() == true || orderDataExchange.PropertyOrder.OrderHasBoardOverlay() == true)
                 && orderDataExchange.Client.Manager.IsWorkshop && orderDataExchange.PropertyOrder.OrderHasCustomOverlayInstalled() == false)
             {
-                Logger.Warn("Overlay order: " + orderDataExchange.PropertyOrder.ClientId + " -- " + orderDataExchange.Property.PropertyAddressWithSuburb);
+                //Logger.Warn("Overlay order: " + orderDataExchange.PropertyOrder.ClientId + " -- " + orderDataExchange.Property.PropertyAddressWithSuburb);
 
                 CartItem cItem = new CartItem();
                 cItem.ProductId = 19635;

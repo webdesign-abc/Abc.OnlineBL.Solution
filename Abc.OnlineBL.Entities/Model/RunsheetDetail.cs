@@ -394,14 +394,7 @@ namespace Abc.OnlineBL.Entities.Model
 					this.DateBoardErected = string.Empty;
 				}
 
-				if (!OnlineBLConfig.IS_NZ)
-				{
-					this.BoardsDespatched = GetDateAlsoCheckIfOld(item.DespatchDetail.BoardsDespatched);
-				}
-				else
-				{
-					this.BoardsDespatched = item.DespatchDetail.BoardsDespatched.HasValue ? item.DespatchDetail.BoardsDespatched.Value.ToString("yyyy-MM-dd HH:mm:ss") : string.Empty;
-				}
+				this.BoardsDespatched = GetDateAlsoCheckIfOld(item.DespatchDetail.BoardsDespatched);
 
 				if (item.DespatchDetail.DateBoardRemoved.HasValue)
 				{

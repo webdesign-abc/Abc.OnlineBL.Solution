@@ -3666,7 +3666,6 @@ namespace Abc.OnlineBL.Orders.Workflow
             #endregion
         }
 
-
         private static void InsertStockboardProduct(Abc.OnlineBL.Entities.Model.OnlineOrder.OnlinePropertyOrder propertyOrder, int orderId, AbcDataContext ctx)
         {
             foreach (Abc.OnlineBL.Entities.Model.OnlineOrder.CartItem item in propertyOrder.Cart)

@@ -405,15 +405,7 @@ namespace Abc.OnlineBL.Entities.Model
 					this.DateBoardRemoved = string.Empty;
 				}
 
-				if (!OnlineBLConfig.IS_NZ)
-				{
-					this.DateRemovalRequested = GetDateAlsoCheckIfOld(item.DespatchDetail.DateRemovalRequested);
-				}
-				else
-				{
-					this.DateRemovalRequested = item.DespatchDetail.DateRemovalRequested.HasValue ? item.DespatchDetail.DateRemovalRequested.Value.ToString("yyyy-MM-dd HH:mm:ss") : string.Empty;
-				}
-
+				this.DateRemovalRequested = GetDateAlsoCheckIfOld(item.DespatchDetail.DateRemovalRequested);
 
                 if (!OnlineBLConfig.IS_NZ)
                 {

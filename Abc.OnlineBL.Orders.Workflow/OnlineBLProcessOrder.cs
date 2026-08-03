@@ -1155,7 +1155,7 @@ namespace Abc.OnlineBL.Orders.Workflow
                 }
                 catch (Exception ex)
                 {
-                    Logger.Exception(ex, string.Format("{0}"), new Object[] { orderDataExchange.PropertyOrder.GetHTMLString() });
+                    Logger.Exception(ex, string.Format("{0}", orderDataExchange.PropertyOrder.GetHTMLString() ));
                     orderDataExchange.StockId = 0;
                 }
             }
@@ -1438,7 +1438,6 @@ namespace Abc.OnlineBL.Orders.Workflow
                 && (orderDataExchange.PropertyOrder.OrderHasOverlay() == true || orderDataExchange.PropertyOrder.OrderHasBoardOverlay() == true)
                 && orderDataExchange.Client.Manager.IsWorkshop && orderDataExchange.PropertyOrder.OrderHasCustomOverlayInstalled() == false)
             {
-                //Logger.Warn("Overlay order: " + orderDataExchange.PropertyOrder.ClientId + " -- " + orderDataExchange.Property.PropertyAddressWithSuburb);
 
                 CartItem cItem = new CartItem();
                 cItem.ProductId = 19635;

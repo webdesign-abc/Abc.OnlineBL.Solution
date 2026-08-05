@@ -169,7 +169,7 @@ namespace Abc.OnlineBL.Orders.Workflow
 		private string GetHtmlFileContents4Client()
 		{
 			string html = GetClientHtmContents();
-            //html = html + orderDataExchange.PropertyOrder.GetHTMLString();
+            
             html = html + orderDataExchange.PropertyOrder.GetClientHTMLString();
 
 			List<string> ids = new List<string>();
@@ -770,6 +770,7 @@ namespace Abc.OnlineBL.Orders.Workflow
 				return sb.ToString() + endTags;
 
 		}
+
 		private string FormatStockboardHtmlBody(string jobNo)
 		{
 			StringBuilder sb = new StringBuilder();

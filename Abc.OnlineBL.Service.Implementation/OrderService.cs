@@ -2103,8 +2103,7 @@ namespace Abc.OnlineBL.Service.Implementation
                     if (hasAOPJob)
                     {
                         //Move working DIY folder
-                        if (!ServiceConfig.IS_NZ)
-                            MoveWorkingDIYFolder(orderID, clientID);
+                        MoveWorkingDIYFolder(orderID, clientID);
                     }
                 }
                 catch (Exception ex)

@@ -407,14 +407,7 @@ namespace Abc.OnlineBL.Entities.Model
 
 				this.DateRemovalRequested = GetDateAlsoCheckIfOld(item.DespatchDetail.DateRemovalRequested);
 
-                if (!OnlineBLConfig.IS_NZ)
-                {
-                    this.DateReErectionRequested = GetDateAlsoCheckIfOld(item.DespatchDetail.ReErectionRequested);
-                }
-                else
-                {
-                    this.DateReErectionRequested = item.DespatchDetail.ReErectionRequested.HasValue ? item.DespatchDetail.ReErectionRequested.Value.ToString("yyyy-MM-dd HH:mm:ss") : string.Empty;
-                }
+                this.DateReErectionRequested = GetDateAlsoCheckIfOld(item.DespatchDetail.ReErectionRequested);
 
                 if (!OnlineBLConfig.IS_NZ)
                 {

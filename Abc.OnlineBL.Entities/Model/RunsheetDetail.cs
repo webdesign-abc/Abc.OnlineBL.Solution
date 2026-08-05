@@ -409,16 +409,8 @@ namespace Abc.OnlineBL.Entities.Model
 
                 this.DateReErectionRequested = GetDateAlsoCheckIfOld(item.DespatchDetail.ReErectionRequested);
 
-                if (!OnlineBLConfig.IS_NZ)
-                {
-                    this.PreferredErectionDate = GetDateAlsoCheckIfOld(item.DespatchDetail.PreferredErectionDate);
-                    this.PreferredRemovalDate = GetDateAlsoCheckIfOld(item.DespatchDetail.PreferredRemovalDate);
-                }
-                else
-                {
-                    this.PreferredErectionDate = item.DespatchDetail.PreferredErectionDate.HasValue ? item.DespatchDetail.PreferredErectionDate.Value.ToString("yyyy-MM-dd HH:mm:ss") : string.Empty;
-                    this.PreferredRemovalDate = item.DespatchDetail.PreferredRemovalDate.HasValue ? item.DespatchDetail.PreferredRemovalDate.Value.ToString("yyyy-MM-dd HH:mm:ss") : string.Empty;
-                }
+                this.PreferredErectionDate = GetDateAlsoCheckIfOld(item.DespatchDetail.PreferredErectionDate);
+                this.PreferredRemovalDate = GetDateAlsoCheckIfOld(item.DespatchDetail.PreferredRemovalDate);
                
 				if (item.DespatchDetail.Order != null)
 				{

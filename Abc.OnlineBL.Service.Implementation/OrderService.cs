@@ -8388,10 +8388,8 @@ namespace Abc.OnlineBL.Service.Implementation
                 bool hasAOPJob = IsDesignNowApplicable(orderID);
                 if (hasAOPJob)
                 {
-                    if (!ServiceConfig.IS_NZ)
-                    {
-                        UpdateXMLOnApproval(orderID);
-                    }
+                    UpdateXMLOnApproval(orderID);
+                    
                     //move approved document and preview
                     MoveDIYDocumentsAndPreviewFiles(orderID, jobDocumentIds);
                 }

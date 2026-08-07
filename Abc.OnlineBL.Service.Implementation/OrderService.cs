@@ -8600,24 +8600,21 @@ namespace Abc.OnlineBL.Service.Implementation
                     if (hasAOPJob)
                     {
                         //Move working DIY folder
-                        if (!ServiceConfig.IS_NZ)
+                        using (AbcDataContext ctx = new AbcDataContext())
                         {
-                            using (AbcDataContext ctx = new AbcDataContext())
-                            {
-                                ProofDetail pd = ctx.ProofDetails.SingleOrDefault(p => p.OrderID == orderID);
+                            ProofDetail pd = ctx.ProofDetails.SingleOrDefault(p => p.OrderID == orderID);
 
-                                //check if order approve then Move all DIY working folder
-                                //or just move Express one
-                                if (pd.DateApproved.HasValue)
-                                {
-                                    MoveWorkingDIYFolder(orderID, clientID);
-                                }
-                                else
-                                {
-                                    MoveExpressDIYWorkingFolder(orderID, clientID, jobDocumentIds);
-                                }
-                                
+                            //check if order approve then Move all DIY working folder
+                            //or just move Express one
+                            if (pd.DateApproved.HasValue)
+                            {
+                                MoveWorkingDIYFolder(orderID, clientID);
                             }
+                            else
+                            {
+                                MoveExpressDIYWorkingFolder(orderID, clientID, jobDocumentIds);
+                            }
+                                
                         }
                     }
                 }

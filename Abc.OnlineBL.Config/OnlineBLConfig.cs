@@ -108,10 +108,7 @@ namespace Abc.OnlineBL
 		{
 			get
 			{
-				if (IS_NZ)
-					return DateTime.Now.AddHours(2);
-				else
-					return DateTime.Now;
+				return DateTime.Now;
 			}
 		}
 

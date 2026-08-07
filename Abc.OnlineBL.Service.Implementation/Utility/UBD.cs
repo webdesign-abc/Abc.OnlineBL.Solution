@@ -30,63 +30,30 @@ namespace Abc.OnlineBL.Utility
                 if (!String.IsNullOrEmpty(objRSDetailModel.Address))
                 {
                     //AbcSettings objAbcSetting = AbcSettings.GetConfig;
-                    string country = (Abc.OnlineBL.Utility.Configuration.BaseConfig.IS_NZ) ? "New Zealand" : "Australia";
+                    string country = "Australia";
 
-					if (!BaseConfig.IS_NZ)
+					objRSDetailModel.UBD_Map_Ref = UBDCache.Current.GetUBDPref(objRSDetailModel.OrderId);
+
+					if (string.IsNullOrEmpty(objRSDetailModel.UBD_Map_Ref))
 					{
-						objRSDetailModel.UBD_Map_Ref = UBDCache.Current.GetUBDPref(objRSDetailModel.OrderId);
+						WhereisApiClient client = new WhereisApiClient("4213272605751756800", "Password01");
+						//WhereisApiClient client = new WhereisApiClient("6165231760435002368", "T_@B)_?_aU5");//old token
+						string propertyAddress = string.Format("{0}, {1}, {2}, {3}", objRSDetailModel.Address, objRSDetailModel.Location, objRSDetailModel.State, country);
 
-						if (string.IsNullOrEmpty(objRSDetailModel.UBD_Map_Ref))
+						Abc.OnlineBL.Utility.WhereIs.GeocodeResponse resu = client.getUnstructuredGeocode(propertyAddress, ref dnsError);
+
+						if (resu != null && resu.results.Count > 0 && resu.results[0] != null)
 						{
-							WhereisApiClient client = new WhereisApiClient("4213272605751756800", "Password01");
-							//WhereisApiClient client = new WhereisApiClient("6165231760435002368", "T_@B)_?_aU5");//old token
-							string propertyAddress = string.Format("{0}, {1}, {2}, {3}", objRSDetailModel.Address, objRSDetailModel.Location, objRSDetailModel.State, country);
-
-							Abc.OnlineBL.Utility.WhereIs.GeocodeResponse resu = client.getUnstructuredGeocode(propertyAddress, ref dnsError);
-
-							if (resu != null && resu.results.Count > 0 && resu.results[0] != null)
+							string mapRef = GetPageRef(resu.results[0].centrePoint.lat, resu.results[0].centrePoint.lon);
+							if (mapRef != null)
 							{
-								string mapRef = GetPageRef(resu.results[0].centrePoint.lat, resu.results[0].centrePoint.lon);
-								if (mapRef != null)
-								{
-									objRSDetailModel.UBD_Map_Ref = mapRef;
-								}
+								objRSDetailModel.UBD_Map_Ref = mapRef;
 							}
-
-							UBDCache.Current.AddUBD(objRSDetailModel.OrderId, objRSDetailModel.UBD_Map_Ref);
 						}
-						
+
+						UBDCache.Current.AddUBD(objRSDetailModel.OrderId, objRSDetailModel.UBD_Map_Ref);
 					}
-					//else
-					//{
-					//    #region Old Bing code
-					//    //string query = string.Format("{0},{1},{2},{3}", objRSDetailModel.Address.Trim(), objRSDetailModel.Location.Trim(), objRSDetailModel.State.Trim(), country.Trim());
-
-					//    //BingMap bing = new BingMap();
-
-					//    //var res = bing.GeocodeAddress(query, ref dnsError);
-					//    //if (res.FoundMatch)
-					//    //{
-					//    //    string mapRef = GetPageRef(Double.Parse(res.Latitude), Double.Parse(res.Longitude));
-					//    //    if (mapRef != null)
-					//    //    {
-					//    //        objRSDetailModel.UBD_Map_Ref = mapRef;
-					//    //        //Logger.Warn("Map Reference for {0}: {1}", query, mapRef);
-					//    //    }
-					//    //} 
-					//    #endregion
-
-					//    //OLD GOOGLE CODE
-					//    Geoloc? loc = Abc.OnlineBL.Utility.Geocoder.LocateGoogle(objRSDetailModel.Address, objRSDetailModel.Location, objRSDetailModel.State, country, ref dnsError);
-					//    if (loc.HasValue)
-					//    {
-					//        string mapRef = GetPageRef(loc.Value.Lat, loc.Value.Lon);
-					//        if (mapRef != null)
-					//        {
-					//            objRSDetailModel.UBD_Map_Ref = mapRef;
-					//        }
-					//    }
-					//}
+						
                 }
             }
             catch (Exception ex)

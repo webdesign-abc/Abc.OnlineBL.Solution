@@ -2404,10 +2404,7 @@ namespace Abc.OnlineBL.Service.Implementation
 						pro.StreetName = "Regular Order";
 						pro.StreetNo = "1";
 						pro.UnitNo = string.Empty;
-						if (ServiceConfig.IS_NZ)
-							pro.LocationId = 1745;
-						else
-							pro.LocationId = 10751;
+						pro.LocationId = 10751;
 						pro.CreatedOn = DateTime.Now;
 
 						ctx.Properties.InsertOnSubmit(pro);

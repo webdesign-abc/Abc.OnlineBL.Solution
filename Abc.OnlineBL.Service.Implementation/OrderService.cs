@@ -1734,10 +1734,6 @@ namespace Abc.OnlineBL.Service.Implementation
 
                 if (hasAOPJob)
                 {
-                    //if (!ServiceConfig.IS_NZ && hasOnlineListing)
-                    //{
-                    //    UpdateXMLOnApproval(orderID);
-                    //}
                     //move document and preview
                     MoveDocumentsAndPreviewFiles(orderID);
                 }
@@ -2114,15 +2110,12 @@ namespace Abc.OnlineBL.Service.Implementation
 
                 try
                 {
-                    if (!ServiceConfig.IS_NZ && hasOnlineListing)
+                    //Move xml file
+                    string xmlSourceFile = Path.Combine(ServiceConfig.XML_ORDER_DIR, orderID + ".xml");
+                    if(File.Exists(xmlSourceFile))
                     {
-                        //Move xml file
-                        string xmlSourceFile = Path.Combine(ServiceConfig.XML_ORDER_DIR, orderID + ".xml");
-                        if(File.Exists(xmlSourceFile))
-                        {
-                            string destFile = Path.Combine(ServiceConfig.ABC_LISTING_DIR, orderID + ".xml");
-                            File.Copy(xmlSourceFile, destFile, true);
-                        }
+                        string destFile = Path.Combine(ServiceConfig.ABC_LISTING_DIR, orderID + ".xml");
+                        File.Copy(xmlSourceFile, destFile, true);
                     }
                 }
                 catch (Exception ex)

@@ -218,26 +218,6 @@ namespace Abc.OnlineBL.Service.Implementation
 					ctx.Workflow_LogHistory(orderTrackingEventParameter.OrderId, orderDetailsId, null, nextStateName, orderTrackingEventParameter.Message, orderTrackingEventParameter.LoggedBy);
 				}
 
-				foreach (var packageContentId in orderTrackingEventParameter.SelectedODPackageContentIds)
-				{
-					var odEntity = (from od in ctx.ODPackageContents
-													where od.ID == packageContentId
-													select od).FirstOrDefault();
-					////TODO: check condition here..
-					int typeId = odEntity.PackageContent.TypeId;// .OrderDetail.Product.TypeID;
-					StateMapping stateMapping = StateMappingFactory.Current.GetStateMapping(typeId);
-					if (stateMapping == null)
-						throw new Exception(string.Format("There is no StateMapping for productTypeId:{0}, ODPackageContents.ID:{1}", typeId, packageContentId));
-
-					bool isTransitionValid = stateMapping.CheckStateTransition(odEntity.CurrentStatus, nextStateName);
-					if (!isTransitionValid)
-						throw new Exception(GetInvalidStateMessage(odEntity.CurrentStatus, nextStateName, "ODPackageContents.ID", packageContentId, odEntity.OrderDetail.Product.TypeID));
-
-					odEntity.CurrentStatus = nextStateName;
-					
-					ctx.Workflow_LogHistory(orderTrackingEventParameter.OrderId, odEntity.OrderDetailsID, packageContentId, nextStateName, orderTrackingEventParameter.Message, orderTrackingEventParameter.LoggedBy);
-				}
-
 				ctx.SubmitChanges();
 			}
 		}

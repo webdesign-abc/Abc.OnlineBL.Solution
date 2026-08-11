@@ -82,7 +82,6 @@ namespace Abc.OnlineBL.Service.Implementation
                             pgModel.GroupName = pg.GroupName;
                             op.PackageGroups.Add(pgModel);
 
-                            //fix package contents
                             var relatedPGC = from p in pkgGroupProducts
                                              where p.GroupId == pg.GroupId
                                              select p;
@@ -188,7 +187,6 @@ namespace Abc.OnlineBL.Service.Implementation
                             pgModel.GroupName = pg.GroupName;
                             op.PackageGroups.Add(pgModel);
 
-                            //fix package contents
                             var relatedPGC = from p in pkgGroupProducts
                                              where p.GroupId == pg.GroupId
                                              select p;

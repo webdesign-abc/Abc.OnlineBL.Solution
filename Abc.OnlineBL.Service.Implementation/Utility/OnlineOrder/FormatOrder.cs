@@ -161,26 +161,19 @@ namespace Abc.OnlineBL.Service.Implementation.Utility.OnlineOder
 			}
 			else
 			{
-				if (!OnlineBLConfig.IS_NZ)
-				{
-					conditions += @"<P><B>CONDITIONS</B></P>
+				conditions += @"<P><B>CONDITIONS</B></P>
 
-										1. A fee of $45.00 will be incurred for the cancellation of an order prior
-										to printing.<BR>
-										2. Prices stated allow for ground floor installation only. Installation
-										and dismantling of boards no more than 900mm above ground level.<BR>
-										3. Please check proofs carefully as we do not accept any responsibility
-										for any undetected errors after we receive your approval.<BR>
-										4. Delivery: 3-5 days after approval by you.<BR>
-										5. Payment must accompany order.<BR>
-										6. This board remains the property of ABC Photosigns.<BR>
-										7. Hire is for a six month maximum period and thereafter negotiable.<BR>
-										</P>";
-				}
-				else
-				{
-					conditions += @"<P><B>***</B></P></P>";
-				}
+									1. A fee of $45.00 will be incurred for the cancellation of an order prior
+									to printing.<BR>
+									2. Prices stated allow for ground floor installation only. Installation
+									and dismantling of boards no more than 900mm above ground level.<BR>
+									3. Please check proofs carefully as we do not accept any responsibility
+									for any undetected errors after we receive your approval.<BR>
+									4. Delivery: 3-5 days after approval by you.<BR>
+									5. Payment must accompany order.<BR>
+									6. This board remains the property of ABC Photosigns.<BR>
+									7. Hire is for a six month maximum period and thereafter negotiable.<BR>
+									</P>";
 			}
 
 			string endTags = @"</TD></TR></TABLE></BODY></HTML>";

@@ -237,14 +237,14 @@ namespace Abc.OnlineBL.Service.Implementation
 					// If we need to dispatch Boards then also despatch the BoardPackages
 					if (productTypeId == ProductTypes.BillBoard)
 					{
-						if (item.ODPackageContents.Count > 0)
-						{
-							foreach (var odContent in item.ODPackageContents)
-							{
-								if (item.Product.TypeID == ProductTypes.BoardPackages)
-									evp.SelectedODPackageContentIds.Add(odContent.ID);
-							}
-						}
+						//if (item.ODPackageContents.Count > 0)
+						//{
+						//	foreach (var odContent in item.ODPackageContents)
+						//	{
+						//		if (item.Product.TypeID == ProductTypes.BoardPackages)
+						//			evp.SelectedODPackageContentIds.Add(odContent.ID);
+						//	}
+						//}
 
 						if (item.Product.TypeID == ProductTypes.BillBoard || item.Product.TypeID == ProductTypes.BoardPackages)
 						{
@@ -254,20 +254,10 @@ namespace Abc.OnlineBL.Service.Implementation
 					else if (productTypeId == ProductTypes.Brochure)
 					{
 						// If we need to dispatch Brochures then also despatch the OtherPackages
-						if (item.ODPackageContents.Count > 0)
+						
+						if (item.Product.TypeID == ProductTypes.Brochure || item.Product.TypeID == ProductTypes.OtherPackages)
 						{
-							foreach (var odContent in item.ODPackageContents)
-							{
-								if (item.Product.TypeID == ProductTypes.OtherPackages)
-									evp.SelectedODPackageContentIds.Add(odContent.ID);
-							}
-						}
-						else
-						{
-							if (item.Product.TypeID == ProductTypes.Brochure || item.Product.TypeID == ProductTypes.OtherPackages)
-							{
-								evp.SelectedOrderDetailIds.Add(item.OrderDetailsID);
-							}
+							evp.SelectedOrderDetailIds.Add(item.OrderDetailsID);
 						}
 					}
 					else if (productTypeId == ProductTypes.Other)

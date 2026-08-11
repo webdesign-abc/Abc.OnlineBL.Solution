@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Abc.OnlineBL.Utility.Configuration;
-using Abc.OnlineBL.DataStore;
+﻿using Abc.OnlineBL.DataStore;
 using Abc.OnlineBL.Entities;
 using Abc.OnlineBL.Entities.Model;
-using Abc.OnlineBL.Service.Implementation.Utility.BingGeoLocation;
 using Abc.OnlineBL.Utility.WhereIs;
+using System;
+using System.Linq;
 
 namespace Abc.OnlineBL.Utility
 {

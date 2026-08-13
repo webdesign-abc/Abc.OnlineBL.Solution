@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
 
-
 namespace Abc.OnlineBL.Entities.Model
 {
 	[DataContract]

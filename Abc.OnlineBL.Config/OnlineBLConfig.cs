@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Abc.OnlineBL.Utility.Configuration;
+﻿using Abc.OnlineBL.Utility.Configuration;
+using System;
 
 namespace Abc.OnlineBL
 {
-	/// <summary>
-	/// Summary description for Config. This class is not in Abc.OnlineBL.Configuration namespace
-	/// for convenience. We can use it any where without importing the name space.
-	/// </summary>
-	public class OnlineBLConfig : BaseConfig
+    /// <summary>
+    /// Summary description for Config. This class is not in Abc.OnlineBL.Configuration namespace
+    /// for convenience. We can use it any where without importing the name space.
+    /// </summary>
+    public class OnlineBLConfig : BaseConfig
 	{		
 		#region Public Settings
 

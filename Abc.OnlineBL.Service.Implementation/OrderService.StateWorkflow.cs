@@ -237,15 +237,6 @@ namespace Abc.OnlineBL.Service.Implementation
 					// If we need to dispatch Boards then also despatch the BoardPackages
 					if (productTypeId == ProductTypes.BillBoard)
 					{
-						//if (item.ODPackageContents.Count > 0)
-						//{
-						//	foreach (var odContent in item.ODPackageContents)
-						//	{
-						//		if (item.Product.TypeID == ProductTypes.BoardPackages)
-						//			evp.SelectedODPackageContentIds.Add(odContent.ID);
-						//	}
-						//}
-
 						if (item.Product.TypeID == ProductTypes.BillBoard || item.Product.TypeID == ProductTypes.BoardPackages)
 						{
 							evp.SelectedOrderDetailIds.Add(item.OrderDetailsID);
@@ -263,20 +254,9 @@ namespace Abc.OnlineBL.Service.Implementation
 					else if (productTypeId == ProductTypes.Other)
 					{
 						// If we need to dispatch Brochures then also despatch the OtherPackages
-						if (item.ODPackageContents.Count > 0)
+						if (item.Product.TypeID != ProductTypes.BillBoard && item.Product.TypeID != ProductTypes.Brochure)
 						{
-							foreach (var odContent in item.ODPackageContents)
-							{
-								if (item.Product.TypeID == ProductTypes.OtherPackages)
-									evp.SelectedODPackageContentIds.Add(odContent.ID);
-							}
-						}
-						else
-						{
-							if (item.Product.TypeID != ProductTypes.BillBoard && item.Product.TypeID != ProductTypes.Brochure)
-							{
-								evp.SelectedOrderDetailIds.Add(item.OrderDetailsID);
-							}
+							evp.SelectedOrderDetailIds.Add(item.OrderDetailsID);
 						}
 					}
 				}
@@ -320,17 +300,7 @@ namespace Abc.OnlineBL.Service.Implementation
 				// then set the order state to despatched instead of setting all item state to despatched.
 				foreach (OrderDetail item in products)
 				{
-					if (item.ODPackageContents.Count > 0)
-					{
-						foreach (var odContent in item.ODPackageContents)
-						{
-							evp.SelectedODPackageContentIds.Add(odContent.ID);
-						}
-					}
-					else
-					{
-						evp.SelectedOrderDetailIds.Add(item.OrderDetailsID);
-					}
+					evp.SelectedOrderDetailIds.Add(item.OrderDetailsID);
 				}
 			}
 

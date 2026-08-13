@@ -2,14 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using Abc.OnlineBL.Entities.Model;
-using Abc.OnlineBL.Entities.Model.OnlineOrder;
-using Abc.OnlineBL.Orders.Workflow.Model;
 
 namespace Abc.OnlineBL.Service.Implementation.Utility.OnlineOder
 {
-	#region HtmlFormats
-	[Serializable]
+    #region HtmlFormats
+    [Serializable]
 	public class HtmlFormats
 	{
 		public string ForClient = "";

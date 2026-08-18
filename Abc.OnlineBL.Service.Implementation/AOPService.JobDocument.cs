@@ -314,12 +314,17 @@ namespace Abc.OnlineBL.Service.Implementation
 						string destTemplateFile = GetJobDocumentTemplatePath(ServiceConfig.AOP_TEMPLATE_ROOT_DIR,
 							templateDetails.ClientId, templateDetails.OrderId, newJob.JobDocumentId);
 
-						IFile file = VirtualFileSystemFactory.GetFile();
+						//IFile file = VirtualFileSystemFactory.GetFile();
 
-						if (!file.ExistsDir(destTemplatePath))
-							file.CreateDir(destTemplatePath);
+                        //if (!file.ExistsDir(destTemplatePath))
+                        //	file.CreateDir(destTemplatePath);
 
-						file.Copy(sourceTemplateFile, destTemplateFile, true);
+                        //file.Copy(sourceTemplateFile, destTemplateFile, true);
+
+                        if (!Directory.Exists(destTemplatePath))
+                            Directory.CreateDirectory(destTemplatePath);
+
+                        File.Copy(sourceTemplateFile, destTemplateFile, true);
                         Logger.Warn("After move template");
 
 					}

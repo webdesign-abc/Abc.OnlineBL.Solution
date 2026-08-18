@@ -513,7 +513,7 @@ namespace Abc.OnlineBL.Orders.Workflow
 
         private void CheckIfB2BOrder(object sender, ConditionalEventArgs e)
         {
-            e.Result = orderDataExchange.PropertyOrder.IsB2BOrder;
+            e.Result = orderDataExchange.PropertyOrder.IsB2BOrder;//on diff project
         }
 
         private void GenerateB2BOrderEvent_ExecuteCode(object sender, EventArgs e)

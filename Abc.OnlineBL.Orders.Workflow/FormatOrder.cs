@@ -1,17 +1,17 @@
+using Abc.OnlineBL.Entities.Model;
+using Abc.OnlineBL.Entities.Model.OnlineOrder;
+using Abc.OnlineBL.Orders.Workflow.Model;
+using Abc.OnlineBL.VirtualFileSystem;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Web;
-using Abc.OnlineBL.Entities.Model;
-using Abc.OnlineBL.Entities.Model.OnlineOrder;
-using Abc.OnlineBL.Orders.Workflow.Model;
-using Abc.OnlineBL.VirtualFileSystem;
 
 namespace Abc.OnlineBL.Orders.Workflow
 {
-	#region HtmlFormats
-	[Serializable]
+    #region HtmlFormats
+    [Serializable]
 	public class HtmlFormats
 	{
         public string ForClient = "";

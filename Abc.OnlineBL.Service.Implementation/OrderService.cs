@@ -68,7 +68,7 @@ namespace Abc.OnlineBL.Service.Implementation
         #region UploadPhoto
         public List<UploadPhotoResponse> UploadPhoto(List<UploadPhotoRequest> requests, OrderTrackingEventParameter orderTracking)
         {
-            IFile File = VirtualFileSystemFactory.GetFile();
+            
             List<string> outFiles = new List<string>();
             List<UploadPhotoResponse> uploadPhotoResponses = new List<UploadPhotoResponse>();
             int intFileCount = 1;
@@ -2433,20 +2433,19 @@ namespace Abc.OnlineBL.Service.Implementation
                 return;
             if (jobDocs != null && jobDocs.Count > 0)
             {
-                IFile file = VirtualFileSystemFactory.GetFile();
 
                 string path = GetDocumentOutputDir(orderID);
 
                 if (string.IsNullOrEmpty(path))
                     throw new Exception("AOP_DOC_OUTPUT_DIR_STRUCTURE is not correct");
 
-                if (!file.ExistsDir(path))
+                if (!Directory.Exists(path))
                     throw new Exception("AOP CompletedJobs path doesn't exist:" + path);
 
                 foreach (AOP_JobDocument jobDoc in jobDocs)
                 {
                     string inddPattern = string.Format("{0}_{1}_{2}*.indd", orderID, jobDoc.JobDocumentId, Path.GetFileNameWithoutExtension(jobDoc.TemplateOriginalFileName));
-                    string[] artworkFiles = file.GetFiles(path, inddPattern);
+                    string[] artworkFiles = Directory.GetFiles(path, inddPattern);
 
                     // Moving Indd documents
                     if (artworkFiles != null && artworkFiles.Length > 0)
@@ -2462,7 +2461,7 @@ namespace Abc.OnlineBL.Service.Implementation
                 foreach (AOP_JobDocument jobDoc in jobDocs)
                 {
                     string jpgPattern = string.Format("{0}_{1}_{2}*.jpg", orderID, jobDoc.JobDocumentId, Path.GetFileNameWithoutExtension(jobDoc.TemplateOriginalFileName));
-                    string[] previewFiles = file.GetFiles(path, jpgPattern);
+                    string[] previewFiles = Directory.GetFiles(path, jpgPattern);
 
                     // Moving preview images
                     if (previewFiles != null && previewFiles.Length > 0)
@@ -2474,7 +2473,7 @@ namespace Abc.OnlineBL.Service.Implementation
                 // After moving the files, delete the folder.
                 try
                 {
-                    if (file.ExistsDir(path))
+                    if (Directory.Exists(path))
                     {
 
                         //file.DeleteDir(path, true);

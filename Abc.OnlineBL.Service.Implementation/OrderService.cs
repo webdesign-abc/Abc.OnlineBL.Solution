@@ -3541,13 +3541,11 @@ namespace Abc.OnlineBL.Service.Implementation
 
                 #region Make sure the directories exists ...
 
-                IFile file = VirtualFileSystemFactory.GetFile();
-
                 if (!Directory.Exists(Path.GetDirectoryName(txtFilePath)))
                     Directory.CreateDirectory(Path.GetDirectoryName(txtFilePath));
 
-                if (!file.ExistsDir(Path.GetDirectoryName(xmlFilePath)))
-                    file.CreateDir(Path.GetDirectoryName(xmlFilePath));
+                if (!Directory.Exists(Path.GetDirectoryName(xmlFilePath)))
+                    Directory.CreateDirectory(Path.GetDirectoryName(xmlFilePath));
 
                 #endregion
 
@@ -3564,7 +3562,7 @@ namespace Abc.OnlineBL.Service.Implementation
                     //sXml = new StreamWriter(xmlFilePath, false);
                     //sXml.Write(xmlData);
 
-                    file.WriteAllText(xmlFilePath, xmlData);
+                    File.WriteAllText(xmlFilePath, xmlData);
 
                     //update Material Details
                     using (AbcDataContext ctx = new AbcDataContext())

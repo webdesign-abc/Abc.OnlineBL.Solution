@@ -855,12 +855,10 @@ namespace Abc.OnlineBL.Service.Implementation
                 string text = string.Empty;
                 List<string> fileList = new List<string>();
 
-                IFile vfile = VirtualFileSystemFactory.GetFile();
-
                 //check proofing_01 server first
-                if (vfile.ExistsDir(ServiceConfig.PROOF_IMAGE_DIR))
+                if (Directory.Exists(ServiceConfig.PROOF_IMAGE_DIR))
                 {
-                    string[] jpgFiles = vfile.GetFiles(ServiceConfig.PROOF_IMAGE_DIR, orderID + "*.jpg");
+                    string[] jpgFiles = Directory.GetFiles(ServiceConfig.PROOF_IMAGE_DIR, orderID + "*.jpg");
 
                     foreach (string file in jpgFiles)
                     {

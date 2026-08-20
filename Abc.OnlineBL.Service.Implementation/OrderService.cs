@@ -2504,8 +2504,6 @@ namespace Abc.OnlineBL.Service.Implementation
             if (orderID < 1)
                 return;
 
-            IFile vfile = VirtualFileSystemFactory.GetFile();
-
             if (files.Length > 0)
             {
                 string destPath = null;
@@ -2524,8 +2522,8 @@ namespace Abc.OnlineBL.Service.Implementation
 
                 try
                 {
-                    if (!vfile.ExistsDir(destPath))
-                        vfile.CreateDir(destPath);
+                    if (!Directory.Exists(destPath))
+                        Directory.CreateDirectory(destPath);
                 }
                 catch (Exception ex)
                 {
@@ -2537,10 +2535,9 @@ namespace Abc.OnlineBL.Service.Implementation
                     string destFile = Path.Combine(destPath, Path.GetFileName(file));
                     try
                     {
-                        if (vfile.Exists(destFile))
-                            vfile.Delete(destFile);
-                        vfile.Copy(file, destFile, true);
-                        //vfile.Delete(file);
+                        if (File.Exists(destFile))
+                            File.Delete(destFile);
+                        File.Copy(file, destFile, true);
                     }
                     catch (Exception ex)
                     {

@@ -3769,12 +3769,10 @@ namespace Abc.OnlineBL.Service.Implementation
 
             string FilePath = JobFilePath(model.orderID);
 
-            IFile file = VirtualFileSystemFactory.GetFile();
-
-            if (file.Exists(FilePath))
+            if (File.Exists(FilePath))
             {
-                //xmlDoc.Load(FilePath); //old AU code
-                xmlDoc.LoadXml(file.ReadAllText(FilePath));
+                
+                xmlDoc.LoadXml(File.ReadAllText(FilePath));
                 string logEntry = "Client Made Entry";
 
                 if (logEntry != string.Empty)

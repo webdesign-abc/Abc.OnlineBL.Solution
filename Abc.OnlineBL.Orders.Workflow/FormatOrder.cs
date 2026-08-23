@@ -567,10 +567,9 @@ namespace Abc.OnlineBL.Orders.Workflow
 			get
 			{
 				string dir = fileDir + "\\xml\\";
-				IFile file = VirtualFileSystemFactory.GetFile();
 
-				if (!file.ExistsDir(dir))
-					file.CreateDir(dir);
+				if (!Directory.Exists(dir))
+                    Directory.CreateDirectory(dir);
 
 				return dir + orderId + ".xml";
 

@@ -4336,13 +4336,11 @@ namespace Abc.OnlineBL.Service.Implementation
                 string text = string.Empty;
                 List<string> fileList = new List<string>();
 
-                IFile vfile = VirtualFileSystemFactory.GetFile();
-
                 //check proofing_01 server first
-                if (vfile.ExistsDir(ServiceConfig.PROOF_DIR))
+                if (Directory.Exists(ServiceConfig.PROOF_DIR))
                 {
-                    string[] files = vfile.GetFiles(ServiceConfig.PROOF_DIR, orderID + "*.pdf");
-                    string[] jpgFiles = vfile.GetFiles(ServiceConfig.PROOF_DIR, orderID + "*.jpg");
+                    string[] files = Directory.GetFiles(ServiceConfig.PROOF_DIR, orderID + "*.pdf");
+                    string[] jpgFiles = Directory.GetFiles(ServiceConfig.PROOF_DIR, orderID + "*.jpg");
 
                     foreach (string file in files)
                     {
@@ -5930,8 +5928,8 @@ namespace Abc.OnlineBL.Service.Implementation
                     File.SetAttributes(outFile, FileAttributes.Normal);
                     File.Delete(outFile);
                 }
-                IFile file = VirtualFileSystemFactory.GetFile();
-                file.WriteAllBytes(outFile, File.ReadAllBytes(requests.UncFilePath));
+                
+                File.WriteAllBytes(outFile, File.ReadAllBytes(requests.UncFilePath));
                 //File.Copy(requests.UncFilePath, outFile, true);
 
                 //Delete the temp file

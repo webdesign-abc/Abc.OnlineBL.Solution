@@ -6372,8 +6372,8 @@ namespace Abc.OnlineBL.Service.Implementation
                     File.SetAttributes(outFile, FileAttributes.Normal);
                     File.Delete(outFile);
                 }
-                IFile file = VirtualFileSystemFactory.GetFile();
-                file.WriteAllBytes(outFile, File.ReadAllBytes(requests.UncFilePath));
+                
+                File.WriteAllBytes(outFile, File.ReadAllBytes(requests.UncFilePath));
                 //File.Copy(requests.UncFilePath, outFile, true);
 
                 //Delete the temp file

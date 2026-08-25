@@ -1201,9 +1201,8 @@ namespace Abc.OnlineBL.Orders.Workflow
                 nOrderEvent.OrderHasUnitStickerForStockBoardProduct = orderDataExchange.PropertyOrder.OrderHasUnitStickerForStockBoardProduct();
                 nOrderEvent.InterstateOrderHasOverlayOrUnitStickerOrNamePlates = orderDataExchange.PropertyOrder.InterstateOrderHasOverlayOrUnitStickerOrNamePlates();
                 nOrderEvent.ManagerID = orderDataExchange.Client.ManagerID;
-                IFile file = VirtualFileSystemFactory.GetFile();
 
-                if (file.Exists(stockFileName))
+                if (File.Exists(stockFileName))
                     nOrderEvent.FileName = stockFileName;
                 else
                     nOrderEvent.FileName = "";

@@ -7265,7 +7265,6 @@ namespace Abc.OnlineBL.Service.Implementation
 
                         //Remove all AOP folder by clientId + OrderId + JobdocumentID -------------------------
                         //back it up somewhere in case we rollback
-                        IFile file = VirtualFileSystemFactory.GetFile();
 
                         try
                         {
@@ -7278,22 +7277,21 @@ namespace Abc.OnlineBL.Service.Implementation
 
                                 if (!Directory.Exists(destPath))
                                 {
-                                    file.CreateDir(destPath);
-                                    //Directory.CreateDirectory(destPath);
+                                    Directory.CreateDirectory(destPath);
                                 }
 
                                 //Move all the files
                                 foreach (string newPath in Directory.GetFiles(workingPath, "*.*",
                                     SearchOption.AllDirectories))
-                                    file.Copy(newPath, newPath.Replace(workingPath, destPath), true);
+                                    File.Copy(newPath, newPath.Replace(workingPath, destPath), true);
                                 //File.Move(newPath, newPath.Replace(workingPath, destPath));
 
                                 // After moving the files, delete the folder.
                                 try
                                 {
-                                    if (file.ExistsDir(workingPath))
+                                    if (Directory.Exists(workingPath))
                                     {
-                                        file.DeleteDir(workingPath, true);
+                                        Directory.Delete(workingPath, true);
                                     }
                                 }
                                 catch (Exception ex)
@@ -7316,22 +7314,22 @@ namespace Abc.OnlineBL.Service.Implementation
                         {
                             string workingPath = String.Format(@"{0}\{1}", ServiceConfig.AOP_DOC_OUTPUT_DIR, orderID);
 
-                            if (file.ExistsDir(workingPath))
+                            if (Directory.Exists(workingPath))
                             {
                                 foreach (var item in aopToRemove)
                                 {
                                     //New AOP Modify DIY completed folder
                                     string destPath = String.Format(@"{0}\{1}", ServiceConfig.AOP_WORKING_DIR_MODIFY_ORDER_COMPLETED, orderID);
 
-                                    if (!file.ExistsDir(destPath))
-                                        file.CreateDir(destPath);
+                                    if (!Directory.Exists(destPath))
+                                        Directory.CreateDirectory(destPath);
 
                                     //Move all the files
                                     foreach (string newPath in Directory.GetFiles(workingPath, orderID + "_" + item.JobDocumentId + "*.*",
                                         SearchOption.AllDirectories))
                                     {
-                                        file.Copy(newPath, newPath.Replace(workingPath, destPath), true);
-                                        file.Delete(newPath);
+                                        File.Copy(newPath, newPath.Replace(workingPath, destPath), true);
+                                        File.Delete(newPath);
                                         //File.Move(newPath, newPath.Replace(workingPath, destPath));
                                     }
                                 }

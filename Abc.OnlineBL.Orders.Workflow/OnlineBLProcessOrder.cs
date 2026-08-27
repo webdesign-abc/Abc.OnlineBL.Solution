@@ -547,9 +547,8 @@ namespace Abc.OnlineBL.Orders.Workflow
                 HtmlFormats html = formatOrder.GetHtmlFileContents();
 
                 string attachments = "";
-                IFile file = VirtualFileSystemFactory.GetFile();
 
-                if (file.Exists(fileName)) attachments = fileName;
+                if (File.Exists(fileName)) attachments = fileName;
 
                 NewOrderEvent nOrderEvent = new NewOrderEvent();
 

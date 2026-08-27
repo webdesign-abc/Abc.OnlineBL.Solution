@@ -7701,12 +7701,10 @@ namespace Abc.OnlineBL.Service.Implementation
                         string destTemplateFile = GetJobDocumentTemplatePath(OnlineBLConfig.AOP_TEMPLATE_ROOT_DIR,
                             templateDetails.ClientId, templateDetails.OrderId, newJob.JobDocumentId);
 
-                        IFile file = VirtualFileSystemFactory.GetFile();
+                        if (!Directory.Exists(destTemplatePath))
+                            Directory.CreateDirectory(destTemplatePath);
 
-                        if (!file.ExistsDir(destTemplatePath))
-                            file.CreateDir(destTemplatePath);
-
-                        file.Copy(sourceTemplateFile, destTemplateFile, true);
+                        File.Copy(sourceTemplateFile, destTemplateFile, true);
                     }
 
                     return jobs;

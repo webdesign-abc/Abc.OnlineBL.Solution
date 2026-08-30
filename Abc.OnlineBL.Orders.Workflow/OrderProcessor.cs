@@ -966,14 +966,12 @@ namespace Abc.OnlineBL.Orders.Workflow
             try
             {
 
-                IFile file = VirtualFileSystemFactory.GetFile();
-
-                file.CreateDir(assetsOriginal);
-                file.CreateDir(assetsMediumRes);
-                file.CreateDir(assetsLowRes);
-                file.CreateDir(transformedAssetsOriginal);
-                file.CreateDir(transformedAssetsMediumRes);
-                file.CreateDir(transformedAssetsLowRes);
+                Directory.CreateDirectory(assetsOriginal);
+                Directory.CreateDirectory(assetsMediumRes);
+                Directory.CreateDirectory(assetsLowRes);
+                Directory.CreateDirectory(transformedAssetsOriginal);
+                Directory.CreateDirectory(transformedAssetsMediumRes);
+                Directory.CreateDirectory(transformedAssetsLowRes);
 
             }
             catch (Exception ex)

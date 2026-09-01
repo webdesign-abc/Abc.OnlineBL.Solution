@@ -200,12 +200,11 @@ namespace Abc.OnlineBL.Service.Implementation
                         string destTemplateFile = GetDesignDocumentTemplatePath(ServiceConfig.DESIGN_TEMPLATE_DOCUMENT_DIR,
                             templateDetails.ClientId, templateDetails.PropertyId, newJob.DesignDocumentId);
 
-                        IFile file = VirtualFileSystemFactory.GetFile();
 
-                        if (!file.ExistsDir(destTemplatePath))
-                            file.CreateDir(destTemplatePath);
+                        if (!Directory.Exists(destTemplatePath))
+                            Directory.CreateDirectory(destTemplatePath);
 
-                        file.Copy(sourceTemplateFile, destTemplateFile, true);
+                        File.Copy(sourceTemplateFile, destTemplateFile, true);
                         //Logger.Warn("After move template");
 
                     }

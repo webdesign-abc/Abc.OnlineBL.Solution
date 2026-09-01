@@ -18,7 +18,6 @@ using Dom = Abc.OnlinePublication.Common.DOM;
 using System.Data.SqlClient;
 using Abc.OnlineBL.Entities.Model.OnlineOrder;
 using Abc.OnlineBL.Entities.Model.WebClient;
-using Abc.OnlineBL.VirtualFileSystem;
 using Abc.OnlineBL.Entities.Model.OrderService;
 
 namespace Abc.OnlineBL.Service.Implementation

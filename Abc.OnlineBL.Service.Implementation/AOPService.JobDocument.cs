@@ -7,7 +7,6 @@ using Abc.OnlineBL.DataStore;
 using System.Xml.Linq;
 using Abc.OnlineBL.Entities.Enums;
 using System.IO;
-using Abc.OnlineBL.VirtualFileSystem;
 using Abc.OnlineBL.Utility;
 using Dom = Abc.OnlinePublication.Common.DOM;
 

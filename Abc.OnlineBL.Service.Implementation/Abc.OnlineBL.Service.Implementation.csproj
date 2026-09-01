@@ -202,10 +202,6 @@
       <Project>{75943185-C14F-440F-AA31-CF52BDD85BF8}</Project>
       <Name>Abc.OnlineBL.Utility</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Abc.OnlineBL.VirtualFileSystem\Abc.OnlineBL.VirtualFileSystem.csproj">
-      <Project>{28487097-535A-4864-A2F2-8A9CF5D35E34}</Project>
-      <Name>Abc.OnlineBL.VirtualFileSystem</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

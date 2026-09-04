@@ -213,7 +213,7 @@ namespace Abc.OnlineBL.Service.Implementation
             }
             catch (Exception ex)
             {
-                Logger.Exception(ex, "UpdateJobDocument");
+                Logger.Exception(ex, "UpdateDesignDocument");
                 throw;
             }
         }

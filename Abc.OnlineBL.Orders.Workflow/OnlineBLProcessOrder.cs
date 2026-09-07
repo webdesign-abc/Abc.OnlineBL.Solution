@@ -669,8 +669,6 @@ namespace Abc.OnlineBL.Orders.Workflow
                                 {
                                     Logger.Warn("OrderID: " + nOrderEvent.OrderId + " - " + orderDataExchange.PropertyOrder.OrderDescription);
 
-                                    //OrderProcessor.GenerateNewOrderEvent(nOrderEvent);
-
                                     OrderProcessor.GenerateNewOrderNoTemplateEvent(nOrderEvent);
                                 }
                                 else

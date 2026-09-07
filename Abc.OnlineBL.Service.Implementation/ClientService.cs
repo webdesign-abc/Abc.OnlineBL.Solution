@@ -1634,7 +1634,6 @@ namespace Abc.OnlineBL.Service.Implementation
 				}
 				if (!isDisplay)
 				{
-					//Check AOP_JobDocument table
 
 					using (AbcDataContext ctx = new AbcDataContext())
 					{

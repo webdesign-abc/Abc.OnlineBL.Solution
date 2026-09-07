@@ -222,8 +222,6 @@ namespace Abc.OnlineBL.Service.Implementation
                         File.Delete(req.UncFilePath);
                     }
 
-
-
                     //return the value back to the client
                     uploadPhotoResponse.FileName = outFile;
                     uploadPhotoResponse.FileProcesed = true;

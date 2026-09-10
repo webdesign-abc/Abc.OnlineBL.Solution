@@ -953,32 +953,32 @@ namespace Abc.OnlineBL.Orders.Workflow
         /// <param name="clientId">The client id.</param>
         /// <param name="jobId">The job id.</param>
         /// <returns></returns>
-        public static void CreateAssetsFolders(string documentRootPath, int clientId, int jobId)
-        {
-            string assetsOriginal = string.Format("{0}\\{1}\\{2}\\{3}\\{4}", documentRootPath.TrimEnd('\\'), clientId, jobId, "Assets", "Original");
-            string assetsMediumRes = string.Format("{0}\\{1}\\{2}\\{3}\\{4}", documentRootPath.TrimEnd('\\'), clientId, jobId, "Assets", "MediumRes");
-            string assetsLowRes = string.Format("{0}\\{1}\\{2}\\{3}\\{4}", documentRootPath.TrimEnd('\\'), clientId, jobId, "Assets", "LowRes");
-            string transformedAssetsOriginal = string.Format("{0}\\{1}\\{2}\\{3}\\{4}", documentRootPath.TrimEnd('\\'), clientId, jobId, "TransformedAssets", "Original");
-            string transformedAssetsMediumRes = string.Format("{0}\\{1}\\{2}\\{3}\\{4}", documentRootPath.TrimEnd('\\'), clientId, jobId, "TransformedAssets", "MediumRes");
-            string transformedAssetsLowRes = string.Format("{0}\\{1}\\{2}\\{3}\\{4}", documentRootPath.TrimEnd('\\'), clientId, jobId, "TransformedAssets", "LowRes");
+        //public static void CreateAssetsFolders(string documentRootPath, int clientId, int jobId)
+        //{
+        //    string assetsOriginal = string.Format("{0}\\{1}\\{2}\\{3}\\{4}", documentRootPath.TrimEnd('\\'), clientId, jobId, "Assets", "Original");
+        //    string assetsMediumRes = string.Format("{0}\\{1}\\{2}\\{3}\\{4}", documentRootPath.TrimEnd('\\'), clientId, jobId, "Assets", "MediumRes");
+        //    string assetsLowRes = string.Format("{0}\\{1}\\{2}\\{3}\\{4}", documentRootPath.TrimEnd('\\'), clientId, jobId, "Assets", "LowRes");
+        //    string transformedAssetsOriginal = string.Format("{0}\\{1}\\{2}\\{3}\\{4}", documentRootPath.TrimEnd('\\'), clientId, jobId, "TransformedAssets", "Original");
+        //    string transformedAssetsMediumRes = string.Format("{0}\\{1}\\{2}\\{3}\\{4}", documentRootPath.TrimEnd('\\'), clientId, jobId, "TransformedAssets", "MediumRes");
+        //    string transformedAssetsLowRes = string.Format("{0}\\{1}\\{2}\\{3}\\{4}", documentRootPath.TrimEnd('\\'), clientId, jobId, "TransformedAssets", "LowRes");
            
-            try
-            {
+        //    try
+        //    {
 
-                Directory.CreateDirectory(assetsOriginal);
-                Directory.CreateDirectory(assetsMediumRes);
-                Directory.CreateDirectory(assetsLowRes);
-                Directory.CreateDirectory(transformedAssetsOriginal);
-                Directory.CreateDirectory(transformedAssetsMediumRes);
-                Directory.CreateDirectory(transformedAssetsLowRes);
+        //        Directory.CreateDirectory(assetsOriginal);
+        //        Directory.CreateDirectory(assetsMediumRes);
+        //        Directory.CreateDirectory(assetsLowRes);
+        //        Directory.CreateDirectory(transformedAssetsOriginal);
+        //        Directory.CreateDirectory(transformedAssetsMediumRes);
+        //        Directory.CreateDirectory(transformedAssetsLowRes);
 
-            }
-            catch (Exception ex)
-            {
-                Logger.Exception(ex, "CreateAssetsFolders");
-                throw;
-            }
-        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Logger.Exception(ex, "CreateAssetsFolders");
+        //        throw;
+        //    }
+        //}
         #endregion
 
         #region CreateNewPhotoOrder

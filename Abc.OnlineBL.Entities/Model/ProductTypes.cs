@@ -89,7 +89,6 @@ namespace Abc.OnlineBL.Entities.Model
         public const int DowlingMedowie = 763;
         public const int LJHookerRaymondTerrace = 3897;
         public const int BuyMyPlaceSouthMelbourne = 10901;
-        public const int CraigCurriePakenham = 15757;
         public const int BarryPlantBendigo = 14578;
         public const int McKeanMcGregorBendigo = 15078;
     }

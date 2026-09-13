@@ -945,42 +945,6 @@ namespace Abc.OnlineBL.Orders.Workflow
 
         #endregion
 
-        #region CreateAssetsFolders
-        /// <summary>
-        /// Create Assets Folders path. E.g. RootPath\ClientId\JobId\Assets\Original
-        /// </summary>
-        /// <param name="documentRootPath">The document root path.</param>
-        /// <param name="clientId">The client id.</param>
-        /// <param name="jobId">The job id.</param>
-        /// <returns></returns>
-        //public static void CreateAssetsFolders(string documentRootPath, int clientId, int jobId)
-        //{
-        //    string assetsOriginal = string.Format("{0}\\{1}\\{2}\\{3}\\{4}", documentRootPath.TrimEnd('\\'), clientId, jobId, "Assets", "Original");
-        //    string assetsMediumRes = string.Format("{0}\\{1}\\{2}\\{3}\\{4}", documentRootPath.TrimEnd('\\'), clientId, jobId, "Assets", "MediumRes");
-        //    string assetsLowRes = string.Format("{0}\\{1}\\{2}\\{3}\\{4}", documentRootPath.TrimEnd('\\'), clientId, jobId, "Assets", "LowRes");
-        //    string transformedAssetsOriginal = string.Format("{0}\\{1}\\{2}\\{3}\\{4}", documentRootPath.TrimEnd('\\'), clientId, jobId, "TransformedAssets", "Original");
-        //    string transformedAssetsMediumRes = string.Format("{0}\\{1}\\{2}\\{3}\\{4}", documentRootPath.TrimEnd('\\'), clientId, jobId, "TransformedAssets", "MediumRes");
-        //    string transformedAssetsLowRes = string.Format("{0}\\{1}\\{2}\\{3}\\{4}", documentRootPath.TrimEnd('\\'), clientId, jobId, "TransformedAssets", "LowRes");
-           
-        //    try
-        //    {
-
-        //        Directory.CreateDirectory(assetsOriginal);
-        //        Directory.CreateDirectory(assetsMediumRes);
-        //        Directory.CreateDirectory(assetsLowRes);
-        //        Directory.CreateDirectory(transformedAssetsOriginal);
-        //        Directory.CreateDirectory(transformedAssetsMediumRes);
-        //        Directory.CreateDirectory(transformedAssetsLowRes);
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Logger.Exception(ex, "CreateAssetsFolders");
-        //        throw;
-        //    }
-        //}
-        #endregion
-
         #region CreateNewPhotoOrder
         public static int CreateNewPhotoOrder(NewPhotoOrder nPhotoOrder)
         {
@@ -1196,8 +1160,6 @@ namespace Abc.OnlineBL.Orders.Workflow
                                     da.LastUpdatedOn = DateTime.Now;
                                     ctx.DroneAuthorisations.InsertOnSubmit(da);
 
-                                    //photoOd.PgId = 1;
-
                                     ctx.SubmitChanges();
                                 }
                             }
@@ -1296,9 +1258,9 @@ namespace Abc.OnlineBL.Orders.Workflow
                                where po.OrderID == nOrderEvent.OrderId
                                select p).FirstOrDefault();
 
-                    var od = (from o in ctx.Orders
-                              where o.OrderID == nOrderEvent.OrderId
-                              select o).FirstOrDefault();
+                    //var od = (from o in ctx.Orders
+                    //          where o.OrderID == nOrderEvent.OrderId
+                    //          select o).FirstOrDefault();
 
                     if (pho != null && !string.IsNullOrEmpty(pho.Email))
                     {

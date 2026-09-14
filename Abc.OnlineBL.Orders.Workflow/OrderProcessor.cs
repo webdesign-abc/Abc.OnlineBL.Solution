@@ -1258,10 +1258,6 @@ namespace Abc.OnlineBL.Orders.Workflow
                                where po.OrderID == nOrderEvent.OrderId
                                select p).FirstOrDefault();
 
-                    //var od = (from o in ctx.Orders
-                    //          where o.OrderID == nOrderEvent.OrderId
-                    //          select o).FirstOrDefault();
-
                     if (pho != null && !string.IsNullOrEmpty(pho.Email))
                     {
                         try

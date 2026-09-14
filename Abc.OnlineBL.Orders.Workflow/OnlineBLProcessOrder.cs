@@ -418,7 +418,7 @@ namespace Abc.OnlineBL.Orders.Workflow
         {
             StringBuilder sb = new StringBuilder(path);
             sb.Replace("?", "~").Replace("*", "~").Replace(@"\", "~").Replace("/", "~").Replace(":", "~").Replace("\"", "~")
-                                                                                                                                            .Replace("<", "~").Replace(">", "~").Replace("|", "~");
+              .Replace("<", "~").Replace(">", "~").Replace("|", "~");
 
             return sb.ToString();
         }
@@ -632,10 +632,6 @@ namespace Abc.OnlineBL.Orders.Workflow
                                 if (orderDataExchange.PropertyOrder.OrderHasStockboardIncludePackageCheck() || orderDataExchange.PropertyOrder.OrderHasBoardOverlay())
                                 {
                                     OrderProcessor.GenerateNewOrderEvent(nOrderEvent);
-                                }
-                                else
-                                {
-                                    //Logger.Info("New artwork OrderID: " + nOrderEvent.OrderId + " file: " + fileName);
                                 }
                             }
                             else

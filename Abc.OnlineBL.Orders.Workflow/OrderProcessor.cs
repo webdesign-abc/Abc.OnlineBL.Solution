@@ -2665,7 +2665,7 @@ namespace Abc.OnlineBL.Orders.Workflow
                         }
                         catch (Exception ex)
                         {
-                            Logger.Exception(ex, string.Format("{0} {1}"), new object[] { orderId, "Erection Fee", item.ProductId });
+                            Logger.Exception(ex, string.Format("{0} {1}", "Erection Fee", item.ProductId ));
                         }
                     }
                 }
@@ -2683,7 +2683,7 @@ namespace Abc.OnlineBL.Orders.Workflow
                         }
                         catch (System.Exception ex)
                         {
-                            Logger.Exception(ex, string.Format("{0} {1}"), new object[] { orderId, ProductTypes.Other, item.ProductId });
+                            Logger.Exception(ex, string.Format("{0} {1}", orderId, item.ProductId ));
                         }
                     }
                     else
@@ -2698,7 +2698,7 @@ namespace Abc.OnlineBL.Orders.Workflow
                             }
                             catch (System.Exception ex)
                             {
-                                Logger.Exception(ex, string.Format("{0} {1}"), new object[] { orderId, ProductTypes.Other, item.ProductId });
+                                Logger.Exception(ex, string.Format("{0} {1}", orderId, item.ProductId ));
                             }
                         }
                     }

@@ -537,7 +537,6 @@ namespace Abc.OnlineBL.Orders.Workflow
 					sb.Append("</ClientDetails>\r\n");
 				}
 
-
 				// Add the Actual Order Contents
 				sb.Append(propertyOrder.GetXml());
 				sb.Append("</OnlineOrder>\r\n");
@@ -546,7 +545,6 @@ namespace Abc.OnlineBL.Orders.Workflow
 			{
 				Logger.Exception(ex, "Error Occurred in GetXmlFileContents()");
 			}
-
 			
 			return sb.ToString();
 		}

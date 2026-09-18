@@ -731,7 +731,6 @@ namespace Abc.OnlineBL.Orders.Workflow
 
                                 foreach (PackageContentProduct contentProductItem in pgkitem.Products)
                                 {
-
                                     int templateProductId = contentProductItem.SelectedDIYTemplateId;
                                     if (templateProductId > 0 && contentProductItem.UniqueId == pgkitem.SelectedUniqueId)
                                     {
@@ -1481,7 +1480,6 @@ namespace Abc.OnlineBL.Orders.Workflow
             {
                 OrderProcessor.CheckManager(orderDataExchange.OrderId);
             }
-
         }
 
         private void GenerateRegionalPhotoOrder_ExecuteCode(object sender, EventArgs e)

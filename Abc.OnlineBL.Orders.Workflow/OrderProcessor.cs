@@ -3231,9 +3231,6 @@ namespace Abc.OnlineBL.Orders.Workflow
                 #region ModularPackage
                 if (item.TypeId == ProductTypes.Packages || item.TypeId == ProductTypes.BoardPackages || item.TypeId == ProductTypes.OtherPackages)
                 {
-                    ////just add product as normal
-                    //int orderDetailID = InsertProductIntoOrderDetails(ctx, propertyOrder.ClientId, item.ProductId, item.ItemQty,
-                    //                        item.FindFormat(propertyOrder.IsDIYOrder), propertyOrder.IsDIYOrder, orderId, null, null, usePackageContentPrice);
 
                     foreach (PackageGroup itemGroup in item.PackageGroups)
                     {

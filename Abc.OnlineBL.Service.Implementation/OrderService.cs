@@ -4256,7 +4256,6 @@ namespace Abc.OnlineBL.Service.Implementation
                                     ctx.SubmitChanges();
                                     ctx.Transaction.Commit();
 
-
                                 }
 
                             }

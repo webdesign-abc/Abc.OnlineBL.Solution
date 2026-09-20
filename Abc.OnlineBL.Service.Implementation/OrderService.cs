@@ -4380,7 +4380,7 @@ namespace Abc.OnlineBL.Service.Implementation
 
                     foreach (string fileName in fileList)
                     {
-                        if (clientID == 19202 || clientID == 19812 || clientID == 20379)
+                        if (clientID == 19812 || clientID == 20379)
                         {
                             if (!string.IsNullOrEmpty(fileName) && fileName.ToLower().Contains("_br"))
                             {
@@ -4428,9 +4428,6 @@ namespace Abc.OnlineBL.Service.Implementation
             try
             {
                 string fileList = string.Empty;
-
-                //if (!IsApproveJobApplicable(orderID))
-                //    return fileList;
 
                 using (AbcDataContext ctx = new AbcDataContext())
                 {

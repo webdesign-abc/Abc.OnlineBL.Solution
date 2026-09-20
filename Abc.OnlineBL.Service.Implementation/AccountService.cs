@@ -900,7 +900,6 @@ namespace Abc.OnlineBL.Service.Implementation
                         /// Insert record into OnlinePayment table
                         OnlinePaymentExpressOrder onlinePaymentObj = new OnlinePaymentExpressOrder();
 
-                        //    onlinePaymentObj.TempOrderId = paygOrderDetails.TempOrderId;
                         onlinePaymentObj.PaymentAmount = objPaymentExpress.PaymentAmount;
                         onlinePaymentObj.IsPaymentDone = false;
                         onlinePaymentObj.Surcharge = objPaymentExpress.Surcharge;

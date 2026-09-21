@@ -447,50 +447,6 @@ namespace Abc.OnlineBL.Orders.Workflow
 		}
 		#endregion
 
-		#region GetSpotlightFileContents
-		/// <summary>
-		/// This method will get the Contents for Spotlight Orders for generating a Text File
-		/// </summary>
-		/// <returns>String Text Body for File</returns>
-		public string GetSpotlightFileContents()
-		{
-
-			string txtBody = "";
-			StringBuilder sb = new StringBuilder();
-			sb.Append("Spotlight Order\r\n");
-			sb.Append("Date: " + OnlineBLConfig.Now.ToString("dd-MMM-yyyy hh:mm tt") + "\r\n");
-			sb.Append("____________________________________________________________\r\n\r\n");
-			sb.Append("Client Details\r\n");
-			sb.Append("--------------\r\n");
-			sb.Append("Agent Name   : " + client.ClientName + "\r\n");
-			sb.Append("Office       : " + client.Office + "\r\n");
-			sb.Append("Address                : " + (!string.IsNullOrEmpty(client.Address) ? client.Address : "") + " / ");
-			sb.Append("Phone                  : " + (!string.IsNullOrEmpty(client.Phone) ? client.Phone : "") + "\r\n");
-			sb.Append("Fax                    : " + (!string.IsNullOrEmpty(client.Fax) ? client.Fax : "") + "\r\n");
-			sb.Append("Email                  : " + (!string.IsNullOrEmpty(client.Email) ? client.Email : ""));
-			sb.Append("\r\n____________________________________________________________\r\n\r\n");
-			sb.Append(orderDataExchange.Property.GetText());
-			sb.Append("\r\n____________________________________________________________\r\n\r\n");
-			sb.Append("Contact Details\r\n");
-			sb.Append("---------------\r\n\r\n");
-			sb.Append("Contact Name: " + orderDataExchange.PropertyOrder.ContactNumber + "\r\n");
-			sb.Append("Contact No  : " + orderDataExchange.PropertyOrder.ContactName + "\r\n");
-			sb.Append("\r\n____________________________________________________________\r\n\r\n");
-			sb.Append("Product Details\r\n");
-			sb.Append("---------------\r\n\r\n");
-			txtBody = sb.ToString();
-			List<CartItem> spotJobs = orderDataExchange.PropertyOrder.GetSpotlightOrders();
-
-			foreach (CartItem item in spotJobs)
-			{
-				txtBody += item.GetText();
-				txtBody += "\r\n____________________________________________________________\r\n\r\n";
-			}
-
-			return txtBody;
-		}
-		#endregion
-
 		#region GetXmlFileContents
 		/// <summary>
 		/// This method returns the XML body for Creating the XML file which describes the Order.

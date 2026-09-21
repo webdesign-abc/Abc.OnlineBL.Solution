@@ -599,39 +599,6 @@ namespace Abc.OnlineBL.DataStoreTest.UI
                  }
              }
              */
-            /*
-             OnlinePayment onlinePaymentObj =new OnlinePayment();
-                onlinePaymentObj.ClientId =3728;
-                onlinePaymentObj.AccountId =287;
-                onlinePaymentObj.CardType = "Visa";
-                onlinePaymentObj.Surcharge = (decimal)0.9625;
-                onlinePaymentObj.Total = (Decimal)38.50;
-                onlinePaymentObj.CreateOn = DateTime.Now;
-                onlinePaymentObj.TransactionComplete = false;
-                onlinePaymentObj.CBATransactionRef =string.Empty;
-                onlinePaymentObj.PaymentId = 0;
-
-               //// onlinePaymentId = Abc.OnlineBL.ServiceProxy.ServiceFactory.AccountService.InsertOnlinePayment(paymentObj);
-               // onlinePaymentId = 17;
-
-               // if (this.SelectedInvoiceList == null)
-               // {
-               //     throw new NullReferenceException(string.Format("onlinePaymentID:{0}, Selected OrderInvoice List is null", onlinePaymentId));
-               // }
-
-                /// Insert into OnlinePaymentDetails.
-               // Abc.OnlineBL.ServiceProxy.ServiceFactory.AccountService.InsertOnlinePaymentDetails(onlinePaymentId, this.SelectedInvoiceList);
-              
-                    OnlinePaymentDetail onlinePaymentItem = new OnlinePaymentDetail();
-                    onlinePaymentItem.OrderId = 362413;
-                    onlinePaymentItem.AmountPaid = (decimal)11.00;
-                    onlinePaymentObj.OnlinePaymentDetails.Add(onlinePaymentItem);
-
-                /// Insert into OnlinePayment.
-                //OnlinePayment onlinepaymentsObj = Abc.OnlineBL.ServiceProxy.ServiceFactory.AccountService.InsertOnlinePayment(onlinePaymentObj, loadOption);
-                OnlinePayment onlinepaymentsObj = Abc.OnlineBL.ServiceProxy.ServiceFactory.AccountService.InsertOnlinePayment(onlinePaymentObj);
-                
-            */
            // List<InvoiceDetail> objPrev = Abc.OnlineBL.ServiceProxy.ServiceFactory.AccountService.GetInvoiceList(3728, 0, null);
 
             //List<Order> obj = Abc.OnlineBL.ServiceProxy.ServiceFactory.AccountService.GetOrderInvoice(3728, 0, null);

@@ -4551,8 +4551,6 @@ namespace Abc.OnlineBL.Orders.Workflow
                         od.ManagerID = managerID;
                     }
 
-                    //ctx.OnlineServiceQueue_Add(orderID, "OrderInRegionalLocation", "signs@photosigns.com.au");
-
                     ctx.SubmitChanges();
 
                 }

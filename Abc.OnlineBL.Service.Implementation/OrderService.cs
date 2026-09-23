@@ -4506,25 +4506,6 @@ namespace Abc.OnlineBL.Service.Implementation
                                 ret = true;
                                 break;
                             }
-                            //else if (anItem.Product.TypeID == ProductTypes.Packages || anItem.Product.TypeID == ProductTypes.BoardPackages || anItem.Product.TypeID == ProductTypes.OtherPackages)
-                            //{
-                            //    foreach (PackageContentGroup item in anItem.Product.PackageContentGroups)
-                            //    {
-                            //        foreach (PackageContentGroupProduct contentProductItem in item.PackageContentGroupProducts)
-                            //        {
-                            //            Product pro = ctx.Products.SingleOrDefault(p => p.ProductID == contentProductItem.ProductId);
-                            //            if (pro != null && pro.TypeID == typeID)
-                            //            {
-                            //                ret = true;
-                            //                break;
-                            //            }
-
-                            //        }
-                            //        if (ret == true)
-                            //            break;
-                            //    }
-
-                            //}
                         }
                     }
                     return ret;
@@ -4637,7 +4618,6 @@ namespace Abc.OnlineBL.Service.Implementation
                         note = "Installation Note by " + name + ": " + message;
                     else
                         note = "Installation Note by " + name;
-
 
                     if (string.IsNullOrEmpty(od.Notes))
                         od.Notes = note;
@@ -4754,7 +4734,6 @@ namespace Abc.OnlineBL.Service.Implementation
                         note = "Removal Note by " + name + ": " + message;
                     else
                         note = "Removal Note by " + name;
-
 
                     if (string.IsNullOrEmpty(od.Notes))
                         od.Notes = note;

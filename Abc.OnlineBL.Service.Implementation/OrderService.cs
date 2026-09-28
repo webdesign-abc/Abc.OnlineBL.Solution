@@ -4829,7 +4829,6 @@ namespace Abc.OnlineBL.Service.Implementation
                     else
                         note = "Date Removal Requested by " + name;
 
-
                     if (string.IsNullOrEmpty(od.Notes))
                         od.Notes = note;
                     else
@@ -5369,7 +5368,6 @@ namespace Abc.OnlineBL.Service.Implementation
                                                join dd in ctx.DespatchDetails on o.OrderID equals dd.OrderID
                                                join od in ctx.OrderDetails on o.OrderID equals od.OrderID
                                                join p in ctx.Products on od.ProductID equals p.ProductID
-                                               //join w in ctx.ViewBoardOrdersRemovals on o.OrderID equals w.OrderID
                                                where o.ClientID == clientId
                                                && dd.DateBoardErected != null
                                                && dd.DateRemovalRequested == null
@@ -5561,8 +5559,6 @@ namespace Abc.OnlineBL.Service.Implementation
                                 {
                                     var obj = ctx.DespatchDetails.Single(o => o.OrderID == orderID);
                                     obj.RBy = reqBy;
-
-                                    //string dateStr = DateTime.Now.ToString("dd-MMM-yyyy hh:mm tt");
 
                                     if (removalType == null)
                                     {

@@ -1809,42 +1809,6 @@ namespace Abc.OnlineBL.Service.Implementation
                             query.Myop = true;
                             query.UsePackageContentPrice = true;
                             query.RelatedClientId = model.ClientId;
-                            //query.ApplyGST = product.ApplyGST;
-                            //query.SizeCode = product.SizeCode;
-                            //query.Dimensions = product.Dimensions;
-                            //query.ContentType = !string.IsNullOrEmpty(product.ContentType) ? product.ContentType : null;
-                            //query.FrameType = !string.IsNullOrEmpty(product.FrameType) ? product.FrameType : null;
-                            //query.Qty = product.Qty > 0 ? product.Qty : null;
-                            //query.Format = !string.IsNullOrEmpty(product.Format) ? product.Format : null;
-                            //query.CustomName = product.CustomName;
-                            //query.IsPhotoItem = product.IsPhotoItem;
-                            //query.IsStockboardItem = product.IsStockboardItem;
-                            //query.ProductDescription = product.ProductDescription;
-                            //query.ProductGroupID = product.ProductGroupID;
-
-                            //if (product.ProductPricings != null && product.ProductPricings.Count > 0)
-                            //{
-                            //    query.ProductPricings = null;
-                            //}
-                            //foreach (var item in product.ProductPricings)
-                            //{
-                            //    query.ProductPricings.Add(new ProductPricing()
-                            //    {
-                            //        Price = item.Price,
-                            //        ProductID = item.ProductID,
-                            //        PricingID = item.PricingID
-                            //    });
-                            //}
-
-                            //query.ProductManagerExclusives = null;
-                            //foreach (var item in product.ProductManagerExclusives)
-                            //{
-                            //    query.ProductManagerExclusives.Add(new ProductManagerExclusive()
-                            //    {
-                            //        ManagerId = item.ManagerId,
-                            //        ProductId = item.ProductId,
-                            //    });
-                            //}
 
                             query.ProductRules = new System.Data.Linq.EntitySet<ProductRule>();
                             query.ProductRules.Add(new ProductRule()

@@ -1997,36 +1997,6 @@ namespace Abc.OnlineBL.Service.Implementation
                             return query.FirstOrDefault();
                         }
                     }
-                    else if (sizeCode == "C")
-                    {
-                        if (contentType.ToLower().Contains("overlay") && frameType == "Wrap")
-                        {
-                            var query = from p in ctx.PDF_Templates
-                                        where p.SizeCode == sizeCode && p.Orientation == orientation && p.FrameType == "Wrap Board with Overlay"
-                                        select p;
-                            return query.FirstOrDefault();
-                        }
-                        if (contentType.ToLower().Contains("overlay") && frameType == "Wing Wrap")
-                        {
-                            var query = from p in ctx.PDF_Templates
-                                        where p.SizeCode == sizeCode && p.Orientation == orientation && p.FrameType == "Wing Wrap with Overlay"
-                                        select p;
-                            return query.FirstOrDefault();
-                        }
-                        else
-                        {
-                            var query = from p in ctx.PDF_Templates
-                                    where p.SizeCode == sizeCode && p.ContentType != null && p.ContentType.ToLower() == contentType.ToLower() && p.FrameType.ToLower() == frameType.ToLower() && p.Orientation == orientation
-                                    select p;
-                            if (query == null || query.FirstOrDefault() == null)
-                            {
-                                query = from p in ctx.PDF_Templates
-                                        where p.SizeCode == sizeCode && p.Orientation == orientation && p.FrameType.ToLower() == frameType.ToLower()
-                                        select p;
-                            }
-                            return query.FirstOrDefault();
-                        }
-                    }
                     else
                     {
                         var query = from p in ctx.PDF_Templates

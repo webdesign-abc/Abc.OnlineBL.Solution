@@ -87,7 +87,6 @@ namespace Abc.OnlineBL.Entities.Model
     public class ClientSettings
     {
         public const int DowlingMedowie = 763;
-        public const int LJHookerRaymondTerrace = 3897;
         public const int BuyMyPlaceSouthMelbourne = 10901;
         public const int BarryPlantBendigo = 14578;
         public const int McKeanMcGregorBendigo = 15078;
@@ -158,7 +157,6 @@ namespace Abc.OnlineBL.Entities.Model
         public const string WorkshopSouthAustralia = "WSOUT";
         public const string WorkshopVictoria = "WORKS";
         public const string SignshopVictoria = "SIGNSHOP";
-        public const string TrishNewcastle = "MTPNEW";
         public const string WorkshopQueensland = "QWORK";
         public const string WorkshopNewSouthWales = "WNEWS";
         public const string WorkshopWesternAustralia = "WORWA";

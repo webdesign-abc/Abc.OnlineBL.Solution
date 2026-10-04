@@ -37,10 +37,6 @@ namespace Abc.OnlineBL.Orders.Workflow.Model
 			{
 				addNoteAll = addNoteAll + addNote1 + "\r\n";
 			}
-			//if (!string.IsNullOrEmpty(addNote2))
-			//{
-			//	addNoteAll = addNoteAll + "\r\nPackages: " + addNote2;
-			//}
 
 			return addNoteAll;
 		}

@@ -4114,7 +4114,6 @@ namespace Abc.OnlineBL.Service.Implementation
                         //Process Order (New order will be generated)
                         if (!string.IsNullOrEmpty(Pgorder.OrderData))
                         {
-                            // OnlineBL.Entities.Model.OnlineOrder.OnlinePropertyOrder propertyOrder = ObjectUtility.Deserialize<OnlinePropertyOrder>(Pgorder.OrderData);
                             if (propertyOrder == null)
                             {
                                 throw new ArgumentNullException("propertyOrder");
@@ -5224,8 +5223,7 @@ namespace Abc.OnlineBL.Service.Implementation
                             sb.AppendFormat("<TR><TD width=\"20%\"><B>File Name</B> :</TD><TD width=\"80%\"><A href=\"file:{0}\"><font color=\"{2}\">{1}</font></A> - Quality: <font color=\"{2}\">{2}</font></TD></TR>", item.FileName.Replace("\\", "/"), item.FileName, colorCode);
                         }
                     }
-                    else if (item.Quality == UploadedFileQualityType.IMAGING
-                                                                    || item.Quality == UploadedFileQualityType.GRAY)
+                    else if (item.Quality == UploadedFileQualityType.IMAGING || item.Quality == UploadedFileQualityType.GRAY)
                     {
                         colorCode = Enum.GetName(typeof(UploadedFileQualityType), UploadedFileQualityType.GRAY);
                         if (!string.IsNullOrEmpty(item.FileName))
@@ -5595,7 +5593,7 @@ namespace Abc.OnlineBL.Service.Implementation
                                     ctx.SubmitChanges();
 
                                     int? val = ctx.SP_EventGen_SBRemovalRequested(orderID, reqBy, "BatchRequestRemoval");
-                                    //retBuilder.Append("OK");
+                                    
                                 }
                                 //else
                                 //{

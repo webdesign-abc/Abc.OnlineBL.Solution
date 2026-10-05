@@ -2153,7 +2153,7 @@ namespace Abc.OnlineBL.Service.Implementation
 			}
 			catch (Exception ex)
 			{
-				string message = string.Format("Error occured in 'InsertUserLogon'");
+				string message = string.Format("Error occured in 'InsertMarketingMail'");
 				Logger.Exception(ex, message);
 				throw;
 			}
@@ -2729,7 +2729,7 @@ namespace Abc.OnlineBL.Service.Implementation
 			}
 			catch (Exception ex)
 			{
-				string message = string.Format("Error occured in 'SaveEventSubscriber'. SubId:{0}");
+				string message = string.Format("Error occured in 'SaveEventSubscriber'");
 				Logger.Exception(ex, message);
 				throw;
 			}
@@ -2764,8 +2764,6 @@ namespace Abc.OnlineBL.Service.Implementation
 					}
 					else
 					{
-						//Logger.Warn("Client does not have Pref 19: ClientID: {0}", clientID);
-
 						Client cl = ctx.Clients.SingleOrDefault(c => c.ClientID == clientID);
 
 						if (cl != null)

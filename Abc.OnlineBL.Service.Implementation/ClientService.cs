@@ -2911,57 +2911,6 @@ namespace Abc.OnlineBL.Service.Implementation
 		#endregion
 
 		#region ABC Visual
-		//////public List<VisualListing> GetVisualListingsByClientID(int clientID)
-		//////{
-		//////    if (clientID < 0)
-		//////    {
-		//////        throw new ArgumentException("Invalid client id.");
-		//////    }
-		//////    try
-		//////    {
-		//////        List<EntityRelations> loadOptions = new List<EntityRelations>();
-		//////        loadOptions.Add(EntityRelations.ABCVIS_ClientsAssetRental_To_ABCVIS_Listings);
-		//////        loadOptions.Add(EntityRelations.ABCVIS_ClientsAssetRental_To_Client);                
-		//////        loadOptions.Add(EntityRelations.Client_To_AR_Listings);
-		//////        loadOptions.Add(EntityRelations.AR_Listing_To_AR_ListingType);
-		//////        loadOptions.Add(EntityRelations.AR_Listing_To_AR_Status);
-		//////        loadOptions.Add(EntityRelations.AR_Listing_To_Location);
-
-		//////        loadOptions.Add(EntityRelations.ABCVIS_Listing_To_AR_Listing);
-
-		//////        using (AbcDataContext ctx = new AbcDataContext())
-		//////        {
-		//////            ABCVIS_ClientsAssetRental result = ctx.ABCVIS_ClientsAssetRentals.Where(assetRental => 
-		//////                                                   assetRental.ClientId.Equals(clientID) 
-		//////                                                   && assetRental.IsActive.Value
-		//////                                                   && (!assetRental.LeaseEnded)
-		//////                                               ).FirstOrDefault();
-		//////            if (result != null)
-		//////            {
-		//////                List<VisualListing> visualListings = new List<VisualListing>();
-		//////                result.Client.AR_Listings.ToList().ForEach(ar_Listing => 
-		//////                {
-		//////                    VisualListing visualListing = new VisualListing(ar_Listing);
-		//////                    visualListing.IsVisual = result.ABCVIS_Listings.Any(c => 
-		//////                                                c.ListingId.Equals(ar_Listing.ListingId) 
-		//////                                                && c.RentalId.Equals(result.RentalId)
-		//////                                            );
-		//////                    visualListings.Add(visualListing);
-		//////                });                        
-
-		//////                return visualListings;
-		//////            }
-
-		//////            return null;
-		//////        }
-		//////    }
-		//////    catch (Exception ex)
-		//////    {
-		//////        string message = string.Format("Error occured in 'GetClientsVisualListingByClientID'. clientID:{0}", clientID);
-		//////        Logger.Exception(ex, message);
-		//////        throw;
-		//////    }
-		//////}        
 
 		public AbcVisualResponse AddVisualListing(int rentalID, int listingID)
 		{

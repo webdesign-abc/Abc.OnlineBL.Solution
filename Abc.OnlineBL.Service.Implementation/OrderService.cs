@@ -2126,30 +2126,6 @@ namespace Abc.OnlineBL.Service.Implementation
                 string message = string.Format("Error occured in 'ApproveJob'. orderID:{0}", orderID);
                 Logger.Exception(ex, message);
 
-                if (byWhom == "B2B Auto Approve" && ex.Message != "Job is already approved")
-                {
-                    using (AbcDataContext ctx = new AbcDataContext())
-                    {
-                        Order or = ctx.Orders.FirstOrDefault(o => o.OrderID == orderID);
-                        //ROnlineBLe an Event to send email notification to Admin
-                        int eventID = EventSettings.B2BAutoApprovalFailed;
-                        string sub = "Abc Notification: B2B Auto Approval Failed (Order no: " + orderID + ")";
-                        string xmlData = @"<EVENT>
-								<OrderID>" + orderID + @"</OrderID>
-								<ClientID>" + or.ClientID + @"</ClientID>
-								<Description>" + ex.Message.Replace("&", "&amp;") + @"</Description>
-								<ReceivedOn>" + DateTime.Now + @"</ReceivedOn>
-								</EVENT>";
-
-
-                        string source = "OnlineBL_OrderService_ApproveExpressJob";
-
-                        ctx.SP_EventQueueAdd(eventID, sub, xmlData, xmlData, null, null, null, null, source, String.Empty);
-
-                        ctx.SubmitChanges();
-                    }
-                }
-
                 throw ex;
             }
         }
@@ -5595,10 +5571,6 @@ namespace Abc.OnlineBL.Service.Implementation
                                     int? val = ctx.SP_EventGen_SBRemovalRequested(orderID, reqBy, "BatchRequestRemoval");
                                     
                                 }
-                                //else
-                                //{
-                                //    retBuilder.Append("Board Removal is already requested");
-                                //}
                             }
                         }
                         ret = "OK";
@@ -6312,10 +6284,7 @@ namespace Abc.OnlineBL.Service.Implementation
             {
                 throw new ArgumentNullException("uncFilePath");
             }
-            //if (!requests.UncFilePath.StartsWith("\\\\"))
-            //{
-            //    throw new ArgumentException("uncFilePath doesn't start with \\\\");
-            //}
+
             if (!File.Exists(requests.UncFilePath))
             {
                 throw new ApplicationException("uncFilePath doesn't exist");
@@ -6340,7 +6309,6 @@ namespace Abc.OnlineBL.Service.Implementation
                 }
                 
                 File.WriteAllBytes(outFile, File.ReadAllBytes(requests.UncFilePath));
-                //File.Copy(requests.UncFilePath, outFile, true);
 
                 //Delete the temp file
                 if (requests.UncFilePath != null && File.Exists(requests.UncFilePath))

@@ -1980,23 +1980,6 @@ namespace Abc.OnlineBL.Service.Implementation
                             return query.FirstOrDefault();
                         }
                     }
-                    else if (sizeCode == "ABISign4x3" || sizeCode == "ABISign6x4" || sizeCode == "ABISign8x4")
-                    {
-                        if (contentType.ToLower().Contains("overlay"))
-                        {
-                            var query = from p in ctx.PDF_Templates
-                                        where p.SizeCode == sizeCode && p.Orientation == orientation && p.FrameType == "Metal Board With Auction Overlay"
-                                        select p;
-                            return query.FirstOrDefault();
-                        }
-                        else
-                        {
-                            var query = from p in ctx.PDF_Templates
-                                        where p.SizeCode == sizeCode && p.Orientation == orientation && p.FrameType.ToLower() == frameType.ToLower()
-                                        select p;
-                            return query.FirstOrDefault();
-                        }
-                    }
                     else
                     {
                         var query = from p in ctx.PDF_Templates

@@ -3660,6 +3660,7 @@ namespace Abc.OnlineBL.Service.Implementation
             AppendText(ref sb, "<Conjunctional Details>", model.ConjunctionDetails);
 
             #endregion
+
             return sb.ToString();
         }
 
@@ -3847,7 +3848,6 @@ namespace Abc.OnlineBL.Service.Implementation
             string xpath = "OnlineOrder/TextDetails/AgentContacts";
             GetNode(ref xmlDoc, xpath).InnerXml = sb.ToString();
             #endregion
-
 
             #region Append LogHistory ...
 
@@ -8402,7 +8402,6 @@ namespace Abc.OnlineBL.Service.Implementation
                 }
                 catch (Exception ex)
                 {
-                    
                     throw ex;
                 }
 
@@ -8415,7 +8414,6 @@ namespace Abc.OnlineBL.Service.Implementation
                     loadOptions.Add(EntityRelations.AOP_JobDocument_To_OrderDetail);
                     loadOptions.Add(EntityRelations.OrderDetail_To_Product);
                     loadOptions.Add(EntityRelations.Order_To_OrderOtherDetail);
-
 
                     ctx.DeferredLoadingEnabled = false;
                     ctx.SetDataLoadOptions(loadOptions);

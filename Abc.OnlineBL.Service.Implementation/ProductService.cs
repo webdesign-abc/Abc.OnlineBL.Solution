@@ -1903,7 +1903,7 @@ namespace Abc.OnlineBL.Service.Implementation
                     if (options != null && options.Count > 0)
                         ctx.SetDataLoadOptions(options);
 
-                    if (productID == 1359 || productID == 4615 || productID == 3463 || productID == 8191 || productID == 8198)
+                    if (productID == 4615 || productID == 8191 || productID == 8198)
                     {
                         var query = from p in ctx.PDF_Templates
                                     where p.ProductID == productID

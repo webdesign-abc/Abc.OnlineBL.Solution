@@ -1883,10 +1883,6 @@ namespace Abc.OnlineBL.Service.Implementation
         public PDF_Template GetPDFTemplate(int productID, string sizeCode, string frameType, string contentType, string orientation)
         {
             //Logger.Warn("Get PDF Template Method: " + sizeCode); 
-            //if (string.IsNullOrEmpty(sizeCode))
-            //{
-            //    throw new ArgumentNullException("sizeCode");
-            //}
 
             if (string.IsNullOrEmpty(orientation))
             {

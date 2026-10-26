@@ -2657,10 +2657,10 @@ namespace Abc.OnlineBL.Orders.Workflow
                             {
                                 InsertAussieSignErectionFeeIntoOrderDetails(ctx, item.ProductId, 525, orderId, managerId, propertyOrder);
                             }
-                            else if (propertyOrder.BoardInstallationType == BoardInstallationType.BoardToBeROnlineBLed2000mmOfTheGround)
-                            {
-                                InsertAussieSignErectionFeeIntoOrderDetails(ctx, item.ProductId, 0, orderId, managerId, propertyOrder);
-                            }
+                            //else if (propertyOrder.BoardInstallationType == BoardInstallationType.BoardToBeROnlineBLed2000mmOfTheGround)
+                            //{
+                            //    InsertAussieSignErectionFeeIntoOrderDetails(ctx, item.ProductId, 0, orderId, managerId, propertyOrder);
+                            //}
 
                         }
                         catch (Exception ex)

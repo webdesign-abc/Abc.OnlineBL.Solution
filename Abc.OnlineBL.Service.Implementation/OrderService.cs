@@ -8847,57 +8847,57 @@ namespace Abc.OnlineBL.Service.Implementation
                     {
                         if (string.IsNullOrEmpty(od.Caption) || od.Caption.ToUpper().StartsWith("DIY"))
                         {
-                            foreach (AOP_JobDocument aopJob in od.AOP_JobDocuments)
-                            {
-                                if (aopJob.TempDocumentModel != null && aopJob.OrderDetail != null && aopJob.OrderDetail.Product.CategoryId != CategoryTypes.Brochure && aopJob.OrderDetail.Product.CategoryId != CategoryTypes.WindowCard)
-                                {
-                                    Abc.OnlinePublication.Common.DOM.Document doc = Dom.Document.Deserialize(aopJob.TempDocumentModel.ToString());
+                            //foreach (AOP_JobDocument aopJob in od.AOP_JobDocuments)
+                            //{
+                            //    if (aopJob.TempDocumentModel != null && aopJob.OrderDetail != null && aopJob.OrderDetail.Product.CategoryId != CategoryTypes.Brochure && aopJob.OrderDetail.Product.CategoryId != CategoryTypes.WindowCard)
+                            //    {
+                            //        Abc.OnlinePublication.Common.DOM.Document doc = Dom.Document.Deserialize(aopJob.TempDocumentModel.ToString());
 
-                                    Abc.OnlinePublication.Common.DOM.Tag captionTag = doc.Root.Find(delegate(Abc.OnlinePublication.Common.DOM.Tag t) { return t.TagName == "Heading"; });
-                                    if (captionTag != null)
-                                    {
-                                        if (captionTag.FormElement != null && !string.IsNullOrEmpty(captionTag.FormElement.Value))
-                                        {
-                                            od.Caption = captionTag.FormElement.Value;
-                                            if (captionTag.FormElement.Value.Length > 20)
-                                            {
-                                                od.Caption = captionTag.FormElement.Value.Substring(0, 20) + "...";
-                                            }
-                                            break;
-                                        }
-                                    }
-                                    captionTag = doc.Root.Find(delegate(Abc.OnlinePublication.Common.DOM.Tag t) { return t.TagName == "BodyCopy"; });
-                                    if (captionTag != null && captionTag.FormElement != null && !string.IsNullOrEmpty(captionTag.FormElement.Value))
-                                    {
-                                        od.Caption = captionTag.FormElement.Value;
-                                        if (captionTag.FormElement.Value.Length > 20)
-                                        {
-                                            od.Caption = captionTag.FormElement.Value.Substring(0, 20) + "...";
-                                        }
-                                        break;
-                                    }
-                                    captionTag = doc.Root.Find(delegate(Abc.OnlinePublication.Common.DOM.Tag t) { return t.TagName == "BrochureHeading"; });
-                                    if (captionTag != null && captionTag.FormElement != null && !string.IsNullOrEmpty(captionTag.FormElement.Value))
-                                    {
-                                        od.Caption = captionTag.FormElement.Value;
-                                        if (captionTag.FormElement.Value.Length > 20)
-                                        {
-                                            od.Caption = captionTag.FormElement.Value.Substring(0, 20) + "...";
-                                        }
-                                        break;
-                                    }
-                                    captionTag = doc.Root.Find(delegate(Abc.OnlinePublication.Common.DOM.Tag t) { return t.TagName == "BrochureBodyCopy"; });
-                                    if (captionTag != null && captionTag.FormElement != null && !string.IsNullOrEmpty(captionTag.FormElement.Value))
-                                    {
-                                        od.Caption = captionTag.FormElement.Value;
-                                        if (captionTag.FormElement.Value.Length > 20)
-                                        {
-                                            od.Caption = captionTag.FormElement.Value.Substring(0, 20) + "...";
-                                        }
-                                        break;
-                                    }
-                                }
-                            }
+                            //        Abc.OnlinePublication.Common.DOM.Tag captionTag = doc.Root.Find(delegate(Abc.OnlinePublication.Common.DOM.Tag t) { return t.TagName == "Heading"; });
+                            //        if (captionTag != null)
+                            //        {
+                            //            if (captionTag.FormElement != null && !string.IsNullOrEmpty(captionTag.FormElement.Value))
+                            //            {
+                            //                od.Caption = captionTag.FormElement.Value;
+                            //                if (captionTag.FormElement.Value.Length > 20)
+                            //                {
+                            //                    od.Caption = captionTag.FormElement.Value.Substring(0, 20) + "...";
+                            //                }
+                            //                break;
+                            //            }
+                            //        }
+                            //        captionTag = doc.Root.Find(delegate(Abc.OnlinePublication.Common.DOM.Tag t) { return t.TagName == "BodyCopy"; });
+                            //        if (captionTag != null && captionTag.FormElement != null && !string.IsNullOrEmpty(captionTag.FormElement.Value))
+                            //        {
+                            //            od.Caption = captionTag.FormElement.Value;
+                            //            if (captionTag.FormElement.Value.Length > 20)
+                            //            {
+                            //                od.Caption = captionTag.FormElement.Value.Substring(0, 20) + "...";
+                            //            }
+                            //            break;
+                            //        }
+                            //        captionTag = doc.Root.Find(delegate(Abc.OnlinePublication.Common.DOM.Tag t) { return t.TagName == "BrochureHeading"; });
+                            //        if (captionTag != null && captionTag.FormElement != null && !string.IsNullOrEmpty(captionTag.FormElement.Value))
+                            //        {
+                            //            od.Caption = captionTag.FormElement.Value;
+                            //            if (captionTag.FormElement.Value.Length > 20)
+                            //            {
+                            //                od.Caption = captionTag.FormElement.Value.Substring(0, 20) + "...";
+                            //            }
+                            //            break;
+                            //        }
+                            //        captionTag = doc.Root.Find(delegate(Abc.OnlinePublication.Common.DOM.Tag t) { return t.TagName == "BrochureBodyCopy"; });
+                            //        if (captionTag != null && captionTag.FormElement != null && !string.IsNullOrEmpty(captionTag.FormElement.Value))
+                            //        {
+                            //            od.Caption = captionTag.FormElement.Value;
+                            //            if (captionTag.FormElement.Value.Length > 20)
+                            //            {
+                            //                od.Caption = captionTag.FormElement.Value.Substring(0, 20) + "...";
+                            //            }
+                            //            break;
+                            //        }
+                            //    }
+                            //}
                         }
 
                         //clear the caption if order does not have Board

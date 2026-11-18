@@ -8832,7 +8832,6 @@ namespace Abc.OnlineBL.Service.Implementation
                 using (AbcDataContext ctx = new AbcDataContext())
                 {
                     List<EntityRelations> loadOptions = new List<EntityRelations>();
-                    //loadOptions.Add(EntityRelations.Order_To_AOP_JobDocuments);
                     loadOptions.Add(EntityRelations.Order_To_OrderDetails);
                     loadOptions.Add(EntityRelations.OrderDetail_To_Product);
 

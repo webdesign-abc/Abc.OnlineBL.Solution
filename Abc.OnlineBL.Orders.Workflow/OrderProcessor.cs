@@ -1796,7 +1796,7 @@ namespace Abc.OnlineBL.Orders.Workflow
 
                                                         if (nOrderEvent.SendJobsheetToPrintTeam)
                                                         {
-                                                            ctx.FrontOffice_ServiceQueueAdd("PrintJobsheet", "OrderID=" + nOrderEvent.OrderId, 0, 2, null, @"\\adbb\stockboarddepot", null, null, "Online Order Processor", 1);
+                                                            ctx.FrontOffice_ServiceQueueAdd("PrintJobsheet", "OrderID=" + nOrderEvent.OrderId, 0, 2, null, @"\\adbb\HP-Boards", null, null, "Online Order Processor", 1);
                                                         }
                                                         else
                                                         {

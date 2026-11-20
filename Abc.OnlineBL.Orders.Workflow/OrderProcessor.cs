@@ -1984,7 +1984,7 @@ namespace Abc.OnlineBL.Orders.Workflow
 
                                                         ctx.ABCWRKFLOW_ApproveOrder(nOrderEvent.OrderId, DateTime.Now, null, null, null, false);
 
-                                                        ctx.FrontOffice_ServiceQueueAdd("PrintJobsheet", "OrderID=" + nOrderEvent.OrderId, 0, 2, null, @"\\adbb\stockboarddepot", null, null, "Online Order Processor", 1);
+                                                        ctx.FrontOffice_ServiceQueueAdd("PrintJobsheet", "OrderID=" + nOrderEvent.OrderId, 0, 2, null, @"\\adbb\HP-Boards", null, null, "Online Order Processor", 1);
                                                         ctx.SubmitChanges();
                                                     }
                                                     else

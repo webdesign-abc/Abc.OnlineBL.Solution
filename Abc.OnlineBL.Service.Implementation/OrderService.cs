@@ -8609,7 +8609,7 @@ namespace Abc.OnlineBL.Service.Implementation
 
                 if (hasAOPJob)
                 {
-                    if (!ServiceConfig.IS_NZ && hasOnlineListing)
+                    if (hasOnlineListing)
                     {
                         UpdateXMLOnApproval(orderID);
                     }
